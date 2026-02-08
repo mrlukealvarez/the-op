@@ -9,13 +9,21 @@ import {
   Tv,
   Tent,
   Sprout,
+  Home,
+  UtensilsCrossed,
+  Beer,
+  Compass,
+  Briefcase,
+  ShoppingBag,
+  Handshake,
+  ArrowRight,
 } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem, SlideIn } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "THE OP is more than a cafe — it's the community anchor for the Black Hills Consortium campus. See how all 11 entities connect.",
+    "THE OP is more than a cafe — it's the community anchor for the Black Hills Consortium campus. Local partnerships, ecosystem connections, and the Settle the West partner list.",
   openGraph: {
     title: "Community | THE OP",
     description:
@@ -63,6 +71,39 @@ const ecosystemConnections = [
     icon: Heart,
     entity: "Seed Foundation",
     connection: "Foundation programs host community events and fundraisers at THE OP regularly.",
+  },
+];
+
+const partnerCategories = [
+  {
+    icon: Home,
+    category: "Real Estate",
+    desc: "Realtors who understand the vision. Percentage of commission on Settle the West move-ins. First stop for every relocator looking for a home.",
+  },
+  {
+    icon: UtensilsCrossed,
+    category: "Restaurants",
+    desc: "Featured dining list for visitors and relocators. Catering opportunities for campus events. Cross-promotion through Outpost Media content.",
+  },
+  {
+    icon: Beer,
+    category: "Breweries & Beverage",
+    desc: "Local breweries: tap takeover nights at THE OP, revenue share on featured pours. Coffee roasters as THE OP suppliers with permanent branding.",
+  },
+  {
+    icon: Compass,
+    category: "Tours & Activities",
+    desc: "Tour operators: package deals for visitors, referral fees for bookings. Outdoor guides for employee perks and investor entertainment.",
+  },
+  {
+    icon: Briefcase,
+    category: "Professional Services",
+    desc: "Lawyers, accountants, insurance agents, and banks with preferred rates for BHC community members. The professional backbone of relocation.",
+  },
+  {
+    icon: ShoppingBag,
+    category: "Shops & Retail",
+    desc: "Local businesses that stock BHC merch. Exclusive offers for community members. Featured in the Settle the West welcome guide.",
   },
 ];
 
@@ -162,8 +203,77 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Partner List for Relocators */}
       <section className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn className="mb-4">
+            <div className="flex items-center gap-3">
+              <Handshake className="h-6 w-6 text-amber-dark" />
+              <h2 className="text-3xl font-bold text-espresso">
+                The Partner List for Relocators
+              </h2>
+            </div>
+            <p className="mt-2 max-w-2xl text-warm-gray leading-relaxed">
+              When you move to the Black Hills through Settle the West, these are
+              your people. Vetted businesses that believe in what we are building.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {partnerCategories.map((partner) => (
+              <StaggerItem key={partner.category}>
+                <div className="flex h-full flex-col rounded-2xl border border-espresso/10 bg-white p-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
+                    <partner.icon className="h-5 w-5 text-amber-dark" />
+                  </div>
+                  <h3 className="mb-2 text-lg font-semibold text-espresso">
+                    {partner.category}
+                  </h3>
+                  <p className="flex-1 text-sm leading-relaxed text-warm-gray">
+                    {partner.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn delay={0.2}>
+            <div className="mt-12 rounded-2xl bg-cannabis-green/5 border border-cannabis-green/10 p-8">
+              <h3 className="text-lg font-bold text-espresso">Revenue Share Model</h3>
+              <p className="mt-2 text-sm leading-relaxed text-warm-gray">
+                Every partner in the ecosystem generates revenue for themselves AND for
+                the community. Referral fees, featured placements, and exclusive offers
+                create a self-reinforcing local economy. When a Settle the West
+                relocator buys a home, the realtor earns commission and a portion flows
+                back to the program. When a brewery does a tap takeover, they sell beer
+                and THE OP sells food. Rising tides.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <div className="mt-8 rounded-2xl bg-espresso/5 border border-espresso/10 p-8">
+              <h3 className="text-lg font-bold text-espresso">Connection to Settle the West</h3>
+              <p className="mt-2 text-sm leading-relaxed text-warm-gray">
+                When remote workers relocate through our program, they get the Partner
+                List on Day 1. These are not random recommendations — they are vetted
+                businesses that believe in what we are building. From finding a home to
+                opening a bank account to joining a hiking group, the Partner List is
+                the relocator&apos;s on-ramp to Black Hills life.
+              </p>
+              <Link
+                href="/about"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-espresso hover:text-amber-dark transition-colors"
+              >
+                Learn about THE OP&apos;s role <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-cream-dark px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-espresso">

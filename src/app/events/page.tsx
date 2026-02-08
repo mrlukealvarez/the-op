@@ -1,42 +1,55 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Calendar, Mic, Brain, Film, Music, PartyPopper } from "lucide-react";
+import {
+  Calendar,
+  Mic,
+  Brain,
+  Film,
+  Music,
+  PartyPopper,
+  Palette,
+  Coffee,
+  Rocket,
+  DollarSign,
+  Users,
+  MapPin,
+} from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Live events at THE OP in Custer, SD — open mic nights, trivia, live recordings, and community gatherings.",
+    "Live events at THE OP in Custer, SD — open mic nights, trivia, live recordings, startup pitches, art shows, and community gatherings.",
   openGraph: {
     title: "Events | THE OP",
     description:
-      "Live events at THE OP — open mic nights, trivia, live recordings, and community gatherings.",
+      "Live events at THE OP — open mic nights, trivia, live recordings, startup pitches, art shows, and community gatherings.",
   },
 };
 
 const upcomingEvents = [
   {
     icon: Mic,
-    title: "Open Mic Night",
+    title: "Open Mic Nights",
     date: "Every Thursday, 7:00 PM",
     description:
-      "Poets, musicians, comedians — bring your talent or just bring your ears. Sign-ups start at 6:30 PM.",
+      "Local musicians, poets, comedians — bring your talent or just bring your ears. Sign-ups start at 6:30 PM. Free entry, food and drink revenue.",
     tag: "Weekly",
   },
   {
     icon: Brain,
-    title: "THE OP Trivia",
+    title: "Trivia Nights",
     date: "Every Tuesday, 7:30 PM",
     description:
-      "Teams of up to 6. Categories rotate weekly — cannabis culture, Black Hills history, pop culture, and more.",
+      "Cannabis trivia, Black Hills history, tech trivia, pop culture. Teams of 4, prizes for top 3. Categories rotate weekly.",
     tag: "Weekly",
   },
   {
     icon: Film,
-    title: "Outpost Media Live Recording",
+    title: "Outpost Media Live",
     date: "First Saturday of each month, 2:00 PM",
     description:
-      "Watch The Session and other Outpost Media shows record live from THE OP. Free admission, great vibes.",
+      "Live podcast recordings of The Session and other Outpost Media shows. Audience Q&A. Become part of the content.",
     tag: "Monthly",
   },
   {
@@ -49,30 +62,54 @@ const upcomingEvents = [
   },
   {
     icon: PartyPopper,
-    title: "THE CULT Pre-Party",
-    date: "Quarterly (planned — launching 2026)",
+    title: "CULT Pre-Events",
+    date: "Quarterly (launching 2026)",
     description:
-      "The official pre-event for THE CULT convention. Networking, product tastings, and exclusive previews.",
-    tag: "Planned",
+      "Convention warm-up events. Meet speakers, preview the agenda, early bird tickets. Networking, product tastings, and exclusive previews.",
+    tag: "Quarterly",
+  },
+  {
+    icon: Rocket,
+    title: "Startup Pitch Night",
+    date: "Third Thursday of each month, 6:00 PM",
+    description:
+      "Seed Labs and Auric Labs founders pitch to the local audience. Community feedback, investor introductions. Where great ideas get their first real test.",
+    tag: "Monthly",
+  },
+  {
+    icon: Palette,
+    title: "Art Shows",
+    date: "Second Friday of each month",
+    description:
+      "Local Black Hills artists featured on the cafe walls. Opening night receptions with the artists. 15% commission to THE OP on all sales.",
+    tag: "Monthly",
+  },
+  {
+    icon: Coffee,
+    title: "Sunday Morning Sessions",
+    date: "Every Sunday, 9:00 AM",
+    description:
+      "Coffee and conversation. Community planning, town hall style. Where Custer residents shape what comes next. No agenda, just people.",
+    tag: "Weekly",
   },
   {
     icon: Calendar,
     title: "Community Board Meetup",
     date: "Second Wednesday, 6:00 PM",
     description:
-      "Local business owners, nonprofits, and community organizers gather to share updates and collaborate.",
+      "Local business owners, nonprofits, and community organizers gather to share updates and collaborate on regional projects.",
     tag: "Monthly",
   },
 ];
 
 const weeklySchedule = [
   { day: "Monday", event: "Coworking Happy Hour (4-6 PM)", detail: "Discounted drinks for remote workers" },
-  { day: "Tuesday", event: "Trivia Night (7:30 PM)", detail: "Teams of up to 6" },
+  { day: "Tuesday", event: "Trivia Night (7:30 PM)", detail: "Teams of 4, prizes" },
   { day: "Wednesday", event: "Wellness Wednesday", detail: "CBD specials all day" },
   { day: "Thursday", event: "Open Mic (7 PM)", detail: "Music, comedy, poetry" },
-  { day: "Friday", event: "Acoustic Sessions (6 PM)", detail: "Live music" },
-  { day: "Saturday", event: "Rotating Special", detail: "Check socials for details" },
-  { day: "Sunday", event: "Slow Sunday", detail: "Extended brunch menu, chill vibes" },
+  { day: "Friday", event: "Acoustic Sessions (6 PM)", detail: "Live music + Art Show (2nd Fri)" },
+  { day: "Saturday", event: "Rotating Special", detail: "Outpost Media Live (1st Sat)" },
+  { day: "Sunday", event: "Morning Sessions (9 AM)", detail: "Coffee + community conversation" },
 ];
 
 export default function EventsPage() {
@@ -83,12 +120,44 @@ export default function EventsPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber">
-              What&apos;s Happening
+              The Living Room of the Empire
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">Events at THE OP</h1>
             <p className="max-w-xl text-cream/70">
+              Where tourists, remote workers, investors, and locals all converge.
               Something happening every night. Open mics, trivia, live
-              recordings, community meetups, and more.
+              recordings, startup pitches, art shows, and more.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Revenue Model Callout */}
+      <section className="bg-cannabis-green/5 px-6 py-12 border-b border-espresso/10">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { icon: Users, value: "14.9M", label: "Annual tourists past Custer" },
+                { icon: Coffee, value: "Zero", label: "Cannabis cafes in SD" },
+                { icon: DollarSign, value: "$0", label: "Rent (owned campus)" },
+                { icon: MapPin, value: "25 min", label: "From Mount Rushmore" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
+                    <stat.icon className="h-5 w-5 text-espresso" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-espresso">{stat.value}</p>
+                    <p className="text-xs text-warm-gray">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-warm-gray leading-relaxed max-w-3xl">
+              Every visitor to THE OP becomes a potential GrowWise lead, Seed Academy student,
+              or Settle the West relocator. The BHC flywheel means every cup of coffee sold
+              generates value across all 11 entities.
             </p>
           </FadeIn>
         </div>
@@ -98,7 +167,10 @@ export default function EventsPage() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mb-12">
-            <h2 className="text-3xl font-bold text-espresso">Upcoming Events</h2>
+            <h2 className="text-3xl font-bold text-espresso">Event Calendar</h2>
+            <p className="mt-2 text-warm-gray">
+              Weekly staples, monthly showcases, and quarterly festivals.
+            </p>
           </FadeIn>
 
           <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
