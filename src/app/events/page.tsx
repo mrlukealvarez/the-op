@@ -50,10 +50,10 @@ const upcomingEvents = [
   {
     icon: PartyPopper,
     title: "THE CULT Pre-Party",
-    date: "Quarterly (next: March 2026)",
+    date: "Quarterly (planned — launching 2026)",
     description:
       "The official pre-event for THE CULT convention. Networking, product tastings, and exclusive previews.",
-    tag: "Quarterly",
+    tag: "Planned",
   },
   {
     icon: Calendar,

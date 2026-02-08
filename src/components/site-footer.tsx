@@ -11,12 +11,12 @@ const footerLinks = {
   Company: [
     { href: "/about", label: "About" },
     { href: "/contact", label: "Careers" },
-    { href: "https://bhconsortium.com", label: "Black Hills Consortium" },
+    { href: "/about", label: "Black Hills Consortium" },
   ],
   Connect: [
-    { href: "#", label: "Instagram" },
-    { href: "#", label: "Facebook" },
-    { href: "#", label: "Twitter / X" },
+    { href: "/contact", label: "Email Us" },
+    { href: "/events", label: "Upcoming Events" },
+    { href: "/community", label: "Join the Community" },
   ],
 };
 
@@ -38,7 +38,7 @@ export function SiteFooter() {
             <p className="text-xs text-cream/40">
               Part of{" "}
               <a
-                href="https://bhconsortium.com"
+                href="/about"
                 className="underline transition-colors hover:text-amber"
               >
                 Black Hills Consortium

@@ -18,9 +18,9 @@ const timeline = [
   { year: "2024", event: "BHC campus vision conceived — 15 acres in Custer, SD" },
   { year: "2025", event: "South Dakota legalizes recreational cannabis" },
   { year: "2025", event: "THE OP concept developed — Amsterdam meets Black Hills" },
-  { year: "2026", event: "BHC raises $52M — THE OP buildout begins" },
-  { year: "2026", event: "Grand opening — Custer's first cannabis-adjacent cafe" },
-  { year: "2027", event: "THE OP becomes the top-rated cafe in the Black Hills" },
+  { year: "2026", event: "Planned: BHC raises capital — THE OP buildout begins" },
+  { year: "2026", event: "Planned: Grand opening — Custer's first cannabis-adjacent cafe" },
+  { year: "2027", event: "Planned: THE OP becomes the top-rated cafe in the Black Hills" },
 ];
 
 const pillars = [
@@ -211,12 +211,9 @@ export default function AboutPage() {
               $52M initiative to revitalize rural America through technology,
               media, education, and community.
             </p>
-            <Link
-              href="https://bhconsortium.com"
-              className="inline-flex rounded-full bg-espresso px-8 py-3 font-semibold text-cream transition-colors hover:bg-espresso-light"
-            >
-              Learn About BHC
-            </Link>
+            <span className="inline-flex rounded-full bg-espresso/60 px-8 py-3 text-sm font-semibold text-cream">
+              BHC website coming soon
+            </span>
           </div>
         </FadeIn>
       </section>

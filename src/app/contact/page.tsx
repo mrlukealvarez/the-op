@@ -30,8 +30,8 @@ const infoCards = [
   },
   {
     icon: Phone,
-    title: "Phone",
-    lines: ["(605) 555-THEOP", "Call or text during business hours"],
+    title: "Contact",
+    lines: ["hello@theop.cafe", "Opening 2026 — reach us by email"],
   },
   {
     icon: Mail,

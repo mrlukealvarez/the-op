@@ -167,8 +167,11 @@ export default function CommunityPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-espresso">
-              What People Are Saying
+              The Experience We&apos;re Building
             </h2>
+            <p className="mt-2 text-warm-gray">
+              A vision for the community we are creating at THE OP.
+            </p>
           </FadeIn>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -193,9 +196,9 @@ export default function CommunityPage() {
       <section className="bg-espresso px-6 py-20 text-cream">
         <div className="mx-auto max-w-7xl text-center">
           <FadeIn>
-            <h2 className="mb-4 text-3xl font-bold">Local Partnerships</h2>
+            <h2 className="mb-4 text-3xl font-bold">Planned Local Partnerships</h2>
             <p className="mx-auto mb-8 max-w-2xl text-cream/60">
-              We source from Black Hills roasters, bakers, and producers. We
+              We will source from Black Hills roasters, bakers, and producers. We
               hire local. We reinvest in the community. Because that&apos;s what
               Amsterdam-meets-Custer means.
             </p>
