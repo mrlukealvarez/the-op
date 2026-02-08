@@ -68,7 +68,34 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-cream/10 pt-8 text-center text-xs text-cream/40">
+        <div className="mt-12 border-t border-cream/10 pt-8 flex flex-col items-center gap-4 text-xs text-cream/40">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-[10px] text-cream/30 uppercase tracking-wider">Built With</span>
+            <div className="flex items-center gap-2.5">
+              {[
+                { href: "https://anthropic.com", label: "Anthropic", char: "A" },
+                { href: "https://vercel.com", label: "Vercel", char: "\u25B2" },
+                { href: "https://supabase.com", label: "Supabase", char: "S" },
+                { href: "https://meta.com", label: "Meta", char: "M" },
+                { href: "https://nextjs.org", label: "Next.js", char: "N" },
+                { href: "https://x.ai", label: "xAI", char: "X" },
+                { href: "https://openai.com", label: "OpenAI", char: "O" },
+                { href: "https://cursor.com", label: "Cursor", char: "C" },
+                { href: "https://elevenlabs.io", label: "ElevenLabs", char: "11" },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={item.label}
+                  className="flex h-7 w-7 items-center justify-center rounded-md bg-cream/5 text-[10px] font-semibold text-cream/40 transition-all hover:bg-amber/20 hover:text-amber hover:scale-110"
+                >
+                  {item.char}
+                </a>
+              ))}
+            </div>
+          </div>
           <p>
             &copy; {new Date().getFullYear()} THE OP &mdash; A Black Hills
             Consortium Entity. Custer, South Dakota.
