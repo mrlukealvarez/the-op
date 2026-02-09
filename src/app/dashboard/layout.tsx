@@ -17,6 +17,10 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname()
 
+  if (pathname === "/dashboard/login") {
+    return <>{children}</>
+  }
+
   return (
     <div className="min-h-screen bg-espresso">
       <nav className="border-b border-cream/10 bg-espresso/80 backdrop-blur-xl">
