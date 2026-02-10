@@ -1,12 +1,13 @@
 export const dynamic = "force-dynamic"
 
-import { getEntitySummary, getCrmStats } from "@/lib/db/dashboard-queries"
+import { getEntitySummary, getCrmStats, getEntityFinancial } from "@/lib/db/dashboard-queries"
 import OverviewClient from "./_components/overview-client"
 
 export default async function DashboardPage() {
-  const [entitySummary, crmStats] = await Promise.all([
+  const [entitySummary, crmStats, entityFinancial] = await Promise.all([
     getEntitySummary(),
     getCrmStats(),
+    getEntityFinancial("the-op"),
   ])
 
   // Filter metrics relevant to the_op
@@ -18,6 +19,7 @@ export default async function DashboardPage() {
     <OverviewClient
       crmAccountCount={crmStats.total_accounts}
       entityMetrics={entityMetrics}
+      entityFinancial={entityFinancial}
     />
   )
 }

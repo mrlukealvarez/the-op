@@ -70,12 +70,27 @@ const pieChartConfig = {
   },
 }
 
+interface EntityFinancialData {
+  allocation_millions: number
+  y1_revenue_millions: number | null
+  y1_revenue_label: string
+  y5_revenue_millions: number | null
+  y5_revenue_label: string | null
+}
+
 interface OverviewClientProps {
   crmAccountCount: number
   entityMetrics: Array<{ metric_type: string; metric_value: string }>
+  entityFinancial?: EntityFinancialData | null
 }
 
-export default function OverviewClient({ crmAccountCount, entityMetrics }: OverviewClientProps) {
+export default function OverviewClient({ crmAccountCount, entityMetrics, entityFinancial }: OverviewClientProps) {
+  const dynamicStats = stats.map((s) =>
+    s.name === "Y1 Revenue"
+      ? { ...s, value: entityFinancial?.y1_revenue_label || s.value, change: entityFinancial ? `$${entityFinancial.allocation_millions}M allocated` : s.change }
+      : s
+  )
+
   return (
     <div className="space-y-8">
       <div>
@@ -97,7 +112,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics }: Overv
 
       {/* Stats Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((stat) => (
+        {dynamicStats.map((stat) => (
           <div
             key={stat.name}
             className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl"

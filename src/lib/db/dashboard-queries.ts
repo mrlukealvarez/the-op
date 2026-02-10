@@ -30,6 +30,40 @@ export async function getEntitySummary(): Promise<EntitySummary[]> {
   return data || []
 }
 
+export interface EntityFinancial {
+  entity_name: string
+  entity_slug: string
+  role: string
+  allocation_millions: number
+  y1_revenue_millions: number | null
+  y1_revenue_label: string
+  y5_revenue_millions: number | null
+  y5_revenue_label: string | null
+  y1_projection: number | null
+  y2_projection: number | null
+  y3_projection: number | null
+  y4_projection: number | null
+  y5_projection: number | null
+}
+
+export async function getEntityFinancial(slug: string): Promise<EntityFinancial | null> {
+  const supabase = createAdminClient()
+  if (!supabase) return null
+
+  const { data, error } = await supabase
+    .from("entity_financials")
+    .select("*")
+    .eq("entity_slug", slug)
+    .single()
+
+  if (error) {
+    console.error("Error fetching entity financial:", error)
+    return null
+  }
+
+  return data as EntityFinancial
+}
+
 export async function getCrmStats(): Promise<CrmStats> {
   const supabase = createAdminClient()
   if (!supabase) {
