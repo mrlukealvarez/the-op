@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Coffee, Beer, UtensilsCrossed, ShoppingBag } from "lucide-react";
+import { Coffee, Beer, UtensilsCrossed, ShoppingBag, GlassWater } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Craft coffee, local beer and cider, house-baked pastries, and merchandise at THE OP in Custer, South Dakota.",
+    "Craft coffee, dirty sodas, local beer and cider, house-baked pastries, and merchandise at THE OP in Custer, South Dakota.",
   openGraph: {
     title: "Menu | THE OP",
     description:
-      "Craft coffee, local beer and cider, house-baked pastries, and merchandise at THE OP.",
+      "Craft coffee, dirty sodas, local beer and cider, house-baked pastries, and merchandise at THE OP.",
   },
 };
 
@@ -30,14 +30,27 @@ const categories = [
     ],
   },
   {
+    icon: GlassWater,
+    title: "Dirty Sodas & Refreshers",
+    description: "The Swig-inspired soda bar — cream, fruit, fizz",
+    items: [
+      { name: "Classic Dirty Soda", description: "Coca-Cola + coconut cream + lime — 24oz/32oz", price: "$4 - $5" },
+      { name: "Premium Dirty Soda", description: "Dr Pepper + vanilla cream + raspberry — 24oz/32oz", price: "$5 - $6" },
+      { name: "Tropical Refresher", description: "Sprite + passion fruit + coconut", price: "$5" },
+      { name: "Dirty Dr Pepper", description: "Dr Pepper + coconut cream + lime", price: "$4 - $5" },
+      { name: "Berry Blast", description: "Sprite + mixed berry + cream", price: "$5" },
+      { name: "Kids Soda", description: "Pick your flavor, pick your cream — 12oz", price: "$2.50" },
+    ],
+  },
+  {
     icon: Beer,
     title: "Local Beer & Cider",
     description: "Rotating taps from Black Hills breweries — never the same twice",
     items: [
-      { name: "Miner Brewing IPA", description: "Hill City, SD — rotating seasonal", price: "$7" },
-      { name: "Sawyer Brewing Lager", description: "Black Hills craft, crisp finish", price: "$7" },
+      { name: "Lost Cabin IPA", description: "Hill City, SD — rotating seasonal", price: "$7.50" },
+      { name: "Sawyer Brewing Lager", description: "Black Hills craft, crisp finish", price: "$7.50" },
       { name: "Black Hills Cider", description: "Local orchard, rotating variety", price: "$7" },
-      { name: "Seasonal Tap", description: "Ask your barista — changes weekly", price: "$7 - $9" },
+      { name: "Seasonal Tap", description: "Ask your barista — changes weekly", price: "$7.50 - $9" },
       { name: "Flight of 4", description: "Sample four local pours", price: "$12" },
       { name: "Kombucha", description: "House-brewed, rotating flavors", price: "$6" },
     ],
@@ -131,6 +144,17 @@ export default function MenuPage() {
               </div>
             ))}
           </div>
+
+          <FadeIn>
+            <div className="mt-16 rounded-2xl border border-amber/20 bg-amber/5 p-8 text-center">
+              <p className="text-lg font-semibold text-espresso">
+                Open 8am – 9pm, 7 days a week
+              </p>
+              <p className="mt-2 text-sm text-warm-gray">
+                The only cafe in Custer open past 6pm. Coffee, craft beer, dirty sodas, and good company — morning to night.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>
