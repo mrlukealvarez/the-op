@@ -12,36 +12,38 @@ import { Database } from "lucide-react"
 
 const stats = [
   { name: "Y1 Revenue", value: "$380K", change: "V5 floor projection" },
-  { name: "Daily Customers", value: "33", change: "Y1 average target" },
-  { name: "Avg Transaction", value: "$32", change: "Coffee + snack or beer" },
-  { name: "Community Members", value: "500", change: "+18% this quarter" },
+  { name: "Daily Customers", value: "80", change: "4 dayparts avg" },
+  { name: "Avg Transaction", value: "$10.09", change: "Blended across menu" },
+  { name: "CRM Accounts", value: "\u2014", change: "Live from database" },
+  { name: "Evening Revenue", value: "$77K/yr", change: "6-9pm monopoly" },
 ]
 
 const revenueByCategory = [
-  { name: "Coffee/Drinks", value: 45, fill: "#F59E0B" },
-  { name: "Food", value: 25, fill: "#D97706" },
-  { name: "Local Beer/Cider", value: 9, fill: "#3E2723" },
-  { name: "Merch", value: 21, fill: "#92400E" },
+  { name: "Coffee/Drinks", value: 35, fill: "#F59E0B" },
+  { name: "Dirty Sodas", value: 15, fill: "#10b981" },
+  { name: "Food", value: 20, fill: "#D97706" },
+  { name: "Local Beer/Cider", value: 10, fill: "#3E2723" },
+  { name: "Merch", value: 20, fill: "#92400E" },
 ]
 
 const monthlyFootTraffic = [
-  { month: "M1", customers: 120 },
-  { month: "M2", customers: 135 },
-  { month: "M3", customers: 150 },
-  { month: "M4", customers: 165 },
-  { month: "M5", customers: 180 },
-  { month: "M6", customers: 195 },
-  { month: "M7", customers: 210 },
-  { month: "M8", customers: 225 },
-  { month: "M9", customers: 240 },
-  { month: "M10", customers: 255 },
-  { month: "M11", customers: 270 },
-  { month: "M12", customers: 285 },
+  { month: "M1", customers: 1200 },
+  { month: "M2", customers: 1350 },
+  { month: "M3", customers: 1500 },
+  { month: "M4", customers: 1650 },
+  { month: "M5", customers: 1750 },
+  { month: "M6", customers: 1850 },
+  { month: "M7", customers: 1950 },
+  { month: "M8", customers: 2100 },
+  { month: "M9", customers: 2200 },
+  { month: "M10", customers: 2300 },
+  { month: "M11", customers: 2350 },
+  { month: "M12", customers: 2400 },
 ]
 
 const chartConfig = {
   customers: {
-    label: "Daily Customers",
+    label: "Monthly Customers",
     color: "#F59E0B",
   },
 }
@@ -50,6 +52,10 @@ const pieChartConfig = {
   "Coffee/Drinks": {
     label: "Coffee/Drinks",
     color: "#F59E0B",
+  },
+  "Dirty Sodas": {
+    label: "Dirty Sodas",
+    color: "#10b981",
   },
   Food: {
     label: "Food",
@@ -80,11 +86,15 @@ interface OverviewClientProps {
 }
 
 export default function OverviewClient({ crmAccountCount, entityMetrics, entityFinancial }: OverviewClientProps) {
-  const dynamicStats = stats.map((s) =>
-    s.name === "Y1 Revenue"
-      ? { ...s, value: entityFinancial?.y1_revenue_label || s.value, change: entityFinancial ? `$${entityFinancial.allocation_millions}M allocated` : s.change }
-      : s
-  )
+  const dynamicStats = stats.map((s) => {
+    if (s.name === "Y1 Revenue") {
+      return { ...s, value: entityFinancial?.y1_revenue_label || s.value, change: entityFinancial ? `$${entityFinancial.allocation_millions}M allocated` : s.change }
+    }
+    if (s.name === "CRM Accounts" && crmAccountCount > 0) {
+      return { ...s, value: crmAccountCount.toLocaleString() }
+    }
+    return s
+  })
 
   return (
     <div className="space-y-8">
@@ -106,7 +116,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       )}
 
       {/* Stats Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
         {dynamicStats.map((stat) => (
           <div
             key={stat.name}
