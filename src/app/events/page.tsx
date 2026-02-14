@@ -235,8 +235,8 @@ export default function EventsPage() {
               Host Your Event at THE OP
             </h2>
             <p className="mb-8 text-warm-gray">
-              Private parties, corporate events, product launches, and more. THE
-              OP&apos;s space can be configured for groups of 20 to 100+.
+              Small gatherings, team meetups, and community events. THE
+              OP&apos;s cafe space works for groups up to 30. For larger events, contact THE CULT Events LLC.
             </p>
             <Link
               href="/contact"

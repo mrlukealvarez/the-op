@@ -23,7 +23,7 @@ const features = [
     icon: Coffee,
     title: "Craft Coffee & More",
     description:
-      "Locally roasted beans, specialty espresso, CBD-infused beverages, and house-baked pastries. Every cup tells a Black Hills story.",
+      "Locally roasted beans, specialty espresso, local beer and cider on tap, and house-baked pastries. Every cup tells a Black Hills story.",
   },
   {
     icon: Calendar,

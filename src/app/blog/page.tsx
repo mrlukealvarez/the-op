@@ -38,7 +38,7 @@ export default function BlogPage() {
                 <span className="text-amber">Third Place</span>
               </h1>
               <p className="mt-4 text-lg text-cream/70">
-                Coffee, cannabis, community, and the culture of gathering in the
+                Coffee, community, and the culture of gathering in the
                 Black Hills.
               </p>
             </div>

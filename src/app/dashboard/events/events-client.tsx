@@ -43,7 +43,7 @@ const SEED_UPCOMING_EVENTS = [
     expected: 65,
   },
   {
-    name: "Trivia: Cannabis History",
+    name: "Trivia: Black Hills History",
     date: "Feb 15, 2026",
     time: "6:30 PM",
     expected: 55,

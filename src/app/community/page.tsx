@@ -317,7 +317,7 @@ export default function CommunityPage() {
                 "Black Hills Roasters",
                 "Custer Bakehouse",
                 "Hills Fresh Farms",
-                "Dakota Hemp Co.",
+                "Dakota Artisan Co.",
                 "Pine & Prairie Pottery",
               ].map((name) => (
                 <span

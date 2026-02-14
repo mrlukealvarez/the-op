@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Coffee, Leaf, UtensilsCrossed, ShoppingBag } from "lucide-react";
+import { Coffee, Beer, UtensilsCrossed, ShoppingBag } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Craft coffee, cannabis-infused beverages, house-baked pastries, and merchandise at THE OP in Custer, South Dakota.",
+    "Craft coffee, local beer and cider, house-baked pastries, and merchandise at THE OP in Custer, South Dakota.",
   openGraph: {
     title: "Menu | THE OP",
     description:
-      "Craft coffee, cannabis-infused beverages, house-baked pastries, and merchandise at THE OP.",
+      "Craft coffee, local beer and cider, house-baked pastries, and merchandise at THE OP.",
   },
 };
 
@@ -30,16 +30,16 @@ const categories = [
     ],
   },
   {
-    icon: Leaf,
-    title: "Cannabis-Infused Beverages",
-    description: "CBD and THC options where legally permitted",
+    icon: Beer,
+    title: "Local Beer & Cider",
+    description: "Rotating taps from Black Hills breweries — never the same twice",
     items: [
-      { name: "CBD Cold Brew", description: "25mg CBD, smooth finish", price: "$8" },
-      { name: "THC Sparkling Water", description: "5mg THC, assorted flavors", price: "$7" },
-      { name: "CBD Matcha Latte", description: "Ceremonial grade matcha + 15mg CBD", price: "$9" },
-      { name: "Cannabis Lemonade", description: "House-made, seasonal infusion", price: "$8" },
-      { name: "Relaxation Tonic", description: "CBD + adaptogens, non-caffeinated", price: "$9" },
-      { name: "Microdose Flight", description: "Three 2.5mg THC mini beverages", price: "$12" },
+      { name: "Miner Brewing IPA", description: "Hill City, SD — rotating seasonal", price: "$7" },
+      { name: "Sawyer Brewing Lager", description: "Black Hills craft, crisp finish", price: "$7" },
+      { name: "Black Hills Cider", description: "Local orchard, rotating variety", price: "$7" },
+      { name: "Seasonal Tap", description: "Ask your barista — changes weekly", price: "$7 - $9" },
+      { name: "Flight of 4", description: "Sample four local pours", price: "$12" },
+      { name: "Kombucha", description: "House-brewed, rotating flavors", price: "$6" },
     ],
   },
   {
@@ -52,7 +52,7 @@ const categories = [
       { name: "Breakfast Burrito", description: "Scrambled eggs, cheese, green chile", price: "$10" },
       { name: "Croissant", description: "Plain, almond, or chocolate", price: "$4 - $5" },
       { name: "Muffins", description: "Blueberry, banana walnut, rotating special", price: "$4" },
-      { name: "Energy Bites", description: "Oat, peanut butter, hemp seed", price: "$3" },
+      { name: "Energy Bites", description: "Oat, peanut butter, chia seed", price: "$3" },
       { name: "Soup of the Day", description: "Seasonal, made in-house", price: "$7" },
       { name: "Grilled Cheese", description: "Three cheese blend on sourdough", price: "$8" },
     ],
@@ -84,8 +84,8 @@ export default function MenuPage() {
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">Our Menu</h1>
             <p className="max-w-xl text-cream/70">
-              Craft coffee, cannabis-infused beverages, house-baked pastries, and
-              gear. Everything made with care, sourced with intention.
+              Craft coffee, local beer and cider, house-baked pastries, and
+              gear. Everything sourced within 50 miles of the Black Hills.
             </p>
           </FadeIn>
         </div>
@@ -94,8 +94,8 @@ export default function MenuPage() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <p className="mb-12 text-center text-sm text-warm-gray-light">
-            Menu items vary by season and availability. Cannabis products
-            available where legally permitted. Ask your barista for details.
+            Menu items and taps rotate by season. Everything sourced locally.
+            Ask your barista what&apos;s new this week.
           </p>
 
           <div className="space-y-20">
