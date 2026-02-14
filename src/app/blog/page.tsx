@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BookOpen, Calendar, Clock, User, ArrowRight } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, AmberShimmer } from "@/components/motion";
 import { blogPosts } from "@/lib/blog-posts";
 
 const categories = ["All", "Culture", "Community", "Business"] as const;
@@ -35,7 +35,7 @@ export default function BlogPage() {
               </p>
               <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
                 Stories from the{" "}
-                <span className="text-amber">Third Place</span>
+                <AmberShimmer>Third Place</AmberShimmer>
               </h1>
               <p className="mt-4 text-lg text-cream/70">
                 Coffee, community, and the culture of gathering in the
@@ -76,6 +76,7 @@ export default function BlogPage() {
             {filtered.map((post) => (
               <StaggerItem key={post.slug}>
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
+                  <WarmGlow className="h-full rounded-xl">
                   <div className="h-full rounded-xl border border-espresso/10 bg-white p-6 transition-colors group-hover:border-amber/40">
                     <div className="mb-3 flex items-center gap-2">
                       <span
@@ -117,6 +118,7 @@ export default function BlogPage() {
                       <ArrowRight className="h-4 w-4 text-warm-gray-light transition-transform group-hover:translate-x-1 group-hover:text-amber" />
                     </div>
                   </div>
+                  </WarmGlow>
                 </Link>
               </StaggerItem>
             ))}

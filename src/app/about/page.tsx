@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Mountain, Coffee, Leaf, Building, Users } from "lucide-react";
-import { FadeIn, SlideIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import {
+  FadeIn,
+  SlideIn,
+  StaggerContainer,
+  StaggerItem,
+  CountUp,
+  AmberShimmer,
+  WarmGlow,
+  ScaleReveal,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "About",
@@ -57,7 +66,7 @@ export default function AboutPage() {
               Our Story
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Coffee, Community, and Campus
+              Coffee, <AmberShimmer>Community</AmberShimmer>, and Campus
             </h1>
             <p className="max-w-xl text-cream/70">
               THE OP was born from a simple question: what if the best coffee shop in the
@@ -112,11 +121,15 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <p className="text-2xl font-bold text-espresso">14.9M</p>
+                    <p className="text-2xl font-bold text-espresso">
+                      <CountUp end={14.9} decimals={1} suffix="M" />
+                    </p>
                     <p className="text-xs text-warm-gray">Annual SD tourists</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-espresso">2M+</p>
+                    <p className="text-2xl font-bold text-espresso">
+                      <CountUp end={2} suffix="M+" />
+                    </p>
                     <p className="text-xs text-warm-gray">Custer SP visitors</p>
                   </div>
                 </div>
@@ -160,17 +173,19 @@ export default function AboutPage() {
           <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {pillars.map((p) => (
               <StaggerItem key={p.title}>
-                <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/10">
-                    <p.icon className="h-7 w-7 text-amber" />
+                <WarmGlow className="rounded-2xl">
+                  <div className="text-center">
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/10">
+                      <p.icon className="h-7 w-7 text-amber" />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold text-espresso">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-warm-gray">
+                      {p.description}
+                    </p>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-espresso">
-                    {p.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-warm-gray">
-                    {p.description}
-                  </p>
-                </div>
+                </WarmGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -184,24 +199,24 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold">Our Journey</h2>
           </FadeIn>
 
-          <StaggerContainer className="space-y-4">
-            {timeline.map((item) => (
-              <StaggerItem key={item.event}>
+          <div className="space-y-4">
+            {timeline.map((item, i) => (
+              <ScaleReveal key={item.event} delay={i * 0.1}>
                 <div className="flex gap-6 rounded-xl border border-cream/10 bg-cream/5 p-5">
                   <span className="shrink-0 text-sm font-bold text-amber">
                     {item.year}
                   </span>
                   <span className="text-cream/70">{item.event}</span>
                 </div>
-              </StaggerItem>
+              </ScaleReveal>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
       {/* BHC connection */}
       <section className="px-6 py-20 text-center">
-        <FadeIn>
+        <ScaleReveal>
           <div className="mx-auto flex max-w-xl flex-col items-center">
             <Building className="mb-4 h-10 w-10 text-espresso" />
             <h2 className="mb-4 text-2xl font-bold text-espresso">
@@ -216,7 +231,7 @@ export default function AboutPage() {
               BHC website coming soon
             </span>
           </div>
-        </FadeIn>
+        </ScaleReveal>
       </section>
     </>
   );

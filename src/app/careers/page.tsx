@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Briefcase, DollarSign, Users, Mountain } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, CountUp, AmberShimmer, WarmGlow, ScaleReveal, PulseGlow } from "@/components/motion";
 import { CareersForm } from "./careers-form";
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default function CareersPage() {
               Join the Team
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Work at THE OP
+              Work at <AmberShimmer>THE OP</AmberShimmer>
             </h1>
             <p className="mb-8 max-w-2xl text-lg text-cream/70">
               We&apos;re hiring operators — people who run the show, not just
@@ -79,7 +79,7 @@ export default function CareersPage() {
               you&apos;re building a community landmark.
             </p>
             <div className="inline-flex flex-col rounded-2xl border border-amber/20 bg-amber/10 px-8 py-6">
-              <div className="text-5xl font-bold text-amber">$145K</div>
+              <CountUp end={145} prefix="$" suffix="K" className="text-5xl font-bold text-amber" />
               <div className="mt-1 text-sm font-medium text-amber/70">
                 Average Base Salary
               </div>
@@ -94,6 +94,7 @@ export default function CareersPage() {
           <StaggerContainer className="grid gap-6 sm:grid-cols-2">
             {philosophyCards.map((card) => (
               <StaggerItem key={card.title}>
+                <WarmGlow className="rounded-xl">
                 <div className="rounded-xl border border-espresso/10 bg-white p-8">
                   <card.icon
                     className={`mb-4 h-8 w-8 ${
@@ -105,6 +106,7 @@ export default function CareersPage() {
                   </h3>
                   <p className="text-warm-gray">{card.description}</p>
                 </div>
+                </WarmGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -122,6 +124,7 @@ export default function CareersPage() {
           <StaggerContainer className="space-y-6">
             {roles.map((role) => (
               <StaggerItem key={role.title}>
+                <PulseGlow className="rounded-xl">
                 <div className="rounded-xl border border-espresso/10 bg-cream-dark p-8">
                   <div className="mb-4 flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
                     <div>
@@ -141,6 +144,7 @@ export default function CareersPage() {
                     Apply Below
                   </a>
                 </div>
+                </PulseGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -150,7 +154,7 @@ export default function CareersPage() {
       {/* Application Form */}
       <section id="apply" className="bg-cream-dark px-6 py-20">
         <div className="mx-auto max-w-2xl">
-          <FadeIn>
+          <ScaleReveal>
             <h2 className="mb-2 text-center text-3xl font-bold text-espresso">
               Apply to THE OP
             </h2>
@@ -158,14 +162,14 @@ export default function CareersPage() {
               No resumes. No cover letters. Show us who you are.
             </p>
             <CareersForm />
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
 
       {/* How We Sustain This */}
       <section className="bg-espresso px-6 py-16 text-cream">
         <div className="mx-auto max-w-3xl">
-          <FadeIn>
+          <ScaleReveal>
             <h2 className="mb-4 text-center text-2xl font-bold">
               Venture-Backed, Not Bootstrapped
             </h2>
@@ -174,7 +178,7 @@ export default function CareersPage() {
               raise. Our compensation philosophy is backed by institutional
               investment — not revenue alone. We build for the long term.
             </p>
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Coffee, Beer, Wheat, Heart, MapPin } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, AmberShimmer, ScaleReveal, PulseGlow } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -110,7 +110,7 @@ export default function PartnersPage() {
               OUR PARTNERS
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Made in the Black Hills
+              Made in the <AmberShimmer>Black Hills</AmberShimmer>
             </h1>
             <p className="max-w-2xl text-lg text-cream/80">
               Every cup, every pint, every bite supports our neighbors. THE OP
@@ -144,6 +144,7 @@ export default function PartnersPage() {
             <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {coffeeRoasters.map((partner) => (
                 <StaggerItem key={partner.name}>
+                  <WarmGlow className="overflow-hidden rounded-xl">
                   <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
                     <div
                       className="h-48 rounded-t-xl"
@@ -170,6 +171,7 @@ export default function PartnersPage() {
                       </div>
                     </div>
                   </div>
+                  </WarmGlow>
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -196,6 +198,7 @@ export default function PartnersPage() {
             <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {breweries.map((partner) => (
                 <StaggerItem key={partner.name}>
+                  <WarmGlow className="overflow-hidden rounded-xl">
                   <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
                     <div
                       className="h-48 rounded-t-xl"
@@ -222,6 +225,7 @@ export default function PartnersPage() {
                       </div>
                     </div>
                   </div>
+                  </WarmGlow>
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -248,6 +252,7 @@ export default function PartnersPage() {
             <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {localProducers.map((partner) => (
                 <StaggerItem key={partner.name}>
+                  <WarmGlow className="overflow-hidden rounded-xl">
                   <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
                     <div
                       className="h-48 rounded-t-xl"
@@ -274,13 +279,14 @@ export default function PartnersPage() {
                       </div>
                     </div>
                   </div>
+                  </WarmGlow>
                 </StaggerItem>
               ))}
             </StaggerContainer>
           </div>
 
           {/* Why Local Section */}
-          <FadeIn>
+          <ScaleReveal>
             <div className="rounded-2xl border border-espresso/10 bg-white p-8 md:p-12">
               <div className="mx-auto max-w-3xl text-center">
                 <div className="mb-4 flex justify-center">
@@ -298,6 +304,7 @@ export default function PartnersPage() {
                   baristas&apos; curiosity. Every visit to THE OP is a little
                   different, because the Black Hills are always changing.
                 </p>
+                <PulseGlow className="rounded-xl">
                 <div className="rounded-xl border border-amber/20 bg-amber/5 p-6">
                   <p className="text-sm font-medium text-espresso">
                     Interested in becoming a partner?
@@ -313,9 +320,10 @@ export default function PartnersPage() {
                     .
                   </p>
                 </div>
+                </PulseGlow>
               </div>
             </div>
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
     </>

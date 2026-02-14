@@ -18,7 +18,7 @@ import {
   Handshake,
   ArrowRight,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, SlideIn } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, AmberShimmer, WarmGlow, ScaleReveal, PulseGlow } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -136,7 +136,7 @@ export default function CommunityPage() {
               The Heart of the Campus
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              More Than a Cafe
+              More Than a <AmberShimmer>Cafe</AmberShimmer>
             </h1>
             <p className="max-w-xl text-cream/70">
               THE OP is where every thread of the Black Hills Consortium comes
@@ -186,17 +186,19 @@ export default function CommunityPage() {
           <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {ecosystemConnections.map((conn) => (
               <StaggerItem key={conn.entity}>
-                <div className="flex h-full flex-col rounded-xl border border-espresso/10 bg-white p-6">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
-                    <conn.icon className="h-5 w-5 text-amber" />
+                <WarmGlow className="h-full rounded-xl">
+                  <div className="flex h-full flex-col rounded-xl border border-espresso/10 bg-white p-6">
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
+                      <conn.icon className="h-5 w-5 text-amber" />
+                    </div>
+                    <h3 className="mb-2 font-semibold text-espresso">
+                      {conn.entity}
+                    </h3>
+                    <p className="flex-1 text-sm leading-relaxed text-warm-gray">
+                      {conn.connection}
+                    </p>
                   </div>
-                  <h3 className="mb-2 font-semibold text-espresso">
-                    {conn.entity}
-                  </h3>
-                  <p className="flex-1 text-sm leading-relaxed text-warm-gray">
-                    {conn.connection}
-                  </p>
-                </div>
+                </WarmGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -222,22 +224,24 @@ export default function CommunityPage() {
           <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {partnerCategories.map((partner) => (
               <StaggerItem key={partner.category}>
-                <div className="flex h-full flex-col rounded-2xl border border-espresso/10 bg-white p-6">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
-                    <partner.icon className="h-5 w-5 text-amber-dark" />
+                <PulseGlow className="h-full rounded-2xl">
+                  <div className="flex h-full flex-col rounded-2xl border border-espresso/10 bg-white p-6">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
+                      <partner.icon className="h-5 w-5 text-amber-dark" />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold text-espresso">
+                      {partner.category}
+                    </h3>
+                    <p className="flex-1 text-sm leading-relaxed text-warm-gray">
+                      {partner.desc}
+                    </p>
                   </div>
-                  <h3 className="mb-2 text-lg font-semibold text-espresso">
-                    {partner.category}
-                  </h3>
-                  <p className="flex-1 text-sm leading-relaxed text-warm-gray">
-                    {partner.desc}
-                  </p>
-                </div>
+                </PulseGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
-          <FadeIn delay={0.2}>
+          <ScaleReveal delay={0.2}>
             <div className="mt-12 rounded-2xl bg-amber/5 border border-amber/10 p-8">
               <h3 className="text-lg font-bold text-espresso">Revenue Share Model</h3>
               <p className="mt-2 text-sm leading-relaxed text-warm-gray">
@@ -249,9 +253,9 @@ export default function CommunityPage() {
                 and THE OP sells food. Rising tides.
               </p>
             </div>
-          </FadeIn>
+          </ScaleReveal>
 
-          <FadeIn delay={0.3}>
+          <ScaleReveal delay={0.3}>
             <div className="mt-8 rounded-2xl bg-espresso/5 border border-espresso/10 p-8">
               <h3 className="text-lg font-bold text-espresso">Connection to Settle the West</h3>
               <p className="mt-2 text-sm leading-relaxed text-warm-gray">
@@ -268,7 +272,7 @@ export default function CommunityPage() {
                 Learn about THE OP&apos;s role <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
 
@@ -286,7 +290,7 @@ export default function CommunityPage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((t, i) => (
-              <SlideIn key={t.name} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.1}>
+              <ScaleReveal key={t.name} delay={i * 0.12}>
                 <div className="rounded-2xl border border-espresso/10 bg-white p-8">
                   <p className="mb-6 text-lg italic leading-relaxed text-warm-gray">
                     &ldquo;{t.quote}&rdquo;
@@ -296,7 +300,7 @@ export default function CommunityPage() {
                     <p className="text-sm text-warm-gray-light">{t.title}</p>
                   </div>
                 </div>
-              </SlideIn>
+              </ScaleReveal>
             ))}
           </div>
         </div>
@@ -312,6 +316,8 @@ export default function CommunityPage() {
               hire local. We reinvest in the community. Because that&apos;s what
               local-first in the Black Hills means.
             </p>
+          </FadeIn>
+          <ScaleReveal>
             <div className="flex flex-wrap justify-center gap-6 text-cream/40">
               {[
                 "Black Hills Roasters",
@@ -328,7 +334,7 @@ export default function CommunityPage() {
                 </span>
               ))}
             </div>
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
 

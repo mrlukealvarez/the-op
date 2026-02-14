@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Coffee, Beer, UtensilsCrossed, ShoppingBag, GlassWater } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  WarmGlow,
+  AmberShimmer,
+  SlideIn,
+  ScaleReveal,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -95,7 +103,9 @@ export default function MenuPage() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber">
               THE OP
             </p>
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">Our Menu</h1>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+              Our <AmberShimmer>Menu</AmberShimmer>
+            </h1>
             <p className="max-w-xl text-cream/70">
               Craft coffee, local beer and cider, house-baked pastries, and
               gear. Everything sourced within 50 miles of the Black Hills.
@@ -112,9 +122,9 @@ export default function MenuPage() {
           </p>
 
           <div className="space-y-20">
-            {categories.map((cat) => (
+            {categories.map((cat, i) => (
               <div key={cat.title}>
-                <FadeIn>
+                <SlideIn direction={i % 2 === 0 ? "left" : "right"}>
                   <div className="mb-8 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-espresso/10">
                       <cat.icon className="h-5 w-5 text-espresso" />
@@ -124,20 +134,22 @@ export default function MenuPage() {
                       <p className="text-sm text-warm-gray">{cat.description}</p>
                     </div>
                   </div>
-                </FadeIn>
+                </SlideIn>
 
                 <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {cat.items.map((item) => (
                     <StaggerItem key={item.name}>
-                      <div className="flex items-start justify-between rounded-xl border border-espresso/10 bg-white p-5">
-                        <div className="mr-4">
-                          <h3 className="font-semibold text-espresso">{item.name}</h3>
-                          <p className="mt-1 text-sm text-warm-gray">{item.description}</p>
+                      <WarmGlow className="rounded-xl">
+                        <div className="flex items-start justify-between rounded-xl border border-espresso/10 bg-white p-5">
+                          <div className="mr-4">
+                            <h3 className="font-semibold text-espresso">{item.name}</h3>
+                            <p className="mt-1 text-sm text-warm-gray">{item.description}</p>
+                          </div>
+                          <span className="shrink-0 text-sm font-semibold text-amber">
+                            {item.price}
+                          </span>
                         </div>
-                        <span className="shrink-0 text-sm font-semibold text-amber">
-                          {item.price}
-                        </span>
-                      </div>
+                      </WarmGlow>
                     </StaggerItem>
                   ))}
                 </StaggerContainer>
@@ -145,7 +157,7 @@ export default function MenuPage() {
             ))}
           </div>
 
-          <FadeIn>
+          <ScaleReveal>
             <div className="mt-16 rounded-2xl border border-amber/20 bg-amber/5 p-8 text-center">
               <p className="text-lg font-semibold text-espresso">
                 Open 8am – 9pm, 7 days a week
@@ -154,7 +166,7 @@ export default function MenuPage() {
                 The only cafe in Custer open past 6pm. Coffee, craft beer, dirty sodas, and good company — morning to night.
               </p>
             </div>
-          </FadeIn>
+          </ScaleReveal>
         </div>
       </section>
     </>

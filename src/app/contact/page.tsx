@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, ScaleReveal, AmberShimmer } from "@/components/motion";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function ContactPage() {
               Get in Touch
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Visit THE OP
+              Visit <AmberShimmer>THE OP</AmberShimmer>
             </h1>
             <p className="max-w-xl text-cream/70">
               We&apos;re on the BHC campus in Custer, South Dakota — right at the
@@ -66,6 +66,7 @@ export default function ContactPage() {
         <StaggerContainer className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {infoCards.map((card) => (
             <StaggerItem key={card.title}>
+              <WarmGlow className="rounded-xl">
               <div className="rounded-xl border border-espresso/10 bg-white p-6">
                 <card.icon className="mb-3 h-6 w-6 text-amber" />
                 <h3 className="mb-2 font-semibold text-espresso">{card.title}</h3>
@@ -75,6 +76,7 @@ export default function ContactPage() {
                   </p>
                 ))}
               </div>
+              </WarmGlow>
             </StaggerItem>
           ))}
         </StaggerContainer>
@@ -84,7 +86,7 @@ export default function ContactPage() {
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
           {/* Map placeholder */}
-          <FadeIn>
+          <ScaleReveal>
             <div className="flex h-80 items-center justify-center rounded-2xl bg-espresso/5 lg:h-full">
               <div className="text-center">
                 <MapPin className="mx-auto mb-3 h-10 w-10 text-warm-gray-light" />
@@ -94,7 +96,7 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-          </FadeIn>
+          </ScaleReveal>
 
           {/* Contact form */}
           <FadeIn delay={0.15}>
@@ -114,7 +116,7 @@ export default function ContactPage() {
 
       {/* Careers CTA */}
       <section className="bg-espresso px-6 py-16 text-center text-cream">
-        <FadeIn>
+        <ScaleReveal>
           <h2 className="mb-4 text-2xl font-bold">Work With Us</h2>
           <p className="mx-auto max-w-xl text-cream/60">
             THE OP is hiring operators — $145K average base salary, no resumes required.
@@ -125,7 +127,7 @@ export default function ContactPage() {
           >
             View Open Positions
           </a>
-        </FadeIn>
+        </ScaleReveal>
       </section>
     </>
   );

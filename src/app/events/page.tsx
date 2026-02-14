@@ -14,7 +14,7 @@ import {
   Users,
   MapPin,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, CountUp, AmberShimmer, WarmGlow, ScaleReveal } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -122,7 +122,7 @@ export default function EventsPage() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber">
               The Living Room of the Empire
             </p>
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">Events at THE OP</h1>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl"><AmberShimmer>Events</AmberShimmer> at THE OP</h1>
             <p className="max-w-xl text-cream/70">
               Small-scale community events and gatherings. Open mics, trivia, live
               recordings, art shows, and conversations. <span className="text-amber">Looking for large conventions? Visit THE CULT Events LLC.</span>
@@ -136,22 +136,42 @@ export default function EventsPage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { icon: Users, value: "14.9M", label: "Annual tourists past Custer" },
-                { icon: Coffee, value: "2M+", label: "Tourists past campus yearly" },
-                { icon: DollarSign, value: "$0", label: "Rent (owned campus)" },
-                { icon: MapPin, value: "25 min", label: "From Mount Rushmore" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
-                    <stat.icon className="h-5 w-5 text-espresso" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold text-espresso">{stat.value}</p>
-                    <p className="text-xs text-warm-gray">{stat.label}</p>
-                  </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
+                  <Users className="h-5 w-5 text-espresso" />
                 </div>
-              ))}
+                <div>
+                  <p className="text-lg font-bold text-espresso"><CountUp end={14.9} decimals={1} suffix="M" /></p>
+                  <p className="text-xs text-warm-gray">Annual tourists past Custer</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
+                  <Coffee className="h-5 w-5 text-espresso" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-espresso"><CountUp end={2} suffix="M+" /></p>
+                  <p className="text-xs text-warm-gray">Tourists past campus yearly</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
+                  <DollarSign className="h-5 w-5 text-espresso" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-espresso">$0</p>
+                  <p className="text-xs text-warm-gray">Rent (owned campus)</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-espresso/10">
+                  <MapPin className="h-5 w-5 text-espresso" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-espresso">25 min</p>
+                  <p className="text-xs text-warm-gray">From Mount Rushmore</p>
+                </div>
+              </div>
             </div>
             <p className="mt-6 text-sm text-warm-gray leading-relaxed max-w-3xl">
               Every visitor to THE OP becomes a potential GrowWise lead, Seed Academy student,
@@ -175,25 +195,27 @@ export default function EventsPage() {
           <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event) => (
               <StaggerItem key={event.title}>
-                <div className="flex h-full flex-col rounded-2xl border border-espresso/10 bg-white p-6">
-                  <div className="mb-4 flex items-start justify-between">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
-                      <event.icon className="h-5 w-5 text-amber-dark" />
+                <WarmGlow className="h-full rounded-2xl">
+                  <div className="flex h-full flex-col rounded-2xl border border-espresso/10 bg-white p-6">
+                    <div className="mb-4 flex items-start justify-between">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
+                        <event.icon className="h-5 w-5 text-amber-dark" />
+                      </div>
+                      <span className="rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber-dark">
+                        {event.tag}
+                      </span>
                     </div>
-                    <span className="rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber-dark">
-                      {event.tag}
-                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-espresso">
+                      {event.title}
+                    </h3>
+                    <p className="mb-3 text-sm font-medium text-amber-dark">
+                      {event.date}
+                    </p>
+                    <p className="flex-1 text-sm leading-relaxed text-warm-gray">
+                      {event.description}
+                    </p>
                   </div>
-                  <h3 className="mb-1 text-lg font-semibold text-espresso">
-                    {event.title}
-                  </h3>
-                  <p className="mb-3 text-sm font-medium text-amber-dark">
-                    {event.date}
-                  </p>
-                  <p className="flex-1 text-sm leading-relaxed text-warm-gray">
-                    {event.description}
-                  </p>
-                </div>
+                </WarmGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -207,9 +229,9 @@ export default function EventsPage() {
             <h2 className="text-3xl font-bold">Weekly Schedule</h2>
           </FadeIn>
 
-          <StaggerContainer className="space-y-3">
-            {weeklySchedule.map((day) => (
-              <StaggerItem key={day.day}>
+          <div className="space-y-3">
+            {weeklySchedule.map((day, i) => (
+              <ScaleReveal key={day.day} delay={i * 0.08}>
                 <div className="flex flex-col rounded-xl border border-cream/10 bg-cream/5 p-5 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-4">
                     <span className="w-28 text-sm font-semibold text-amber">
@@ -221,15 +243,15 @@ export default function EventsPage() {
                     {day.detail}
                   </span>
                 </div>
-              </StaggerItem>
+              </ScaleReveal>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
       {/* Host Your Event CTA */}
       <section className="px-6 py-20 text-center">
-        <FadeIn>
+        <ScaleReveal>
           <div className="mx-auto max-w-2xl">
             <h2 className="mb-4 text-3xl font-bold text-espresso">
               Host Your Event at THE OP
@@ -245,7 +267,7 @@ export default function EventsPage() {
               Inquire About Events
             </Link>
           </div>
-        </FadeIn>
+        </ScaleReveal>
       </section>
     </>
   );

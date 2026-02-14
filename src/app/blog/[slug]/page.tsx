@@ -4,7 +4,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, User, ArrowRight } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, SlideIn, StaggerContainer, StaggerItem, WarmGlow } from "@/components/motion";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 const categoryColors: Record<string, string> = {
@@ -84,7 +84,7 @@ export default function BlogPostPage({
       {/* Article Content */}
       <section className="border-t border-espresso/10 px-6 py-12 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <FadeIn delay={0.1}>
+          <SlideIn direction="left" delay={0.1}>
             <article className="space-y-6">
               {paragraphs.map((paragraph, i) => (
                 <p
@@ -95,7 +95,7 @@ export default function BlogPostPage({
                 </p>
               ))}
             </article>
-          </FadeIn>
+          </SlideIn>
         </div>
       </section>
 
@@ -115,6 +115,7 @@ export default function BlogPostPage({
                     href={`/blog/${related.slug}`}
                     className="group block h-full"
                   >
+                    <WarmGlow className="h-full rounded-xl">
                     <div className="h-full rounded-xl border border-espresso/10 bg-white p-6 transition-colors group-hover:border-amber/40">
                       <div className="mb-2 flex items-center gap-2">
                         <span
@@ -139,6 +140,7 @@ export default function BlogPostPage({
                         <ArrowRight className="h-3.5 w-3.5" />
                       </div>
                     </div>
+                    </WarmGlow>
                   </Link>
                 </StaggerItem>
               ))}

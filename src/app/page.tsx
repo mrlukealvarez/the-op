@@ -9,13 +9,23 @@ import {
   Calendar,
   Heart,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, SlideIn } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  SlideIn,
+  CountUp,
+  AmberShimmer,
+  ParallaxSection,
+  WarmGlow,
+  ScaleReveal,
+} from "@/components/motion";
 
 const stats = [
-  { label: "Annual Park Visitors", value: "2M+", icon: MapPin },
-  { label: "Year 1 Revenue Target", value: "$380K", icon: TrendingUp },
-  { label: "Annual SD Tourists", value: "14.9M", icon: Coffee },
-  { label: "BHC Campus Entities", value: "11", icon: Building },
+  { label: "Annual Park Visitors", value: "2M+", icon: MapPin, end: 2, prefix: "", suffix: "M+", decimals: 0 },
+  { label: "Year 1 Revenue Target", value: "$380K", icon: TrendingUp, end: 380, prefix: "$", suffix: "K", decimals: 0 },
+  { label: "Annual SD Tourists", value: "14.9M", icon: Coffee, end: 14.9, prefix: "", suffix: "M", decimals: 1 },
+  { label: "BHC Campus Entities", value: "11", icon: Building, end: 11, prefix: "", suffix: "", decimals: 0 },
 ];
 
 const features = [
@@ -72,6 +82,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-espresso px-6 py-28 text-cream md:py-40">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-espresso-light/30 via-transparent to-transparent" />
+        {/* Decorative orb behind hero text */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-amber/5 blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-7xl">
           <FadeIn>
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-amber">
@@ -82,7 +94,7 @@ export default function HomePage() {
             <h1 className="mb-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight md:text-6xl">
               Where the Black Hills
               <br />
-              <span className="text-amber">Come Together</span>
+              <AmberShimmer>Come Together</AmberShimmer>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -120,7 +132,9 @@ export default function HomePage() {
                   <stat.icon className="h-6 w-6 text-espresso" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-espresso">{stat.value}</p>
+                  <p className="text-2xl font-bold text-espresso">
+                    <CountUp end={stat.end} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals} />
+                  </p>
                   <p className="text-sm text-warm-gray">{stat.label}</p>
                 </div>
               </div>
@@ -134,7 +148,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-espresso md:text-4xl">
-              More Than a Cafe
+              More Than a <AmberShimmer>Cafe</AmberShimmer>
             </h2>
             <p className="mx-auto max-w-2xl text-warm-gray">
               THE OP is the beating heart of the Black Hills Consortium campus — a
@@ -145,17 +159,19 @@ export default function HomePage() {
           <StaggerContainer className="grid gap-8 md:grid-cols-2">
             {features.map((feature) => (
               <StaggerItem key={feature.title}>
-                <div className="rounded-2xl border border-espresso/10 bg-white p-8 transition-shadow hover:shadow-lg">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber/10">
-                    <feature.icon className="h-6 w-6 text-amber" />
+                <WarmGlow className="rounded-2xl">
+                  <div className="rounded-2xl border border-espresso/10 bg-white p-8 transition-shadow hover:shadow-lg">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber/10">
+                      <feature.icon className="h-6 w-6 text-amber" />
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold text-espresso">
+                      {feature.title}
+                    </h3>
+                    <p className="leading-relaxed text-warm-gray">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-espresso">
-                    {feature.title}
-                  </h3>
-                  <p className="leading-relaxed text-warm-gray">
-                    {feature.description}
-                  </p>
-                </div>
+                </WarmGlow>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -163,7 +179,7 @@ export default function HomePage() {
       </section>
 
       {/* Why THE OP */}
-      <section className="bg-espresso px-6 py-24 text-cream">
+      <ParallaxSection className="bg-espresso px-6 py-24 text-cream">
         <div className="mx-auto max-w-7xl">
           <FadeIn className="mb-16">
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber">
@@ -174,7 +190,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {whyItems.map((item, i) => (
-              <SlideIn key={item.title} direction="left" delay={i * 0.15}>
+              <ScaleReveal key={item.title} delay={i * 0.12}>
                 <div className="rounded-2xl border border-cream/10 bg-cream/5 p-8">
                   <item.icon className="mb-4 h-8 w-8 text-amber" />
                   <h3 className="mb-3 text-xl font-semibold text-cream">
@@ -184,15 +200,15 @@ export default function HomePage() {
                     {item.description}
                   </p>
                 </div>
-              </SlideIn>
+              </ScaleReveal>
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* CTA */}
       <section className="px-6 py-24 text-center">
-        <FadeIn>
+        <ScaleReveal>
           <div className="mx-auto max-w-2xl">
             <h2 className="mb-4 text-3xl font-bold text-espresso md:text-4xl">
               Pull Up a Chair
@@ -216,7 +232,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </FadeIn>
+        </ScaleReveal>
       </section>
     </>
   );
