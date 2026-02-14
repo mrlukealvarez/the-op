@@ -112,18 +112,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Work With Us */}
+      {/* Careers CTA */}
       <section className="bg-espresso px-6 py-16 text-center text-cream">
         <FadeIn>
           <h2 className="mb-4 text-2xl font-bold">Work With Us</h2>
           <p className="mx-auto max-w-xl text-cream/60">
-            THE OP is always looking for passionate baristas and community
-            builders. If you love coffee, local craft beer, and the Black
-            Hills, we want to hear from you.
+            THE OP is hiring operators — $145K average base salary, no resumes required.
           </p>
-          <p className="mt-4 text-sm text-amber">
-            Send your resume to careers@theop.cafe
-          </p>
+          <a
+            href="/careers"
+            className="mt-6 inline-flex rounded-full bg-amber px-8 py-3 font-semibold text-espresso transition-colors hover:bg-amber/90"
+          >
+            View Open Positions
+          </a>
         </FadeIn>
       </section>
     </>
