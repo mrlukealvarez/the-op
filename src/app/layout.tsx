@@ -20,20 +20,22 @@ export const metadata: Metadata = {
     template: "%s | THE OP",
   },
   description:
-    "Amsterdam-inspired cafe and community space in Custer, South Dakota. Craft coffee, cannabis culture, and community — the heart of the Black Hills Consortium campus.",
+    "Coffee shop and tourist stop in Custer, South Dakota. Craft coffee, local merch, drive-through convenience — the heart of the Black Hills Consortium campus.",
   keywords: [
     "THE OP",
     "Custer SD cafe",
-    "cannabis cafe",
+    "coffee shop",
     "Black Hills coffee",
     "community space",
     "Black Hills Consortium",
     "South Dakota",
+    "tourist stop",
+    "campus coffee",
   ],
   openGraph: {
     title: "THE OP — Where the Black Hills Come Together",
     description:
-      "Amsterdam-inspired cafe and community space in Custer, South Dakota. Craft coffee, cannabis culture, and community.",
+      "Coffee shop and tourist stop in Custer, South Dakota. Craft coffee, local merch, drive-through convenience.",
     type: "website",
     locale: "en_US",
     siteName: "THE OP",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "THE OP — Where the Black Hills Come Together",
     description:
-      "Amsterdam-inspired cafe and community space in Custer, South Dakota.",
+      "Coffee shop and tourist stop in Custer, South Dakota.",
   },
   robots: {
     index: true,

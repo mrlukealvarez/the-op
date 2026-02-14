@@ -121,7 +121,7 @@ export default function MenuPage() {
                           <h3 className="font-semibold text-espresso">{item.name}</h3>
                           <p className="mt-1 text-sm text-warm-gray">{item.description}</p>
                         </div>
-                        <span className="shrink-0 text-sm font-semibold text-cannabis-green">
+                        <span className="shrink-0 text-sm font-semibold text-amber">
                           {item.price}
                         </span>
                       </div>

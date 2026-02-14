@@ -32,8 +32,8 @@ export function SiteFooter() {
               <span className="text-lg font-bold text-cream">THE OP</span>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-cream/60">
-              Where the Black Hills Come Together. Amsterdam-inspired cafe and
-              community space in Custer, South Dakota.
+              Coffee, local beer, and Black Hills merch on the Grow Campus in
+              Custer, South Dakota.
             </p>
             <p className="text-xs text-cream/40">
               Part of{" "}

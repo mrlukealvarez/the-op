@@ -11,18 +11,17 @@ import {
 import { Database } from "lucide-react"
 
 const stats = [
-  { name: "Y1 Revenue", value: "$600K", change: "+35% vs projection" },
-  { name: "Daily Customers", value: "150", change: "+22% vs last month" },
-  { name: "Events/Month", value: "12", change: "Consistent schedule" },
+  { name: "Y1 Revenue", value: "$380K", change: "V5 floor projection" },
+  { name: "Daily Customers", value: "33", change: "Y1 average target" },
+  { name: "Avg Transaction", value: "$32", change: "Coffee + snack or beer" },
   { name: "Community Members", value: "500", change: "+18% this quarter" },
 ]
 
 const revenueByCategory = [
-  { name: "Coffee/Drinks", value: 35, fill: "#F59E0B" },
+  { name: "Coffee/Drinks", value: 45, fill: "#F59E0B" },
   { name: "Food", value: 25, fill: "#D97706" },
-  { name: "Cannabis Menu", value: 20, fill: "#4CAF50" },
-  { name: "Events", value: 15, fill: "#B45309" },
-  { name: "Merch", value: 5, fill: "#92400E" },
+  { name: "Local Beer/Cider", value: 9, fill: "#3E2723" },
+  { name: "Merch", value: 21, fill: "#92400E" },
 ]
 
 const monthlyFootTraffic = [
@@ -56,13 +55,9 @@ const pieChartConfig = {
     label: "Food",
     color: "#D97706",
   },
-  "Cannabis Menu": {
-    label: "Cannabis Menu",
-    color: "#4CAF50",
-  },
-  Events: {
-    label: "Events",
-    color: "#B45309",
+  "Local Beer/Cider": {
+    label: "Local Beer/Cider",
+    color: "#3E2723",
   },
   Merch: {
     label: "Merch",

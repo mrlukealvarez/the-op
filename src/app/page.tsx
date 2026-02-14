@@ -13,8 +13,8 @@ import { FadeIn, StaggerContainer, StaggerItem, SlideIn } from "@/components/mot
 
 const stats = [
   { label: "Annual Park Visitors", value: "2M+", icon: MapPin },
-  { label: "Year 1 Revenue Target", value: "$600K", icon: TrendingUp },
-  { label: "Cannabis Cafes in SD", value: "Zero", icon: Coffee },
+  { label: "Year 1 Revenue Target", value: "$380K", icon: TrendingUp },
+  { label: "Annual SD Tourists", value: "14.9M", icon: Coffee },
   { label: "BHC Campus Entities", value: "11", icon: Building },
 ];
 
@@ -29,7 +29,7 @@ const features = [
     icon: Calendar,
     title: "Events & Culture",
     description:
-      "Open mic nights, trivia, live Outpost Media recordings, and THE CULT pre-events. Something happening every night of the week.",
+      "Open mic nights, trivia, live Outpost Media recordings. Looking for conventions? Visit THE CULT Events LLC for full-scale events.",
   },
   {
     icon: Users,
@@ -39,9 +39,9 @@ const features = [
   },
   {
     icon: Leaf,
-    title: "Cannabis Forward",
+    title: "Employee Perks",
     description:
-      "Pioneering South Dakota's first cannabis cafe experience. Amsterdam-inspired vibes with Black Hills hospitality.",
+      "Campus staff get exclusive perks — discounted meals, priority seating, free workspace, and special employee-only events.",
   },
 ];
 
@@ -87,9 +87,8 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mb-10 max-w-xl text-lg leading-relaxed text-cream/70">
-              Amsterdam-style coffee shop meets Black Hills hospitality. Craft
-              coffee, cannabis culture, and community — all under one roof on the
-              BHC campus.
+              Coffee shop and tourist stop on the BHC campus. Craft
+              coffee, local merch, drive-through convenience, and community — serving locals, tourists, and campus staff.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -139,7 +138,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto max-w-2xl text-warm-gray">
               THE OP is the beating heart of the Black Hills Consortium campus — a
-              place where coffee, culture, cannabis, and community converge.
+              place where coffee, culture, and community converge.
             </p>
           </FadeIn>
 
@@ -147,8 +146,8 @@ export default function HomePage() {
             {features.map((feature) => (
               <StaggerItem key={feature.title}>
                 <div className="rounded-2xl border border-espresso/10 bg-white p-8 transition-shadow hover:shadow-lg">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cannabis-green/10">
-                    <feature.icon className="h-6 w-6 text-cannabis-green" />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber/10">
+                    <feature.icon className="h-6 w-6 text-amber" />
                   </div>
                   <h3 className="mb-2 text-xl font-semibold text-espresso">
                     {feature.title}

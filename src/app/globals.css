@@ -5,8 +5,8 @@
   --foreground: #2C1810;
   --espresso: #3E2723;
   --espresso-light: #5D4037;
-  --cannabis-green: #4CAF50;
-  --cannabis-green-dark: #388E3C;
+  --pine-green: #2D5016;
+  --pine-green-dark: #1A3A0A;
   --amber: #F59E0B;
   --amber-dark: #D97706;
   --cream: #FFF8E1;
@@ -20,8 +20,8 @@
   --color-foreground: var(--foreground);
   --color-espresso: var(--espresso);
   --color-espresso-light: var(--espresso-light);
-  --color-cannabis-green: var(--cannabis-green);
-  --color-cannabis-green-dark: var(--cannabis-green-dark);
+  --color-pine-green: var(--pine-green);
+  --color-pine-green-dark: var(--pine-green-dark);
   --color-amber: var(--amber);
   --color-amber-dark: var(--amber-dark);
   --color-cream: var(--cream);

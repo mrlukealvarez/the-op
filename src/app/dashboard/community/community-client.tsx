@@ -132,7 +132,7 @@ export default function CommunityClient({ events, sales, stats }: CommunityClien
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-warm-gray-light">Value</span>
-                  <span className="font-mono text-cannabis-green">{partner.value}</span>
+                  <span className="font-mono text-amber">{partner.value}</span>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function CommunityClient({ events, sales, stats }: CommunityClien
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-warm-gray-light">Total Partner Value</p>
-              <p className="mt-1 text-3xl font-bold text-cannabis-green">$50,000</p>
+              <p className="mt-1 text-3xl font-bold text-amber">$50,000</p>
             </div>
             <div>
               <p className="text-sm text-warm-gray-light">Active Partnerships</p>
@@ -236,7 +236,7 @@ export default function CommunityClient({ events, sales, stats }: CommunityClien
                     {business.referrals}
                   </td>
                   <td className="py-3 text-right">
-                    <span className="inline-flex items-center rounded-full bg-cannabis-green/20 px-2 py-1 text-xs font-medium text-cannabis-green">
+                    <span className="inline-flex items-center rounded-full bg-amber/20 px-2 py-1 text-xs font-medium text-amber">
                       {business.status}
                     </span>
                   </td>

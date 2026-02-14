@@ -19,11 +19,11 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Live events at THE OP in Custer, SD — open mic nights, trivia, live recordings, startup pitches, art shows, and community gatherings.",
+    "Community events and gatherings at THE OP in Custer, SD. Small-scale events and a community bulletin board. For full-scale conventions, visit THE CULT Events LLC.",
   openGraph: {
     title: "Events | THE OP",
     description:
-      "Live events at THE OP — open mic nights, trivia, live recordings, startup pitches, art shows, and community gatherings.",
+      "Community events and gatherings at THE OP. For full-scale conventions, visit THE CULT Events LLC.",
   },
 };
 
@@ -41,7 +41,7 @@ const upcomingEvents = [
     title: "Trivia Nights",
     date: "Every Tuesday, 7:30 PM",
     description:
-      "Cannabis trivia, Black Hills history, tech trivia, pop culture. Teams of 4, prizes for top 3. Categories rotate weekly.",
+      "Black Hills history, tech trivia, pop culture, food and drink. Teams of 4, prizes for top 3. Categories rotate weekly.",
     tag: "Weekly",
   },
   {
@@ -62,11 +62,11 @@ const upcomingEvents = [
   },
   {
     icon: PartyPopper,
-    title: "CULT Pre-Events",
-    date: "Quarterly (launching 2026)",
+    title: "Looking for Conventions?",
+    date: "Visit THE CULT Events LLC",
     description:
-      "Convention warm-up events. Meet speakers, preview the agenda, early bird tickets. Networking, product tastings, and exclusive previews.",
-    tag: "Quarterly",
+      "Full-scale events, conventions, and festivals are now managed by THE CULT Events LLC. THE OP focuses on small community gatherings and daily campus life.",
+    tag: "Note",
   },
   {
     icon: Rocket,
@@ -103,9 +103,9 @@ const upcomingEvents = [
 ];
 
 const weeklySchedule = [
-  { day: "Monday", event: "Coworking Happy Hour (4-6 PM)", detail: "Discounted drinks for remote workers" },
+  { day: "Monday", event: "Happy Hour (4-6 PM)", detail: "Discounted drinks for campus workers" },
   { day: "Tuesday", event: "Trivia Night (7:30 PM)", detail: "Teams of 4, prizes" },
-  { day: "Wednesday", event: "Wellness Wednesday", detail: "CBD specials all day" },
+  { day: "Wednesday", event: "Wellness Wednesday", detail: "Specialty drinks + local wellness vendors" },
   { day: "Thursday", event: "Open Mic (7 PM)", detail: "Music, comedy, poetry" },
   { day: "Friday", event: "Acoustic Sessions (6 PM)", detail: "Live music + Art Show (2nd Fri)" },
   { day: "Saturday", event: "Rotating Special", detail: "Outpost Media Live (1st Sat)" },
@@ -124,22 +124,21 @@ export default function EventsPage() {
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">Events at THE OP</h1>
             <p className="max-w-xl text-cream/70">
-              Where tourists, remote workers, investors, and locals all converge.
-              Something happening every night. Open mics, trivia, live
-              recordings, startup pitches, art shows, and more.
+              Small-scale community events and gatherings. Open mics, trivia, live
+              recordings, art shows, and conversations. <span className="text-amber">Looking for large conventions? Visit THE CULT Events LLC.</span>
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* Revenue Model Callout */}
-      <section className="bg-cannabis-green/5 px-6 py-12 border-b border-espresso/10">
+      <section className="bg-amber/5 px-6 py-12 border-b border-espresso/10">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: Users, value: "14.9M", label: "Annual tourists past Custer" },
-                { icon: Coffee, value: "Zero", label: "Cannabis cafes in SD" },
+                { icon: Coffee, value: "2M+", label: "Tourists past campus yearly" },
                 { icon: DollarSign, value: "$0", label: "Rent (owned campus)" },
                 { icon: MapPin, value: "25 min", label: "From Mount Rushmore" },
               ].map((stat) => (
@@ -181,7 +180,7 @@ export default function EventsPage() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
                       <event.icon className="h-5 w-5 text-amber-dark" />
                     </div>
-                    <span className="rounded-full bg-cannabis-green/10 px-3 py-1 text-xs font-medium text-cannabis-green-dark">
+                    <span className="rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber-dark">
                       {event.tag}
                     </span>
                   </div>

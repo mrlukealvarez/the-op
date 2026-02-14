@@ -191,7 +191,7 @@ export default function EventsClient({ events, upcomingEvents, stats, eventsByTy
               </div>
               <div className="h-2 overflow-hidden rounded-full bg-espresso-light">
                 <div
-                  className="h-full bg-cannabis-green"
+                  className="h-full bg-amber"
                   style={{ width: `${(event.revenue / maxRevenue) * 100}%` }}
                 ></div>
               </div>

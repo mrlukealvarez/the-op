@@ -6,21 +6,21 @@ import { FadeIn, SlideIn, StaggerContainer, StaggerItem } from "@/components/mot
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The story of THE OP — an Amsterdam-inspired cafe born from the Black Hills Consortium campus vision in Custer, South Dakota.",
+    "The story of THE OP — a coffee shop and tourist stop born from the Black Hills Consortium campus vision in Custer, South Dakota.",
   openGraph: {
     title: "About | THE OP",
     description:
-      "The story of THE OP — an Amsterdam-inspired cafe born from the Black Hills Consortium campus vision in Custer, South Dakota.",
+      "The story of THE OP — a coffee shop and tourist stop born from the Black Hills Consortium campus vision in Custer, South Dakota.",
   },
 };
 
 const timeline = [
   { year: "2024", event: "BHC campus vision conceived — 15 acres in Custer, SD" },
-  { year: "2025", event: "South Dakota legalizes recreational cannabis" },
-  { year: "2025", event: "THE OP concept developed — Amsterdam meets Black Hills" },
+  { year: "2025", event: "BHC campus vision refined — coffee shop as campus anchor" },
+  { year: "2025", event: "THE OP concept developed — community coffee shop and tourist stop" },
   { year: "2026", event: "Planned: BHC raises capital — THE OP buildout begins" },
-  { year: "2026", event: "Planned: Grand opening — Custer's first cannabis-adjacent cafe" },
-  { year: "2027", event: "Planned: THE OP becomes the top-rated cafe in the Black Hills" },
+  { year: "2026", event: "Planned: Grand opening — campus coffee shop with drive-through" },
+  { year: "2027", event: "Planned: THE OP becomes the top-rated coffee shop in the Black Hills" },
 ];
 
 const pillars = [
@@ -31,8 +31,8 @@ const pillars = [
   },
   {
     icon: Leaf,
-    title: "Cannabis Culture",
-    description: "Pioneering the legal cannabis cafe experience in South Dakota. Responsible, educated, and welcoming.",
+    title: "Campus Life",
+    description: "A hub for campus employees, students, and visitors. Employee perks, community events, and daily connection.",
   },
   {
     icon: Users,
@@ -57,11 +57,11 @@ export default function AboutPage() {
               Our Story
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Amsterdam Meets the Black Hills
+              Coffee, Community, and Campus
             </h1>
             <p className="max-w-xl text-cream/70">
-              THE OP was born from a simple question: what if the best cafe in the
-              region was also the most forward-thinking?
+              THE OP was born from a simple question: what if the best coffee shop in the
+              region was also the heart of a thriving campus?
             </p>
           </FadeIn>
         </div>
@@ -77,24 +77,25 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-warm-gray leading-relaxed">
                 <p>
-                  In the Netherlands, a &ldquo;coffee shop&rdquo; is more than a
-                  place to buy espresso. It&apos;s a third place — a community
-                  anchor where conversation flows as freely as the coffee.
-                  Cannabis is part of the culture, not separate from it.
+                  A great coffee shop is more than a place to buy espresso.
+                  It&apos;s a third place — a community anchor where conversation
+                  flows as freely as the coffee. A gathering spot for locals,
+                  a welcome center for tourists, and a daily ritual for campus staff.
                 </p>
                 <p>
-                  When South Dakota legalized recreational cannabis, the Black
-                  Hills Consortium saw an opportunity: build the first
-                  Amsterdam-style cafe in the state, right on the BHC campus in
-                  Custer. Not a dispensary. Not a smoke shop. A genuine community
-                  space where great coffee, responsible cannabis, and local
-                  culture coexist.
+                  The Black Hills Consortium saw an opportunity: build a campus
+                  coffee shop that serves everyone — GrowWise employees grabbing
+                  their morning latte, tourists stopping on their way to Custer
+                  State Park, locals meeting for conversation, and students
+                  finding their study spot. Not just a cafe, but the living room
+                  of the entire campus.
                 </p>
                 <p>
                   THE OP sits at the gateway to Custer State Park, one of the
                   most visited natural destinations in America. With 14.9 million
-                  annual tourists passing through the Black Hills and zero
-                  cannabis cafes in the state, the timing is perfect.
+                  annual tourists passing through the Black Hills and a thriving
+                  campus community, it's positioned to be the region's favorite
+                  gathering place.
                 </p>
               </div>
             </div>
@@ -160,8 +161,8 @@ export default function AboutPage() {
             {pillars.map((p) => (
               <StaggerItem key={p.title}>
                 <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-cannabis-green/10">
-                    <p.icon className="h-7 w-7 text-cannabis-green" />
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/10">
+                    <p.icon className="h-7 w-7 text-amber" />
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-espresso">
                     {p.title}

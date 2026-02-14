@@ -67,7 +67,7 @@ export default function ContactPage() {
           {infoCards.map((card) => (
             <StaggerItem key={card.title}>
               <div className="rounded-xl border border-espresso/10 bg-white p-6">
-                <card.icon className="mb-3 h-6 w-6 text-cannabis-green" />
+                <card.icon className="mb-3 h-6 w-6 text-amber" />
                 <h3 className="mb-2 font-semibold text-espresso">{card.title}</h3>
                 {card.lines.map((line) => (
                   <p key={line} className="text-sm text-warm-gray">
@@ -117,9 +117,9 @@ export default function ContactPage() {
         <FadeIn>
           <h2 className="mb-4 text-2xl font-bold">Work With Us</h2>
           <p className="mx-auto max-w-xl text-cream/60">
-            THE OP is always looking for passionate baristas, bakers, event
-            coordinators, and community builders. If you love coffee, cannabis
-            culture, and the Black Hills, we want to hear from you.
+            THE OP is always looking for passionate baristas and community
+            builders. If you love coffee, local craft beer, and the Black
+            Hills, we want to hear from you.
           </p>
           <p className="mt-4 text-sm text-amber">
             Send your resume to careers@theop.cafe

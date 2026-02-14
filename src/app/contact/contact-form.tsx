@@ -10,8 +10,8 @@ export function ContactForm() {
 
   if (state.success) {
     return (
-      <div className="rounded-2xl border border-cannabis-green/20 bg-cannabis-green/5 p-8 text-center">
-        <p className="text-lg font-semibold text-cannabis-green-dark">
+      <div className="rounded-2xl border border-amber/20 bg-amber/5 p-8 text-center">
+        <p className="text-lg font-semibold text-amber-dark">
           {state.message}
         </p>
       </div>
@@ -39,7 +39,7 @@ export function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-cannabis-green focus:ring-1 focus:ring-cannabis-green"
+          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber"
         />
         {state.errors?.name && (
           <p className="mt-1 text-xs text-red-600">{state.errors.name[0]}</p>
@@ -55,7 +55,7 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-cannabis-green focus:ring-1 focus:ring-cannabis-green"
+          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber"
         />
         {state.errors?.email && (
           <p className="mt-1 text-xs text-red-600">{state.errors.email[0]}</p>
@@ -70,7 +70,7 @@ export function ContactForm() {
           id="subject"
           name="subject"
           required
-          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-cannabis-green focus:ring-1 focus:ring-cannabis-green"
+          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber"
         >
           <option value="general">General Inquiry</option>
           <option value="events">Events & Private Bookings</option>
@@ -89,7 +89,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
-          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-cannabis-green focus:ring-1 focus:ring-cannabis-green"
+          className="w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber"
         />
         {state.errors?.message && (
           <p className="mt-1 text-xs text-red-600">{state.errors.message[0]}</p>

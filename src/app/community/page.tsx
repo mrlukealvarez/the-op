@@ -187,8 +187,8 @@ export default function CommunityPage() {
             {ecosystemConnections.map((conn) => (
               <StaggerItem key={conn.entity}>
                 <div className="flex h-full flex-col rounded-xl border border-espresso/10 bg-white p-6">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cannabis-green/10">
-                    <conn.icon className="h-5 w-5 text-cannabis-green" />
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-amber/10">
+                    <conn.icon className="h-5 w-5 text-amber" />
                   </div>
                   <h3 className="mb-2 font-semibold text-espresso">
                     {conn.entity}
@@ -238,7 +238,7 @@ export default function CommunityPage() {
           </StaggerContainer>
 
           <FadeIn delay={0.2}>
-            <div className="mt-12 rounded-2xl bg-cannabis-green/5 border border-cannabis-green/10 p-8">
+            <div className="mt-12 rounded-2xl bg-amber/5 border border-amber/10 p-8">
               <h3 className="text-lg font-bold text-espresso">Revenue Share Model</h3>
               <p className="mt-2 text-sm leading-relaxed text-warm-gray">
                 Every partner in the ecosystem generates revenue for themselves AND for
@@ -310,7 +310,7 @@ export default function CommunityPage() {
             <p className="mx-auto mb-8 max-w-2xl text-cream/60">
               We will source from Black Hills roasters, bakers, and producers. We
               hire local. We reinvest in the community. Because that&apos;s what
-              Amsterdam-meets-Custer means.
+              local-first in the Black Hills means.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-cream/40">
               {[

@@ -9,7 +9,7 @@ import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 const categoryColors: Record<string, string> = {
   Culture: "border-amber text-amber",
-  Community: "border-cannabis-green text-cannabis-green",
+  Community: "border-amber text-amber",
   Business: "border-espresso-light text-espresso-light",
 };
 
