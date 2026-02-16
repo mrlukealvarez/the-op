@@ -5,12 +5,14 @@ const footerLinks = {
   Visit: [
     { href: "/menu", label: "Menu" },
     { href: "/events", label: "Events" },
+    { href: "/partners", label: "Partners" },
     { href: "/community", label: "Community" },
     { href: "/contact", label: "Contact" },
   ],
   Company: [
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Careers" },
+    { href: "/careers", label: "Careers" },
+    { href: "/perks", label: "Perks" },
     { href: "/about", label: "Black Hills Consortium" },
   ],
   Connect: [

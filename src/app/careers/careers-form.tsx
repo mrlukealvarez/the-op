@@ -80,8 +80,11 @@ export function CareersForm() {
           className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
         >
           <option value="">Select a role...</option>
-          <option value="gm">GM / Operator</option>
-          <option value="barista">Barista / Counter Lead</option>
+          <option value="cafe-manager">Cafe Manager</option>
+          <option value="lead-barista">Lead Barista</option>
+          <option value="merch-coordinator">Merch Coordinator</option>
+          <option value="campus-host">Campus Host</option>
+          <option value="prep-cook">Prep Cook</option>
           <option value="general">General Interest</option>
         </select>
       </div>

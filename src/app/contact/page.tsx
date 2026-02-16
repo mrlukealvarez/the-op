@@ -23,9 +23,9 @@ const infoCards = [
     icon: Clock,
     title: "Hours",
     lines: [
-      "Mon-Fri: 8:00 AM - 6:00 PM",
-      "Saturday: 8:00 AM - 6:00 PM",
-      "Sunday: 9:00 AM - 5:00 PM",
+      "Open 8:00 AM - 9:00 PM",
+      "7 Days a Week",
+      "The only cafe in Custer open past 6 PM",
     ],
   },
   {
