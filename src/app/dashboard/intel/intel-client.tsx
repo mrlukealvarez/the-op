@@ -19,10 +19,10 @@ interface IntelClientProps {
 
 const kpiCards = [
   { label: "Y1 Revenue", value: "$380K", sub: "V5 floor", accent: "text-amber" },
-  { label: "Y5 Revenue", value: "$1.9M", sub: "31% margin", accent: "text-green-400" },
+  { label: "Y5 Revenue", value: "$1.9M", sub: "65% gross margin", accent: "text-green-400" },
   { label: "Daily Customers", value: "80", sub: "4 dayparts", accent: "text-amber" },
   { label: "Avg Transaction", value: "$10.09", sub: "Blended", accent: "text-amber" },
-  { label: "Break-Even", value: "Month 5-6", sub: "P&L crossover", accent: "text-green-400" },
+  { label: "Break-Even", value: "Month 24", sub: "$3M allocation", accent: "text-amber" },
   { label: "Evening Monopoly", value: "$77K/yr", sub: "Zero competition 6-9pm", accent: "text-amber", glow: true },
 ]
 
@@ -41,21 +41,24 @@ const margins = [
   { name: "Beer", margin: 63, color: "#5D4037" },
 ]
 
+// P&L from financial-model.ts (single source of truth)
+// THE OP is subsidized by $3M capital allocation + GrowWise cross-subsidy
+// Net is negative at $145K salary floor — by design (lifestyle/brand entity)
 const plData = [
-  { year: "Y1", revenue: 380, expenses: 362, net: 18 },
-  { year: "Y2", revenue: 600, expenses: 507, net: 93 },
-  { year: "Y3", revenue: 900, expenses: 702, net: 198 },
-  { year: "Y4", revenue: 1300, expenses: 958, net: 342 },
-  { year: "Y5", revenue: 1900, expenses: 1310, net: 589 },
+  { year: "Y1", revenue: 380, expenses: 1330, net: -950 },
+  { year: "Y2", revenue: 700, expenses: 1780, net: -1080 },
+  { year: "Y3", revenue: 1000, expenses: 2400, net: -1400 },
+  { year: "Y4", revenue: 1400, expenses: 3080, net: -1680 },
+  { year: "Y5", revenue: 1900, expenses: 4800, net: -2900 },
 ]
 
+// Y1 expenses from financial-model.ts ($1.33M total)
+// $145K salary floor × 5 staff fully loaded = $1.08M payroll
 const expensesY1 = [
-  { name: "COGS F&B", value: 120, pct: 33.1 },
-  { name: "Labor", value: 115, pct: 31.8 },
-  { name: "Operating", value: 55, pct: 15.2 },
-  { name: "COGS Merch", value: 40, pct: 11.0 },
-  { name: "Rent", value: 24, pct: 6.6 },
-  { name: "Tech", value: 8, pct: 2.2 },
+  { name: "Payroll (5 staff)", value: 1080, pct: 81.2 },
+  { name: "COGS (F&B + Merch)", value: 130, pct: 9.8 },
+  { name: "Operations", value: 80, pct: 6.0 },
+  { name: "Marketing", value: 40, pct: 3.0 },
 ]
 
 const competitors = [
@@ -67,13 +70,14 @@ const competitors = [
   { name: "THE OP", hours: 91, extra: "\u2014", status: "8am-9pm, 7 days", color: "text-green-400" },
 ]
 
+// $145K minimum salary for ALL positions (ecosystem-wide policy)
 const staffing = [
-  { role: "GM/Lead Barista", y1: "$55K", y5: "$70K" },
-  { role: "Barista/Counter", y1: "$38K", y5: "$46K" },
-  { role: "Part-Time", y1: "$22K", y5: "$30K" },
-  { role: "Barista #2", y1: "\u2014", y5: "$40K" },
-  { role: "Merch Manager", y1: "\u2014", y5: "$50K" },
-  { role: "Additional PT", y1: "\u2014", y5: "$124K" },
+  { role: "GM/Lead Barista", y1: "$145K", y5: "$165K" },
+  { role: "Barista #1", y1: "$145K", y5: "$150K" },
+  { role: "Barista #2", y1: "$145K", y5: "$150K" },
+  { role: "Merch/Counter", y1: "$145K", y5: "$155K" },
+  { role: "Kitchen/Prep", y1: "$145K", y5: "$150K" },
+  { role: "Additional Staff", y1: "\u2014", y5: "$145K \u00d7 10" },
 ]
 
 const partners = [
@@ -97,22 +101,23 @@ const transactions = [
   { year: "Y5", txns: "55,000" },
 ]
 
+// Benefits aligned with $145K salary floor and fully-loaded costs from financial-model.ts
 const benefits = [
   { metric: "Avg family plan (SD)", y1: "$22K/yr", y5: "$24K/yr" },
-  { metric: "Total insurance cost", y1: "$66K", y5: "$168K" },
-  { metric: "Labor (base salaries)", y1: "$115K", y5: "$360K" },
-  { metric: "Total comp + benefits", y1: "$181K", y5: "$528K", bold: true },
+  { metric: "Total insurance cost", y1: "$110K", y5: "$360K" },
+  { metric: "Labor (base salaries)", y1: "$725K", y5: "$2.26M" },
+  { metric: "Total comp + benefits", y1: "$1.08M", y5: "$3.6M", bold: true },
   { metric: "Revenue", y1: "$380K", y5: "$1.9M" },
-  { metric: "Non-labor expenses", y1: "$247K", y5: "$951K" },
-  { metric: "Net after full benefits", y1: "-$48K", y5: "$421K", bold: true },
-  { metric: "Margin after benefits", y1: "-12.6%", y5: "22.2%", bold: true },
+  { metric: "Non-labor expenses", y1: "$250K", y5: "$1.2M" },
+  { metric: "Net (before subsidy)", y1: "-$950K", y5: "-$2.9M", bold: true },
+  { metric: "Subsidy source", y1: "$3M raise", y5: "GrowWise", bold: true },
 ]
 
 const insights = [
-  "Full family coverage costs $66K Y1 -- investor runway covers the gap",
-  "By Y3 ($900K revenue), full benefits are sustainable at 14.5% margin",
-  "By Y5, $421K net AFTER insuring every employee's family",
-  "Zero rent + evening monopoly = margin buffer for real benefits",
+  "$145K minimum salary for ALL positions -- barista to GM, no exceptions",
+  "THE OP is a community anchor, not a standalone profit center",
+  "$3M from $52M raise covers Y1-Y2; GrowWise cross-subsidy covers Y3+",
+  "Zero rent + 65.8% gross margin = strong unit economics despite operating loss",
 ]
 
 // ── Chart Configs ───────────────────────────────────────────────────
@@ -137,7 +142,7 @@ export default function IntelClient({ entityFinancial, crmStats, cafeStats, rece
       <div>
         <h1 className="text-3xl font-bold text-cream">Intel Command Center</h1>
         <p className="mt-2 text-warm-gray-light">
-          GTM intelligence -- Sprint 138 pricing model + live Supabase data
+          GTM intelligence -- financial-model.ts (V5 floor) + live Supabase data
         </p>
       </div>
 
@@ -250,7 +255,7 @@ export default function IntelClient({ entityFinancial, crmStats, cafeStats, rece
               </div>
             ))}
           </div>
-          <p className="text-sm text-warm-gray-light mt-4 font-mono">Total: $362K</p>
+          <p className="text-sm text-warm-gray-light mt-4 font-mono">Total: $1.33M</p>
         </div>
       </div>
 
@@ -345,8 +350,8 @@ export default function IntelClient({ entityFinancial, crmStats, cafeStats, rece
               ))}
               <tr className="bg-amber/10 font-bold">
                 <td className="py-2 text-cream">Total</td>
-                <td className="py-2 text-right font-mono text-cream">$115K (3)</td>
-                <td className="py-2 text-right font-mono text-cream">$360K (7)</td>
+                <td className="py-2 text-right font-mono text-cream">$725K (5)</td>
+                <td className="py-2 text-right font-mono text-cream">$2.26M (15)</td>
               </tr>
             </tbody>
           </table>

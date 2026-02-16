@@ -22,6 +22,8 @@ import {
   Clock,
   Sparkles,
   ArrowRight,
+  Car,
+  TrendingUp,
 } from "lucide-react";
 import {
   FadeIn,
@@ -32,7 +34,6 @@ import {
   WarmGlow,
   ScaleReveal,
   PulseGlow,
-  SlideIn,
   ParallaxSection,
 } from "@/components/motion";
 import { CareersForm } from "./careers-form";
@@ -49,13 +50,13 @@ export const metadata: Metadata = {
 };
 
 // ---------------------------------------------------------------------------
-// Open Positions — 5 roles, $145K salary floor
+// Open Positions — 5 roles, $145K-$165K salary range
 // ---------------------------------------------------------------------------
 
 const positions = [
   {
     title: "Cafe Manager",
-    salary: "$145K+",
+    salary: "$145K - $165K",
     type: "Full-Time",
     location: "Custer, SD",
     icon: Coffee,
@@ -64,7 +65,7 @@ const positions = [
   },
   {
     title: "Lead Barista",
-    salary: "$145K+",
+    salary: "$145K - $155K",
     type: "Full-Time",
     location: "Custer, SD",
     icon: Sparkles,
@@ -73,7 +74,7 @@ const positions = [
   },
   {
     title: "Merch Coordinator",
-    salary: "$145K+",
+    salary: "$145K - $155K",
     type: "Full-Time",
     location: "Custer, SD",
     icon: ShoppingBag,
@@ -82,7 +83,7 @@ const positions = [
   },
   {
     title: "Campus Host",
-    salary: "$145K+",
+    salary: "$145K - $150K",
     type: "Full-Time",
     location: "Custer, SD",
     icon: UserCheck,
@@ -91,7 +92,7 @@ const positions = [
   },
   {
     title: "Prep Cook",
-    salary: "$145K+",
+    salary: "$145K - $150K",
     type: "Full-Time",
     location: "Custer, SD",
     icon: UtensilsCrossed,
@@ -177,6 +178,12 @@ const benefitCategories = [
         title: "VIP Tourism Access",
         description:
           "Deadwood, Sturgis, and Black Hills adventures. This is your backyard.",
+      },
+      {
+        icon: Car,
+        title: "$1,500/mo Car Allowance",
+        description:
+          "Field reps and campus roles get a monthly vehicle stipend. Drive the Black Hills on us.",
       },
     ],
   },
@@ -310,6 +317,41 @@ export default function CareersPage() {
               >
                 Apply Now
               </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Cost-of-Living Comparison */}
+      <section className="bg-amber/5 px-6 py-12 border-y border-amber/20">
+        <div className="mx-auto max-w-4xl">
+          <FadeIn>
+            <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-amber/10">
+                  <TrendingUp className="h-7 w-7 text-amber" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-espresso">
+                    $145K here = $210K+ in Denver or Austin
+                  </h3>
+                  <p className="mt-1 text-warm-gray">
+                    Median home price in Custer: <span className="font-semibold text-espresso">$285K</span> vs{" "}
+                    <span className="font-semibold text-espresso">$550K+</span> in major tech hubs.
+                    Your dollar goes further. Your quality of life goes through the roof.
+                  </p>
+                </div>
+              </div>
+              <div className="flex shrink-0 gap-4 text-center">
+                <div className="rounded-xl border border-amber/20 bg-white px-5 py-3">
+                  <div className="text-2xl font-bold text-amber">45%</div>
+                  <div className="text-xs text-warm-gray">Lower cost<br />of living</div>
+                </div>
+                <div className="rounded-xl border border-amber/20 bg-white px-5 py-3">
+                  <div className="text-2xl font-bold text-amber">0</div>
+                  <div className="text-xs text-warm-gray">State income<br />tax</div>
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>
