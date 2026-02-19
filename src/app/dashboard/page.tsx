@@ -4,20 +4,30 @@ import { getEntitySummary, getCrmStats, getEntityFinancial } from "@/lib/db/dash
 import OverviewClient from "./_components/overview-client"
 
 export default async function DashboardPage() {
-  const [entitySummary, crmStats, entityFinancial] = await Promise.all([
-    getEntitySummary(),
-    getCrmStats(),
-    getEntityFinancial("the-op"),
-  ])
+  let crmAccountCount = 0
+  let entityMetrics: Array<{ metric_type: string; metric_value: string }> = []
+  let entityFinancial = null
 
-  // Filter metrics relevant to the_op
-  const entityMetrics = entitySummary
-    .filter((e) => e.entity_name === "the_op")
-    .map((e) => ({ metric_type: e.metric_type, metric_value: e.metric_value }))
+  try {
+    const [entitySummary, crmStats, financial] = await Promise.all([
+      getEntitySummary(),
+      getCrmStats(),
+      getEntityFinancial("the-op"),
+    ])
+
+    entityMetrics = entitySummary
+      .filter((e) => e.entity_name === "the_op")
+      .map((e) => ({ metric_type: e.metric_type, metric_value: e.metric_value }))
+
+    crmAccountCount = crmStats.total_accounts
+    entityFinancial = financial
+  } catch (err) {
+    console.error("Dashboard data fetch failed:", err)
+  }
 
   return (
     <OverviewClient
-      crmAccountCount={crmStats.total_accounts}
+      crmAccountCount={crmAccountCount}
       entityMetrics={entityMetrics}
       entityFinancial={entityFinancial}
     />
