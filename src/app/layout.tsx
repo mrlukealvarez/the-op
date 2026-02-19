@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://the-op.vercel.app'),
   title: {
     default: "THE OP — Where the Black Hills Come Together",
     template: "%s | THE OP",
