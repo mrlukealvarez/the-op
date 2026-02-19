@@ -4,12 +4,25 @@ import { getEntityFinancial, getCrmStats, getCafeStats, getCafeSales } from "@/l
 import IntelClient from "./intel-client"
 
 export default async function IntelPage() {
-  const [entityFinancial, crmStats, cafeStats, cafeSales] = await Promise.all([
-    getEntityFinancial("the-op"),
-    getCrmStats(),
-    getCafeStats(),
-    getCafeSales(90),
-  ])
+  let entityFinancial = null
+  let crmStats = { total_accounts: 0, total_opportunities: 0, total_contacts: 0 }
+  let cafeStats = null
+  let cafeSales: any[] | null = null
+
+  try {
+    const [ef, cs, cas, sal] = await Promise.all([
+      getEntityFinancial("the-op"),
+      getCrmStats(),
+      getCafeStats(),
+      getCafeSales(90),
+    ])
+    entityFinancial = ef
+    crmStats = cs
+    cafeStats = cas
+    cafeSales = sal
+  } catch (error) {
+    console.error("Dashboard data fetch failed:", error)
+  }
 
   return (
     <IntelClient
