@@ -4,6 +4,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, User, ArrowRight } from "lucide-react";
+import { AudioPlayer } from "@/components/audio-player";
 import { FadeIn, StaggerContainer, StaggerItem, WarmGlow } from "@/components/motion";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
@@ -80,6 +81,15 @@ export default function BlogPostPage({
           </FadeIn>
         </div>
       </section>
+
+      {/* Audio Player */}
+      {post.audioUrl && (
+        <section className="border-t border-espresso/10 px-6 py-6">
+          <div className="mx-auto max-w-3xl">
+            <AudioPlayer src={post.audioUrl} title={`Listen: ${post.title}`} />
+          </div>
+        </section>
+      )}
 
       {/* Article Content */}
       <section className="border-t border-espresso/10 px-6 py-12 sm:py-16">

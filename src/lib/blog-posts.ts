@@ -7,6 +7,7 @@ export interface BlogPost {
   category: "Culture" | "Community" | "Business";
   readTime: string;
   content: string;
+  audioUrl?: string;
 }
 
 export const blogPosts: BlogPost[] = [
