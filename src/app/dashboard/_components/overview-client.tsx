@@ -13,10 +13,10 @@ import { Coffee, DollarSign, Users, Clock, TrendingUp, Database } from "lucide-r
 /* ─── KPI Card Component ─── */
 function KPICard({ icon, label, value, sub }: { icon: React.ReactNode; label: string; value: string; sub: string }) {
   return (
-    <div className="rounded-xl border border-cream/10 bg-cream/5 p-4">
+    <div className="rounded-xl border border-cream/15 bg-cream/5 p-5">
       <div className="flex items-center gap-2">
         {icon}
-        <span className="text-xs uppercase tracking-wider text-warm-gray-light">{label}</span>
+        <span className="text-sm uppercase tracking-wider text-cream/80">{label}</span>
       </div>
       <p className="mt-2 font-mono text-2xl font-bold text-cream">{value}</p>
       <p className="mt-1 text-xs text-amber">{sub}</p>
@@ -139,7 +139,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-cream">Cafe Overview</h1>
-        <p className="mt-2 text-warm-gray-light">
+        <p className="mt-2 text-cream/80">
           Living Room of the Empire — Real-time metrics
         </p>
       </div>
@@ -148,7 +148,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       {crmAccountCount > 0 && (
         <div className="flex items-center gap-3 rounded-xl border border-amber/20 bg-amber/5 px-4 py-3">
           <Database className="h-5 w-5 text-amber" />
-          <p className="text-sm text-warm-gray-light">
+          <p className="text-sm text-cream/80">
             Connected to live CRM — <span className="font-semibold text-amber">{crmAccountCount.toLocaleString()}</span> accounts in database
           </p>
         </div>
@@ -195,38 +195,38 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Daypart Economics */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-6 text-xl font-bold text-cream">Daypart Economics</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-cream/10">
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Daypart</th>
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Hours</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Customers</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Avg Ticket</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Daily Rev</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Annual Rev</th>
+              <tr className="border-b border-cream/25">
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">Daypart</th>
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">Hours</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Customers</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Avg Ticket</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Daily Rev</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Annual Rev</th>
               </tr>
             </thead>
             <tbody>
               {daypartData.map((row) => (
-                <tr key={row.daypart} className="border-b border-cream/5">
-                  <td className="py-3 font-medium text-cream">{row.daypart}</td>
-                  <td className="py-3 text-warm-gray-light">{row.hours}</td>
-                  <td className="py-3 text-right font-mono text-cream">{row.customers}</td>
-                  <td className="py-3 text-right font-mono text-cream">{row.avgTicket}</td>
-                  <td className="py-3 text-right font-mono text-cream">{row.dailyRev}</td>
-                  <td className="py-3 text-right font-mono text-cream">{row.annualRev}</td>
+                <tr key={row.daypart} className="border-b border-cream/15 even:bg-cream/5">
+                  <td className="py-3 px-4 font-medium text-cream">{row.daypart}</td>
+                  <td className="py-3 px-4 text-cream/80">{row.hours}</td>
+                  <td className="py-3 px-4 text-right font-mono text-cream">{row.customers}</td>
+                  <td className="py-3 px-4 text-right font-mono text-cream">{row.avgTicket}</td>
+                  <td className="py-3 px-4 text-right font-mono text-cream">{row.dailyRev}</td>
+                  <td className="py-3 px-4 text-right font-mono text-cream">{row.annualRev}</td>
                 </tr>
               ))}
-              <tr className="border-t border-cream/20">
-                <td className="py-3 font-bold text-cream">Total</td>
-                <td className="py-3 text-warm-gray-light"></td>
-                <td className="py-3 text-right font-mono font-bold text-cream">80</td>
-                <td className="py-3 text-right font-mono font-bold text-cream">$10.09</td>
-                <td className="py-3 text-right font-mono font-bold text-cream">$808</td>
-                <td className="py-3 text-right font-mono font-bold text-amber">$282K</td>
+              <tr className="border-t border-cream/25">
+                <td className="py-3 px-4 font-bold text-cream">Total</td>
+                <td className="py-3 px-4 text-cream/80"></td>
+                <td className="py-3 px-4 text-right font-mono font-bold text-cream">80</td>
+                <td className="py-3 px-4 text-right font-mono font-bold text-cream">$10.09</td>
+                <td className="py-3 px-4 text-right font-mono font-bold text-cream">$808</td>
+                <td className="py-3 px-4 text-right font-mono font-bold text-amber">$282K</td>
               </tr>
             </tbody>
           </table>
@@ -234,7 +234,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Menu Economics */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-6 text-xl font-bold text-cream">Menu Economics</h2>
         <div className="space-y-4">
           {menuEconomics.map((item) => (
@@ -248,7 +248,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
                   {item.margin}%
                 </span>
               </div>
-              <p className="mt-1 text-xs text-warm-gray-light">{item.why}</p>
+              <p className="mt-1 text-xs text-cream/80">{item.why}</p>
               <div className="mt-2 h-2 overflow-hidden rounded-full bg-espresso-light">
                 <div
                   className={`h-full rounded-full ${item.star ? "bg-green-400" : "bg-amber"}`}
@@ -261,7 +261,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Revenue by Category */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-6 text-xl font-bold text-cream">
           Revenue by Category
         </h2>
@@ -289,7 +289,7 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Monthly Foot Traffic */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-6 text-xl font-bold text-cream">
           Monthly Foot Traffic Projection
         </h2>
@@ -316,30 +316,30 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* P&L Table (Y1-Y5) */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-6 text-xl font-bold text-cream">P&L Projection (Y1-Y5)</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-cream/10">
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Metric</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y1</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y2</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y3</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y4</th>
-                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y5</th>
+              <tr className="border-b border-cream/25">
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">Metric</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Y1</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Y2</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Y3</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Y4</th>
+                <th className="py-3 px-4 text-right text-sm uppercase tracking-wider text-cream/80">Y5</th>
               </tr>
             </thead>
             <tbody>
               {pnlData.map((row) => (
-                <tr key={row.metric} className="border-b border-cream/5">
-                  <td className={`py-3 font-medium ${row.highlight ? "font-bold text-cream" : "text-cream"}`}>
+                <tr key={row.metric} className="border-b border-cream/15 even:bg-cream/5">
+                  <td className={`py-3 px-4 font-medium ${row.highlight ? "font-bold text-cream" : "text-cream"}`}>
                     {row.metric}
                   </td>
                   {[row.y1, row.y2, row.y3, row.y4, row.y5].map((val, i) => (
                     <td
                       key={i}
-                      className={`py-3 text-right font-mono ${
+                      className={`py-3 px-4 text-right font-mono ${
                         row.highlight === "green"
                           ? "font-bold text-green-400"
                           : row.highlight === "amber"
@@ -358,18 +358,18 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Living Room of the Empire — Flywheel */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-4 text-xl font-bold text-cream">
           Living Room of the Empire
         </h2>
-        <p className="mb-6 text-sm text-warm-gray-light">
+        <p className="mb-6 text-sm text-cream/80">
           THE OP sits at the center of the BHC flywheel — every entity benefits from foot traffic here.
         </p>
         <div className="space-y-3">
           {flywheelCards.map((card, i) => (
             <div
               key={i}
-              className="rounded-lg border border-amber/10 bg-amber/5 px-4 py-3"
+              className="rounded-lg border border-amber/15 bg-amber/5 px-4 py-3"
             >
               <p className="text-sm text-cream">{card.text}</p>
             </div>
@@ -378,26 +378,26 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
       </div>
 
       {/* Competitive Position */}
-      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+      <div className="rounded-2xl border border-cream/15 bg-cream/5 p-6">
         <h2 className="mb-2 text-xl font-bold text-cream">Competitive Position</h2>
-        <p className="mb-6 text-sm text-warm-gray-light">
+        <p className="mb-6 text-sm text-cream/80">
           THE OP: <span className="font-semibold text-amber">8am-9pm, Mon-Sun (91 hrs/week)</span> — most hours in Custer
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-cream/10">
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Competitor</th>
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Hours</th>
-                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">THE OP Advantage</th>
+              <tr className="border-b border-cream/25">
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">Competitor</th>
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">Hours</th>
+                <th className="py-3 px-4 text-left text-sm uppercase tracking-wider text-cream/80">THE OP Advantage</th>
               </tr>
             </thead>
             <tbody>
               {competitors.map((c) => (
-                <tr key={c.name} className="border-b border-cream/5">
-                  <td className="py-3 font-medium text-cream">{c.name}</td>
-                  <td className="py-3 text-warm-gray-light">{c.hours}</td>
-                  <td className="py-3 font-semibold text-green-400">{c.advantage}</td>
+                <tr key={c.name} className="border-b border-cream/15 even:bg-cream/5">
+                  <td className="py-3 px-4 font-medium text-cream">{c.name}</td>
+                  <td className="py-3 px-4 text-cream/80">{c.hours}</td>
+                  <td className="py-3 px-4 font-semibold text-green-400">{c.advantage}</td>
                 </tr>
               ))}
             </tbody>
