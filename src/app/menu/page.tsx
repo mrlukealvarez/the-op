@@ -6,7 +6,6 @@ import {
   StaggerItem,
   WarmGlow,
   AmberShimmer,
-  SlideIn,
   ScaleReveal,
 } from "@/components/motion";
 
@@ -124,7 +123,7 @@ export default function MenuPage() {
           <div className="space-y-20">
             {categories.map((cat, i) => (
               <div key={cat.title}>
-                <SlideIn direction={i % 2 === 0 ? "left" : "right"}>
+                <FadeIn direction={i % 2 === 0 ? "left" : "right"}>
                   <div className="mb-8 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-espresso/10">
                       <cat.icon className="h-5 w-5 text-espresso" />
@@ -134,7 +133,7 @@ export default function MenuPage() {
                       <p className="text-sm text-warm-gray">{cat.description}</p>
                     </div>
                   </div>
-                </SlideIn>
+                </FadeIn>
 
                 <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {cat.items.map((item) => (

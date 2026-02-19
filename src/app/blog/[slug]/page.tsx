@@ -4,7 +4,7 @@ import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, User, ArrowRight } from "lucide-react";
-import { FadeIn, SlideIn, StaggerContainer, StaggerItem, WarmGlow } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, WarmGlow } from "@/components/motion";
 import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 
 const categoryColors: Record<string, string> = {
@@ -84,7 +84,7 @@ export default function BlogPostPage({
       {/* Article Content */}
       <section className="border-t border-espresso/10 px-6 py-12 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <SlideIn direction="left" delay={0.1}>
+          <FadeIn direction="left" delay={0.1}>
             <article className="space-y-6">
               {paragraphs.map((paragraph, i) => (
                 <p
@@ -95,7 +95,7 @@ export default function BlogPostPage({
                 </p>
               ))}
             </article>
-          </SlideIn>
+          </FadeIn>
         </div>
       </section>
 

@@ -13,7 +13,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  SlideIn,
   CountUp,
   AmberShimmer,
   ParallaxSection,

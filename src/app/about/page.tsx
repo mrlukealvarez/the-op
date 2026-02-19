@@ -3,7 +3,6 @@ import Link from "next/link";
 import { MapPin, Mountain, Coffee, Leaf, Building, Users } from "lucide-react";
 import {
   FadeIn,
-  SlideIn,
   StaggerContainer,
   StaggerItem,
   CountUp,
@@ -79,7 +78,7 @@ export default function AboutPage() {
       {/* Origin Story */}
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
-          <SlideIn direction="left">
+          <FadeIn direction="left">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-espresso">
                 The Origin
@@ -108,8 +107,8 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </SlideIn>
-          <SlideIn direction="right" delay={0.2}>
+          </FadeIn>
+          <FadeIn direction="right" delay={0.2}>
             <div className="flex items-center justify-center rounded-2xl bg-espresso/5 p-12">
               <div className="text-center">
                 <MapPin className="mx-auto mb-4 h-12 w-12 text-amber" />
@@ -135,7 +134,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </SlideIn>
+          </FadeIn>
         </div>
       </section>
 

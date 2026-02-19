@@ -10,29 +10,49 @@ import {
 } from "framer-motion";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
-const fadeInVariants: Variants = {
+const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-const slideInLeftVariants: Variants = {
+const fadeInDownVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeInLeftVariants: Variants = {
   hidden: { opacity: 0, x: -40 },
   visible: { opacity: 1, x: 0 },
 };
 
-const slideInRightVariants: Variants = {
+const fadeInRightVariants: Variants = {
   hidden: { opacity: 0, x: 40 },
   visible: { opacity: 1, x: 0 },
+};
+
+const fadeInVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const variantMap = {
+  up: fadeInUpVariants,
+  down: fadeInDownVariants,
+  left: fadeInLeftVariants,
+  right: fadeInRightVariants,
+  none: fadeInVariants,
 };
 
 export function FadeIn({
   children,
   className,
   delay = 0,
+  direction = "up",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  direction?: "up" | "down" | "left" | "right" | "none";
 }) {
   const shouldReduceMotion = useReducedMotion();
   if (shouldReduceMotion) {
@@ -45,36 +65,7 @@ export function FadeIn({
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      variants={fadeInVariants}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-export function SlideIn({
-  children,
-  className,
-  direction = "left",
-  delay = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  direction?: "left" | "right";
-  delay?: number;
-}) {
-  const shouldReduceMotion = useReducedMotion();
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-  return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      variants={direction === "left" ? slideInLeftVariants : slideInRightVariants}
+      variants={variantMap[direction]}
     >
       {children}
     </motion.div>
@@ -121,7 +112,7 @@ export function StaggerItem({
   return (
     <motion.div
       className={className}
-      variants={fadeInVariants}
+      variants={fadeInUpVariants}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       {children}
