@@ -638,7 +638,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-3xl">
           <FadeIn>
             <p className="text-warm-gray">
-              THE OP is one of 11 companies in the Black Hills Consortium. Your
+              THE OP is one of 13 companies in the Black Hills Consortium. Your
               work here feeds the flywheel — a thriving cafe drives campus foot
               traffic, foot traffic drives events, events drive investment,
               investment builds the community.

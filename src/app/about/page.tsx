@@ -222,7 +222,7 @@ export default function AboutPage() {
               Part of Black Hills Consortium
             </h2>
             <p className="mb-8 text-warm-gray">
-              THE OP is one of 11 entities in the Black Hills Consortium — a
+              THE OP is one of 13 entities in the Black Hills Consortium — a
               $52M initiative to revitalize rural America through technology,
               media, education, and community.
             </p>
