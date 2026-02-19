@@ -8,16 +8,23 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { Database } from "lucide-react"
+import { Coffee, DollarSign, Users, Clock, TrendingUp, Database } from "lucide-react"
 
-const stats = [
-  { name: "Y1 Revenue", value: "$380K", change: "V5 floor projection" },
-  { name: "Daily Customers", value: "80", change: "4 dayparts avg" },
-  { name: "Avg Transaction", value: "$10.09", change: "Blended across menu" },
-  { name: "CRM Accounts", value: "\u2014", change: "Live from database" },
-  { name: "Evening Revenue", value: "$77K/yr", change: "6-9pm monopoly" },
-]
+/* ─── KPI Card Component ─── */
+function KPICard({ icon, label, value, sub }: { icon: React.ReactNode; label: string; value: string; sub: string }) {
+  return (
+    <div className="rounded-xl border border-cream/10 bg-cream/5 p-4">
+      <div className="flex items-center gap-2">
+        {icon}
+        <span className="text-xs uppercase tracking-wider text-warm-gray-light">{label}</span>
+      </div>
+      <p className="mt-2 font-mono text-2xl font-bold text-cream">{value}</p>
+      <p className="mt-1 text-xs text-amber">{sub}</p>
+    </div>
+  )
+}
 
+/* ─── Static Data ─── */
 const revenueByCategory = [
   { name: "Coffee/Drinks", value: 35, fill: "#F59E0B" },
   { name: "Dirty Sodas", value: 15, fill: "#10b981" },
@@ -71,6 +78,46 @@ const pieChartConfig = {
   },
 }
 
+const daypartData = [
+  { daypart: "Morning", hours: "8-11am", customers: 25, avgTicket: "$8.50", dailyRev: "$213", annualRev: "$74K" },
+  { daypart: "Lunch", hours: "11am-2pm", customers: 20, avgTicket: "$12.00", dailyRev: "$240", annualRev: "$84K" },
+  { daypart: "Afternoon", hours: "2-6pm", customers: 15, avgTicket: "$9.00", dailyRev: "$135", annualRev: "$47K" },
+  { daypart: "Evening", hours: "6-9pm", customers: 20, avgTicket: "$11.00", dailyRev: "$220", annualRev: "$77K" },
+]
+
+const menuEconomics = [
+  { category: "Dirty Sodas", margin: 90, why: "Near-zero COGS — cream + syrup already stocked", star: true },
+  { category: "Coffee", margin: 78, why: "Third-wave from Black Hills Coffee" },
+  { category: "Merch", margin: 70, why: "BHC branded + local artisan products" },
+  { category: "Beer/Cider", margin: 65, why: "4 local breweries on tap" },
+  { category: "Food", margin: 55, why: "Local bakery sourcing, counter prep only" },
+]
+
+const pnlData = [
+  { metric: "Revenue", y1: "$380K", y2: "$600K", y3: "$900K", y4: "$1.3M", y5: "$1.9M", highlight: false },
+  { metric: "COGS", y1: "$160K", y2: "$253K", y3: "$380K", y4: "$550K", y5: "$805K", highlight: false },
+  { metric: "Gross Profit", y1: "$220K", y2: "$347K", y3: "$520K", y4: "$750K", y5: "$1.095M", highlight: false },
+  { metric: "OpEx", y1: "$202K", y2: "$254K", y3: "$322K", y4: "$408K", y5: "$506K", highlight: false },
+  { metric: "Net Income", y1: "$18K", y2: "$93K", y3: "$198K", y4: "$342K", y5: "$589K", highlight: "green" },
+  { metric: "Net Margin", y1: "4.7%", y2: "15.5%", y3: "22.0%", y4: "26.3%", y5: "31.0%", highlight: "amber" },
+]
+
+const flywheelCards = [
+  { text: "Remote workers \u2192 THE OP regulars \u2192 content for Outpost Media \u2192 more relocators" },
+  { text: "GrowWise POS live demo \u2192 investors see platform while ordering coffee" },
+  { text: "Tourists (14.9M annual SD visitors) \u2192 merch purchase \u2192 walking billboards nationwide" },
+  { text: "Only evening food/drink in Custer (pop. 2,100) \u2192 monopoly position after 6pm" },
+  { text: "Zero rent on owned campus \u2192 15-20% margin advantage vs. typical cafe" },
+]
+
+const competitors = [
+  { name: "Minder\u2019s Cup", hours: "Tue-Sat, 6:30am-12:30pm", advantage: "+61 extra hours, Mon-Sun" },
+  { name: "Wild Spruce Market", hours: "Mon-Sat 9:30am-6:30pm", advantage: "+33 extra hours, evening monopoly" },
+  { name: "Baker\u2019s Bakery", hours: "6:30am-4pm daily", advantage: "+24.5 extra hours, fills evening gap" },
+  { name: "Calamity Jane\u2019s", hours: "6:30am-2pm daily", advantage: "+38.5 extra hours" },
+]
+
+/* ─── Interfaces ─── */
 interface EntityFinancialData {
   allocation_millions: number
   y1_revenue_millions: number | null
@@ -86,15 +133,7 @@ interface OverviewClientProps {
 }
 
 export default function OverviewClient({ crmAccountCount, entityMetrics, entityFinancial }: OverviewClientProps) {
-  const dynamicStats = stats.map((s) => {
-    if (s.name === "Y1 Revenue") {
-      return { ...s, value: entityFinancial?.y1_revenue_label || s.value, change: entityFinancial ? `$${entityFinancial.allocation_millions}M allocated` : s.change }
-    }
-    if (s.name === "CRM Accounts" && crmAccountCount > 0) {
-      return { ...s, value: crmAccountCount.toLocaleString() }
-    }
-    return s
-  })
+  const y1Label = entityFinancial?.y1_revenue_label || "$380K"
 
   return (
     <div className="space-y-8">
@@ -115,18 +154,110 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
         </div>
       )}
 
-      {/* Stats Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-        {dynamicStats.map((stat) => (
-          <div
-            key={stat.name}
-            className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl"
-          >
-            <p className="text-sm text-warm-gray-light">{stat.name}</p>
-            <p className="mt-2 text-3xl font-bold text-cream">{stat.value}</p>
-            <p className="mt-1 text-xs text-amber">{stat.change}</p>
-          </div>
-        ))}
+      {/* 6 KPI Cards */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <KPICard
+          icon={<Coffee className="h-4 w-4 text-amber" />}
+          label="Y1 Revenue"
+          value={y1Label}
+          sub="Coffee + merch + dirty sodas"
+        />
+        <KPICard
+          icon={<DollarSign className="h-4 w-4 text-amber" />}
+          label="Daily Customers"
+          value="80"
+          sub="4 dayparts"
+        />
+        <KPICard
+          icon={<Users className="h-4 w-4 text-amber" />}
+          label="Avg Transaction"
+          value="$10.09"
+          sub="Blended across menu"
+        />
+        <KPICard
+          icon={<Clock className="h-4 w-4 text-amber" />}
+          label="Evening Revenue"
+          value="$77K/yr"
+          sub="6-9pm monopoly — zero competition"
+        />
+        <KPICard
+          icon={<TrendingUp className="h-4 w-4 text-amber" />}
+          label="Y5 Net Margin"
+          value="31%"
+          sub="$589K net on $1.9M"
+        />
+        <KPICard
+          icon={<Database className="h-4 w-4 text-amber" />}
+          label="CRM Accounts"
+          value={crmAccountCount > 0 ? crmAccountCount.toLocaleString() : "\u2014"}
+          sub="Live from Supabase"
+        />
+      </div>
+
+      {/* Daypart Economics */}
+      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+        <h2 className="mb-6 text-xl font-bold text-cream">Daypart Economics</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-cream/10">
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Daypart</th>
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Hours</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Customers</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Avg Ticket</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Daily Rev</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Annual Rev</th>
+              </tr>
+            </thead>
+            <tbody>
+              {daypartData.map((row) => (
+                <tr key={row.daypart} className="border-b border-cream/5">
+                  <td className="py-3 font-medium text-cream">{row.daypart}</td>
+                  <td className="py-3 text-warm-gray-light">{row.hours}</td>
+                  <td className="py-3 text-right font-mono text-cream">{row.customers}</td>
+                  <td className="py-3 text-right font-mono text-cream">{row.avgTicket}</td>
+                  <td className="py-3 text-right font-mono text-cream">{row.dailyRev}</td>
+                  <td className="py-3 text-right font-mono text-cream">{row.annualRev}</td>
+                </tr>
+              ))}
+              <tr className="border-t border-cream/20">
+                <td className="py-3 font-bold text-cream">Total</td>
+                <td className="py-3 text-warm-gray-light"></td>
+                <td className="py-3 text-right font-mono font-bold text-cream">80</td>
+                <td className="py-3 text-right font-mono font-bold text-cream">$10.09</td>
+                <td className="py-3 text-right font-mono font-bold text-cream">$808</td>
+                <td className="py-3 text-right font-mono font-bold text-amber">$282K</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Menu Economics */}
+      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+        <h2 className="mb-6 text-xl font-bold text-cream">Menu Economics</h2>
+        <div className="space-y-4">
+          {menuEconomics.map((item) => (
+            <div key={item.category}>
+              <div className="flex items-center justify-between text-sm">
+                <span className="font-medium text-cream">
+                  {item.category}
+                  {item.star && <span className="ml-2 text-xs text-amber">(star performer)</span>}
+                </span>
+                <span className={`font-mono font-bold ${item.star ? "text-green-400" : "text-amber"}`}>
+                  {item.margin}%
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-warm-gray-light">{item.why}</p>
+              <div className="mt-2 h-2 overflow-hidden rounded-full bg-espresso-light">
+                <div
+                  className={`h-full rounded-full ${item.star ? "bg-green-400" : "bg-amber"}`}
+                  style={{ width: `${item.margin}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Revenue by Category */}
@@ -184,48 +315,93 @@ export default function OverviewClient({ crmAccountCount, entityMetrics, entityF
         </ChartContainer>
       </div>
 
-      {/* Engagement Score */}
+      {/* P&L Table (Y1-Y5) */}
+      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+        <h2 className="mb-6 text-xl font-bold text-cream">P&L Projection (Y1-Y5)</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-cream/10">
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Metric</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y1</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y2</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y3</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y4</th>
+                <th className="pb-3 text-right text-xs uppercase tracking-wider text-warm-gray-light">Y5</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pnlData.map((row) => (
+                <tr key={row.metric} className="border-b border-cream/5">
+                  <td className={`py-3 font-medium ${row.highlight ? "font-bold text-cream" : "text-cream"}`}>
+                    {row.metric}
+                  </td>
+                  {[row.y1, row.y2, row.y3, row.y4, row.y5].map((val, i) => (
+                    <td
+                      key={i}
+                      className={`py-3 text-right font-mono ${
+                        row.highlight === "green"
+                          ? "font-bold text-green-400"
+                          : row.highlight === "amber"
+                            ? "font-bold text-amber"
+                            : "text-cream"
+                      }`}
+                    >
+                      {val}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Living Room of the Empire — Flywheel */}
       <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
         <h2 className="mb-4 text-xl font-bold text-cream">
           Living Room of the Empire
         </h2>
-        <div className="space-y-4">
-          <div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-warm-gray-light">Community Engagement</span>
-              <span className="font-mono text-amber">92/100</span>
+        <p className="mb-6 text-sm text-warm-gray-light">
+          THE OP sits at the center of the BHC flywheel — every entity benefits from foot traffic here.
+        </p>
+        <div className="space-y-3">
+          {flywheelCards.map((card, i) => (
+            <div
+              key={i}
+              className="rounded-lg border border-amber/10 bg-amber/5 px-4 py-3"
+            >
+              <p className="text-sm text-cream">{card.text}</p>
             </div>
-            <div className="mt-2 h-2 overflow-hidden rounded-full bg-espresso-light">
-              <div
-                className="h-full bg-amber"
-                style={{ width: "92%" }}
-              ></div>
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-warm-gray-light">Settle the West Referrals</span>
-              <span className="font-mono text-amber">87/100</span>
-            </div>
-            <div className="mt-2 h-2 overflow-hidden rounded-full bg-espresso-light">
-              <div
-                className="h-full bg-amber"
-                style={{ width: "87%" }}
-              ></div>
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-warm-gray-light">Local Business Partnerships</span>
-              <span className="font-mono text-amber">95/100</span>
-            </div>
-            <div className="mt-2 h-2 overflow-hidden rounded-full bg-espresso-light">
-              <div
-                className="h-full bg-amber"
-                style={{ width: "95%" }}
-              ></div>
-            </div>
-          </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Competitive Position */}
+      <div className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur-xl">
+        <h2 className="mb-2 text-xl font-bold text-cream">Competitive Position</h2>
+        <p className="mb-6 text-sm text-warm-gray-light">
+          THE OP: <span className="font-semibold text-amber">8am-9pm, Mon-Sun (91 hrs/week)</span> — most hours in Custer
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-cream/10">
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Competitor</th>
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">Hours</th>
+                <th className="pb-3 text-left text-xs uppercase tracking-wider text-warm-gray-light">THE OP Advantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {competitors.map((c) => (
+                <tr key={c.name} className="border-b border-cream/5">
+                  <td className="py-3 font-medium text-cream">{c.name}</td>
+                  <td className="py-3 text-warm-gray-light">{c.hours}</td>
+                  <td className="py-3 font-semibold text-green-400">{c.advantage}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
