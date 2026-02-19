@@ -18,7 +18,7 @@ interface IntelClientProps {
 // ── Static Data from Sprint 138 Pricing Model ──────────────────────
 
 const kpiCards = [
-  { label: "Y1 Revenue", value: "$380K", sub: "V5 floor", accent: "text-amber" },
+  { label: "Y1 Revenue", value: "$490K", sub: "V6 floor", accent: "text-amber" },
   { label: "Y5 Revenue", value: "$1.9M", sub: "65% gross margin", accent: "text-green-400" },
   { label: "Daily Customers", value: "80", sub: "4 dayparts", accent: "text-amber" },
   { label: "Avg Transaction", value: "$10.09", sub: "Blended", accent: "text-amber" },
@@ -142,7 +142,7 @@ export default function IntelClient({ entityFinancial, crmStats, cafeStats, rece
       <div>
         <h1 className="text-3xl font-bold text-cream">Intel Command Center</h1>
         <p className="mt-2 text-warm-gray-light">
-          GTM intelligence -- financial-model.ts (V5 floor) + live Supabase data
+          GTM intelligence -- financial-model.ts (V6 floor) + live Supabase data
         </p>
       </div>
 
