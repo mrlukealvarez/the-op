@@ -13,6 +13,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "the-friendly-stop-on-the-way-to-everything",
+    audioUrl: "/audio/the-friendly-stop-on-the-way-to-everything.mp3",
     title: "The Friendly Stop on the Way to Everything",
     date: "2026-02-07",
     author: "Luke Alvarez",
@@ -40,6 +41,7 @@ The Black Hills have always been a place people pass through. THE OP is where th
   },
   {
     slug: "why-every-town-needs-a-third-place",
+    audioUrl: "/audio/why-every-town-needs-a-third-place.mp3",
     title: "Why Every Town Needs a Third Place",
     date: "2026-02-04",
     author: "THE OP Team",
@@ -71,6 +73,7 @@ Every town needs a third place. Custer's is THE OP.`,
   },
   {
     slug: "local-first-everything-within-50-miles",
+    audioUrl: "/audio/local-first-everything-within-50-miles.mp3",
     title: "Local First: Everything Within 50 Miles",
     date: "2026-02-01",
     author: "Luke Alvarez",
