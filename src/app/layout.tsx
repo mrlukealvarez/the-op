@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -63,6 +64,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <OrganizationJsonLd
+          name="THE OP"
+          url="https://the-op.vercel.app"
+          description="Cannabis-adjacent cafe and community anchor in Custer, South Dakota"
+          parentOrg="Black Hills Consortium"
+        />
+        <WebSiteJsonLd name="THE OP" url="https://the-op.vercel.app" />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
