@@ -18,10 +18,11 @@ export function CareersForm() {
           <Send className="h-8 w-8 text-amber" />
         </div>
         <h3 className="mb-2 text-xl font-bold text-espresso">
-          Application Submitted!
+          You&apos;re on the List!
         </h3>
         <p className="text-warm-gray">
-          Thanks! We&apos;ll watch your video and reach out within 48 hours.
+          We&apos;ll reach out when the cafe doors open and hiring begins.
+          Until then, follow us for build-out updates.
         </p>
       </div>
     );
@@ -65,13 +66,13 @@ export function CareersForm() {
         </div>
       </div>
 
-      {/* Role */}
+      {/* Role Interest */}
       <div>
         <label
           htmlFor="role"
           className="mb-2 block text-sm font-medium text-espresso"
         >
-          Role
+          Role Interest
         </label>
         <select
           id="role"
@@ -80,66 +81,45 @@ export function CareersForm() {
           className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
         >
           <option value="">Select a role...</option>
-          <option value="cafe-manager">Cafe Manager</option>
-          <option value="lead-barista">Lead Barista</option>
-          <option value="merch-coordinator">Merch Coordinator</option>
-          <option value="campus-host">Campus Host</option>
-          <option value="prep-cook">Prep Cook</option>
+          <option value="general-manager">General Manager</option>
+          <option value="head-barista">Head Barista</option>
+          <option value="barista">Barista</option>
           <option value="general">General Interest</option>
         </select>
       </div>
 
-      {/* Portfolio URL */}
+      {/* Location */}
       <div>
         <label
-          htmlFor="portfolio"
+          htmlFor="location"
           className="mb-2 block text-sm font-medium text-espresso"
         >
-          Portfolio URL
-        </label>
-        <input
-          type="url"
-          id="portfolio"
-          name="portfolio"
-          required
-          className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso placeholder-warm-gray-light focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-          placeholder="Your website, LinkedIn, Behance, or any link to your work"
-        />
-      </div>
-
-      {/* Video Introduction URL */}
-      <div>
-        <label
-          htmlFor="video"
-          className="mb-2 block text-sm font-medium text-espresso"
-        >
-          Video Introduction URL
-        </label>
-        <input
-          type="url"
-          id="video"
-          name="video"
-          required
-          className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso placeholder-warm-gray-light focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-          placeholder="Loom, YouTube unlisted, or Google Drive link (60-90 sec)"
-        />
-      </div>
-
-      {/* Preferred Meeting Link */}
-      <div>
-        <label
-          htmlFor="meeting"
-          className="mb-2 block text-sm font-medium text-espresso"
-        >
-          Preferred Meeting Link
+          Current Location
         </label>
         <input
           type="text"
-          id="meeting"
-          name="meeting"
+          id="location"
+          name="location"
           required
           className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso placeholder-warm-gray-light focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-          placeholder="Calendly, Cal.com, or 'I'll email times'"
+          placeholder="City, State (e.g. Custer, SD)"
+        />
+      </div>
+
+      {/* Experience */}
+      <div>
+        <label
+          htmlFor="experience"
+          className="mb-2 block text-sm font-medium text-espresso"
+        >
+          Relevant Experience
+        </label>
+        <textarea
+          id="experience"
+          name="experience"
+          rows={3}
+          className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso placeholder-warm-gray-light focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
+          placeholder="Tell us about your coffee, hospitality, or management experience..."
         />
       </div>
 
@@ -149,14 +129,14 @@ export function CareersForm() {
           htmlFor="message"
           className="mb-2 block text-sm font-medium text-espresso"
         >
-          Brief Message <span className="text-warm-gray-light">(optional)</span>
+          Anything Else? <span className="text-warm-gray-light">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={3}
           className="w-full rounded-lg border border-espresso/10 bg-white px-4 py-3 text-espresso placeholder-warm-gray-light focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/20"
-          placeholder="Anything else you'd like us to know..."
+          placeholder="Why you want to work at THE OP..."
         />
       </div>
 
@@ -165,7 +145,7 @@ export function CareersForm() {
         type="submit"
         className="w-full rounded-full bg-espresso px-8 py-4 font-semibold text-cream transition-colors hover:bg-espresso/90"
       >
-        Submit Application
+        Join the Waitlist
       </button>
     </form>
   );
