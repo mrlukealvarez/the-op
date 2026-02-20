@@ -71,6 +71,11 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 border-t border-cream/10 pt-8 flex flex-col items-center gap-4 text-xs text-cream/40">
+          <div className="flex items-center gap-4">
+            <Link href="/terms" className="hover:text-amber transition-colors">Terms of Service</Link>
+            <span>&middot;</span>
+            <Link href="/privacy" className="hover:text-amber transition-colors">Privacy Policy</Link>
+          </div>
           <div className="flex flex-col items-center gap-2">
             <span className="text-[10px] text-cream/30 uppercase tracking-wider">Built With</span>
             <div className="flex items-center gap-2.5">
