@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/json-ld";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <SiteFooter />
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       </body>
     </html>
   );
