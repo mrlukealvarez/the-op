@@ -15,7 +15,7 @@ THE OP LLC is a community coffee shop and campus merchandise counter on the Grow
 - Merch counter (BHC branded apparel, local artisan goods, tourist souvenirs)
 - Drive-through window for grab-and-go tourists
 - Employee perks profit center (food/beverage/merch as BHC employee benefits)
-- GrowWise POS live demo for investor campus tours
+- FlowBot POS live demo for investor campus tours
 
 **What THE OP is NOT:**
 
@@ -94,7 +94,7 @@ Sources: the-op-brief.md, the-op-pricing-model.md
 2. **Tourist drive-through capture** — 14.9M annual SD visitors, 2M+ past campus via Custer State Park — drive-through window for grab-and-go traffic
 3. **BHC employee perks** — 51 employees Y1 → 175 Y5 as regular customers — 30% discount + free coffee/snacks as company benefits
 4. **Social/YouTube/podcast via The Session** — Dedicated Instagram, TikTok, Facebook + "High Culture" YouTube channel + podcast (community stories, relocator first-coffee interviews)
-5. **GrowWise POS demo environment** — Investor tours see platform running live while ordering coffee — "Your coffee order just ran through the platform we're pitching"
+5. **FlowBot POS demo environment** — Investor tours see platform running live while ordering coffee — "Your coffee order just ran through the platform we're pitching"
 6. **QR charity round-up** — Coffee sleeves have QR code linking to Seed Foundation + BHC donation pages + POS prompts "Round up to nearest dollar for BHC?" at checkout
 
 Sources: the-op-brief.md
@@ -139,10 +139,10 @@ Sources: the-op-brief.md, the-op-pricing-model.md
 - **Employee perks model:** F&B + merch as BHC employee benefits — fully deductible
 - **$2/transaction charitable floor:** $1.50 Seed Foundation + $0.50 BHC per transaction
 - **Charity QR on coffee sleeve:** Every cup has a QR code linking to Seed Foundation + BHC donation pages — passive fundraising with every coffee sold
-- **POS round-up donation:** GrowWise POS prompts "Round up to the nearest dollar for BHC?" at checkout — classic charity round-up model, also demos GrowWise charitable integration for visiting investors
+- **POS round-up donation:** FlowBot POS prompts "Round up to the nearest dollar for BHC?" at checkout — classic charity round-up model, also demos FlowBot charitable integration for visiting investors
 - **Drive-through:** Captures grab-and-go tourist traffic
 - **Everything Is Content:** Outpost Media produces zero-CAC marketing content
-- **GrowWise live demo:** POS runs on GrowWise — investors see platform while ordering coffee
+- **FlowBot live demo:** POS runs on FlowBot — investors see platform while ordering coffee
 - **Rotating local roster:** Coffee roasters and craft beer/cider rotate constantly — no two visits the same. Every VC, celebrity, or tourist gets a different experience. Cycle through Black Hills roasters (Black Hills Coffee, etc.) and local breweries (Miner, Sawyer, etc.) so the menu is always fresh and uniquely local.
 
 ---
@@ -158,7 +158,7 @@ Sources: the-op-brief.md, the-op-pricing-model.md
 
 ### PROVIDES TO ECOSYSTEM
 
-- **GrowWise POS live demo:** Zero marketing cost — investors see platform running in real-world coffee shop environment
+- **FlowBot POS live demo:** Zero marketing cost — investors see platform running in real-world coffee shop environment
 - **Community anchor:** Friendly local spot where construction workers and software developers grab morning coffee (breaks down "us vs. them")
 - **Content for Outpost Media:** Every latte art photo, every supplier story, every customer feature becomes evergreen content for High Culture channel
 - **Merch revenue:** BHC-branded apparel sales = brand awareness + revenue (tourists wearing BHC shirts across the country)

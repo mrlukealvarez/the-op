@@ -103,7 +103,7 @@ const whyItems = [
     icon: Heart,
     title: "The BHC Flywheel",
     description:
-      "Every BHC entity drives traffic to THE OP. GrowWise employees, Outpost Media crews, Seed Academy students, and Settle the West relocates all converge here.",
+      "Every BHC entity drives traffic to THE OP. FlowBot employees, Outpost Media crews, Seed Academy students, and Settle the West relocates all converge here.",
   },
 ];
 

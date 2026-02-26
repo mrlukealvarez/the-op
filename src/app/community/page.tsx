@@ -42,9 +42,9 @@ export const metadata: Metadata = {
 const ecosystemConnections = [
   {
     icon: Laptop,
-    entity: "GrowWise",
+    entity: "FlowBot",
     connection:
-      "GrowWise employees eat, meet, and work from THE OP daily. Team standup spot.",
+      "FlowBot employees eat, meet, and work from THE OP daily. Team standup spot.",
   },
   {
     icon: Tv,
@@ -178,7 +178,7 @@ export default function CommunityPage() {
               barbershop. THE OP is that for the entire Black Hills region.
             </p>
             <p className="leading-relaxed text-warm-gray">
-              When a GrowWise engineer needs a break, they walk to THE OP. When
+              When a FlowBot engineer needs a break, they walk to THE OP. When
               Outpost Media needs a location, they set up at THE OP. When a new
               family arrives through Settle the West, their welcome packet
               includes a free drink at THE OP. When an investor visits the

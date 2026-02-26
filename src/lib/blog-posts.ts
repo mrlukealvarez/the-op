@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     content: `South Dakota draws 14.9 million visitors a year. Two million of them drive right past the Grow Campus on the way to Custer State Park. THE OP is the coffee stop they did not know they needed.
 
-The name "THE OP" is short for "outpost." It reflects our location — a frontier town at the edge of one of America's most remarkable landscapes — and our identity within the Black Hills Consortium ecosystem. THE OP is the living room of the Grow Campus. The place where GrowWise engineers take their afternoon coffee break. Where Seed Academy students decompress after class. Where Outpost Media producers plan their next episode. Where tourists wander in, curious about the campus, and leave wondering how to move here.
+The name "THE OP" is short for "outpost." It reflects our location — a frontier town at the edge of one of America's most remarkable landscapes — and our identity within the Black Hills Consortium ecosystem. THE OP is the living room of the Grow Campus. The place where FlowBot engineers take their afternoon coffee break. Where Seed Academy students decompress after class. Where Outpost Media producers plan their next episode. Where tourists wander in, curious about the campus, and leave wondering how to move here.
 
 Think Wild Spruce Market in Custer — a charming stop where tourists grab coffee, browse local goods, and take a breath before continuing their journey. That is THE OP, but on a tech campus surrounded by pines with views of the Black Hills.
 

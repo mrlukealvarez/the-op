@@ -223,7 +223,7 @@ export default function EventsPage() {
               </div>
             </div>
             <p className="mt-6 text-sm text-warm-gray leading-relaxed max-w-3xl">
-              Every visitor to THE OP becomes a potential GrowWise lead, Seed
+              Every visitor to THE OP becomes a potential FlowBot lead, Seed
               Academy student, or Settle the West relocator. The BHC flywheel
               means every cup of coffee sold generates value across all 13
               entities.

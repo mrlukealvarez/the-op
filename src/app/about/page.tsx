@@ -116,7 +116,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   The Black Hills Consortium saw an opportunity: build a campus
-                  coffee shop that serves everyone — GrowWise employees grabbing
+                  coffee shop that serves everyone — FlowBot employees grabbing
                   their morning latte, tourists stopping on their way to Custer
                   State Park, locals meeting for conversation, and students
                   finding their study spot. Not just a cafe, but the living room
@@ -178,7 +178,7 @@ export default function AboutPage() {
               revitalize rural America.
             </p>
             <p className="leading-relaxed text-warm-gray">
-              THE OP represents the human side of that vision. While GrowWise
+              THE OP represents the human side of that vision. While FlowBot
               builds the technology and Seed Foundation builds the programs, THE
               OP builds the relationships. It&apos;s where you go when you want
               to feel the energy of what BHC is creating.

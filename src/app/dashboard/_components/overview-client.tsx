@@ -215,7 +215,7 @@ const flywheelCards = [
     text: "Remote workers \u2192 THE OP regulars \u2192 content for Outpost Media \u2192 more relocators",
   },
   {
-    text: "GrowWise POS live demo \u2192 investors see platform while ordering coffee",
+    text: "FlowBot POS live demo \u2192 investors see platform while ordering coffee",
   },
   {
     text: "Tourists (14.9M annual SD visitors) \u2192 merch purchase \u2192 walking billboards nationwide",

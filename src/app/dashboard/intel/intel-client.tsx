@@ -86,7 +86,7 @@ const margins = [
 ];
 
 // P&L from financial-model.ts (single source of truth)
-// THE OP is subsidized by $3M capital allocation + GrowWise cross-subsidy
+// THE OP is subsidized by $3M capital allocation + FlowBot cross-subsidy
 // Net is negative at $145K salary floor — by design (lifestyle/brand entity)
 const plData = [
   { year: "Y1", revenue: 380, expenses: 1330, net: -950 },
@@ -240,13 +240,13 @@ const benefits = [
   { metric: "Revenue", y1: "$380K", y5: "$1.9M" },
   { metric: "Non-labor expenses", y1: "$250K", y5: "$1.2M" },
   { metric: "Net (before subsidy)", y1: "-$950K", y5: "-$2.9M", bold: true },
-  { metric: "Subsidy source", y1: "$3M raise", y5: "GrowWise", bold: true },
+  { metric: "Subsidy source", y1: "$3M raise", y5: "FlowBot", bold: true },
 ];
 
 const insights = [
   "$145K minimum salary for ALL positions -- barista to GM, no exceptions",
   "THE OP is a community anchor, not a standalone profit center",
-  "$3M from $52M raise covers Y1-Y2; GrowWise cross-subsidy covers Y3+",
+  "$3M from $52M raise covers Y1-Y2; FlowBot cross-subsidy covers Y3+",
   "Zero rent + 65.8% gross margin = strong unit economics despite operating loss",
 ];
 

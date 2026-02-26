@@ -45,7 +45,7 @@ export default function PrivacyPage() {
               <li>
                 <strong className="text-cream">Customer purchase data:</strong>{" "}
                 Transaction history, items purchased, payment method (processed
-                through our GrowWise POS system and third-party payment
+                through our FlowBot POS system and third-party payment
                 processors — we do not store full credit card numbers), purchase
                 date and time, and transaction amounts.
               </li>
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
               <li>
                 <strong className="text-cream">BHC affiliated entities:</strong>{" "}
                 We may share relevant information with other Black Hills
-                Consortium entities (such as GrowWise for POS analytics, or Seed
+                Consortium entities (such as FlowBot for POS analytics, or Seed
                 Foundation for charitable donation records) when you interact
                 with services spanning multiple entities.
               </li>
@@ -171,12 +171,12 @@ export default function PrivacyPage() {
               5. Point-of-Sale &amp; Payment Data
             </h2>
             <p>
-              THE OP uses the GrowWise POS system for transaction processing.
+              THE OP uses the FlowBot POS system for transaction processing.
               Payment card information is processed by PCI-compliant third-party
               payment processors and is not stored on our systems. Transaction
               data (items purchased, amounts, timestamps) is retained for
               business operations, tax compliance, and to improve our product
-              offerings. The GrowWise POS may also serve as a live demonstration
+              offerings. The FlowBot POS may also serve as a live demonstration
               environment for BHC investor tours. Demonstration activities use
               anonymized transaction data only and never expose individual
               customer personal information.

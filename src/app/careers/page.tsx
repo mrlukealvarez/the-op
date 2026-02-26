@@ -54,7 +54,7 @@ const currentTeam = [
     hours: "1-2 hrs/week",
     icon: Star,
     description:
-      "Strategic direction: vendor selection, brand standards, investor tour experience design, menu pricing, and GrowWise POS configuration.",
+      "Strategic direction: vendor selection, brand standards, investor tour experience design, menu pricing, and FlowBot POS configuration.",
   },
   {
     name: "Ryan",
@@ -234,9 +234,9 @@ const culturePoints = [
       "Mountains, clean air, low cost of living, and a community that knows your name. This is not a job. It is a life upgrade.",
   },
   {
-    title: "GrowWise POS Live Demo",
+    title: "FlowBot POS Live Demo",
     description:
-      "Every coffee order runs through GrowWise. Visiting investors watch the platform in action while you serve them espresso.",
+      "Every coffee order runs through FlowBot. Visiting investors watch the platform in action while you serve them espresso.",
   },
 ];
 
