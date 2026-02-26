@@ -14,7 +14,9 @@ export default function TermsPage() {
           Legal
         </p>
         <h1 className="mb-4 text-4xl font-bold text-cream">Terms of Service</h1>
-        <p className="mb-12 text-sm text-cream/50">Last updated: February 2026</p>
+        <p className="mb-12 text-sm text-cream/50">
+          Last updated: February 2026
+        </p>
 
         <div className="space-y-10 text-sm leading-relaxed text-cream/70">
           <div>
@@ -42,8 +44,8 @@ export default function TermsPage() {
               only. This license does not include: modifying or copying
               materials; using materials for any commercial purpose or public
               display; attempting to decompile or reverse-engineer any software
-              on the website; removing any copyright or proprietary notations; or
-              transferring materials to another person. This license shall
+              on the website; removing any copyright or proprietary notations;
+              or transferring materials to another person. This license shall
               automatically terminate if you violate any of these restrictions
               and may be terminated by THE OP at any time.
             </p>
@@ -107,8 +109,8 @@ export default function TermsPage() {
               </li>
               <li>
                 <strong className="text-cream">Exchanges:</strong> Exchanges for
-                different sizes or colors are subject to availability and must be
-                made within 14 days of purchase.
+                different sizes or colors are subject to availability and must
+                be made within 14 days of purchase.
               </li>
               <li>
                 <strong className="text-cream">Final sale items:</strong>{" "}
@@ -129,14 +131,15 @@ export default function TermsPage() {
             </h2>
             <p>
               THE OP may offer loyalty programs, campus passport programs, and
-              employee perks programs. Participation in these programs is subject
-              to the specific terms and conditions provided at enrollment.
-              Loyalty rewards, discounts, and perks have no cash value and may
-              not be transferred, sold, or combined with other offers unless
-              specifically stated. THE OP reserves the right to modify, suspend,
-              or terminate any loyalty program at any time with reasonable notice
-              to participants. Accumulated rewards may expire if not used within
-              the specified timeframe outlined in the program terms.
+              employee perks programs. Participation in these programs is
+              subject to the specific terms and conditions provided at
+              enrollment. Loyalty rewards, discounts, and perks have no cash
+              value and may not be transferred, sold, or combined with other
+              offers unless specifically stated. THE OP reserves the right to
+              modify, suspend, or terminate any loyalty program at any time with
+              reasonable notice to participants. Accumulated rewards may expire
+              if not used within the specified timeframe outlined in the program
+              terms.
             </p>
           </div>
 
@@ -147,8 +150,8 @@ export default function TermsPage() {
             <p>
               THE OP may host community events, pop-up markets, live music, and
               other gatherings. Event attendance is subject to venue capacity
-              limits and applicable safety regulations. THE OP reserves the right
-              to refuse entry or remove attendees for disruptive or unsafe
+              limits and applicable safety regulations. THE OP reserves the
+              right to refuse entry or remove attendees for disruptive or unsafe
               behavior. Events hosted at THE OP are managed by THE OP staff
               unless specifically designated as THE CULT Events LLC productions.
               Event photography and recordings may be used for promotional
@@ -163,8 +166,8 @@ export default function TermsPage() {
             <p>
               All content on this website — including but not limited to text,
               graphics, logos, images, audio, video, and software — is the
-              property of THE OP LLC or its content suppliers and is protected by
-              United States and international copyright laws. BHC-branded
+              property of THE OP LLC or its content suppliers and is protected
+              by United States and international copyright laws. BHC-branded
               merchandise designs are the property of Black Hills Consortium and
               its affiliated entities.
             </p>
@@ -177,9 +180,9 @@ export default function TermsPage() {
             <p>
               THE OP&rsquo;s services, website, and products are provided on an
               &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis. THE OP
-              makes no warranties, expressed or implied, and hereby disclaims all
-              warranties including, without limitation, implied warranties of
-              merchantability, fitness for a particular purpose, and
+              makes no warranties, expressed or implied, and hereby disclaims
+              all warranties including, without limitation, implied warranties
+              of merchantability, fitness for a particular purpose, and
               non-infringement. THE OP does not warrant that products will meet
               your expectations or that services will be uninterrupted or
               error-free.
@@ -208,10 +211,10 @@ export default function TermsPage() {
             </h2>
             <p>
               These Terms of Service shall be governed by and construed in
-              accordance with the laws of the State of South Dakota. Any disputes
-              arising under these terms shall be subject to the exclusive
-              jurisdiction of the state and federal courts located in Custer
-              County, South Dakota.
+              accordance with the laws of the State of South Dakota. Any
+              disputes arising under these terms shall be subject to the
+              exclusive jurisdiction of the state and federal courts located in
+              Custer County, South Dakota.
             </p>
           </div>
 
@@ -221,10 +224,10 @@ export default function TermsPage() {
             </h2>
             <p>
               THE OP reserves the right to update or modify these Terms of
-              Service at any time without prior notice. Changes will be effective
-              immediately upon posting to our website. Your continued use of our
-              services following any changes constitutes acceptance of the
-              revised terms.
+              Service at any time without prior notice. Changes will be
+              effective immediately upon posting to our website. Your continued
+              use of our services following any changes constitutes acceptance
+              of the revised terms.
             </p>
           </div>
 

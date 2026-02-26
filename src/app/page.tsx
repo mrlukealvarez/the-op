@@ -21,10 +21,42 @@ import {
 } from "@/components/motion";
 
 const stats = [
-  { label: "Annual Park Visitors", value: "2M+", icon: MapPin, end: 2, prefix: "", suffix: "M+", decimals: 0 },
-  { label: "Year 1 Revenue Target", value: "$380K", icon: TrendingUp, end: 380, prefix: "$", suffix: "K", decimals: 0 },
-  { label: "Annual SD Tourists", value: "14.9M", icon: Coffee, end: 14.9, prefix: "", suffix: "M", decimals: 1 },
-  { label: "BHC Campus Entities", value: "11", icon: Building, end: 11, prefix: "", suffix: "", decimals: 0 },
+  {
+    label: "Annual Park Visitors",
+    value: "2M+",
+    icon: MapPin,
+    end: 2,
+    prefix: "",
+    suffix: "M+",
+    decimals: 0,
+  },
+  {
+    label: "Year 1 Revenue Target",
+    value: "$380K",
+    icon: TrendingUp,
+    end: 380,
+    prefix: "$",
+    suffix: "K",
+    decimals: 0,
+  },
+  {
+    label: "Annual SD Tourists",
+    value: "14.9M",
+    icon: Coffee,
+    end: 14.9,
+    prefix: "",
+    suffix: "M",
+    decimals: 1,
+  },
+  {
+    label: "BHC Campus Entities",
+    value: "11",
+    icon: Building,
+    end: 11,
+    prefix: "",
+    suffix: "",
+    decimals: 0,
+  },
 ];
 
 const features = [
@@ -98,8 +130,9 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mb-10 max-w-xl text-lg leading-relaxed text-cream/70">
-              Coffee shop and tourist stop on the BHC campus. Craft
-              coffee, local merch, drive-through convenience, and community — serving locals, tourists, and campus staff.
+              Coffee shop and tourist stop on the BHC campus. Craft coffee,
+              local merch, drive-through convenience, and community — serving
+              locals, tourists, and campus staff.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -132,7 +165,12 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-espresso">
-                    <CountUp end={stat.end} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals} />
+                    <CountUp
+                      end={stat.end}
+                      prefix={stat.prefix}
+                      suffix={stat.suffix}
+                      decimals={stat.decimals}
+                    />
                   </p>
                   <p className="text-sm text-warm-gray">{stat.label}</p>
                 </div>
@@ -150,8 +188,8 @@ export default function HomePage() {
               More Than a <AmberShimmer>Cafe</AmberShimmer>
             </h2>
             <p className="mx-auto max-w-2xl text-warm-gray">
-              THE OP is the beating heart of the Black Hills Consortium campus — a
-              place where coffee, culture, and community converge.
+              THE OP is the beating heart of the Black Hills Consortium campus —
+              a place where coffee, culture, and community converge.
             </p>
           </FadeIn>
 
@@ -213,8 +251,8 @@ export default function HomePage() {
               Pull Up a Chair
             </h2>
             <p className="mb-8 text-lg text-warm-gray">
-              Whether you&apos;re a local, a tourist, or a remote worker looking for
-              your new favorite spot — THE OP has a seat for you.
+              Whether you&apos;re a local, a tourist, or a remote worker looking
+              for your new favorite spot — THE OP has a seat for you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { Bar, BarChart, Line, LineChart } from "recharts"
+import { Bar, BarChart, Line, LineChart } from "recharts";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
-import type { CafeEvent, CafeStats } from "@/lib/db/dashboard-queries"
+} from "@/components/ui/chart";
+import type { CafeEvent, CafeStats } from "@/lib/db/dashboard-queries";
 
 // ── Seed Data (fallback when Supabase not configured) ────────────────
 
@@ -16,7 +16,7 @@ const SEED_EVENT_TYPE_BREAKDOWN = [
   { type: "Live Recordings", count: 2 },
   { type: "CULT Pre-Events", count: 2 },
   { type: "Community Meetings", count: 1 },
-]
+];
 
 const SEED_REVENUE_BY_TYPE = [
   { type: "Live Recordings", revenue: 8500 },
@@ -24,7 +24,7 @@ const SEED_REVENUE_BY_TYPE = [
   { type: "Open Mic", revenue: 4800 },
   { type: "Trivia Night", revenue: 3600 },
   { type: "Community Meetings", revenue: 1200 },
-]
+];
 
 const SEED_ATTENDANCE_TRENDS = [
   { month: "Aug", avg: 45 },
@@ -33,7 +33,7 @@ const SEED_ATTENDANCE_TRENDS = [
   { month: "Nov", avg: 68 },
   { month: "Dec", avg: 75 },
   { month: "Jan", avg: 82 },
-]
+];
 
 const SEED_UPCOMING_EVENTS = [
   {
@@ -60,7 +60,7 @@ const SEED_UPCOMING_EVENTS = [
     time: "8:00 PM",
     expected: 90,
   },
-]
+];
 
 const chartConfig = {
   count: {
@@ -75,7 +75,7 @@ const chartConfig = {
     label: "Avg Attendance",
     color: "#F59E0B",
   },
-}
+};
 
 // ── Event type display name mapping ──────────────────────────────────
 
@@ -87,62 +87,86 @@ const EVENT_TYPE_LABELS: Record<string, string> = {
   community: "Community Meetings",
   private: "Private Events",
   workshop: "Workshop",
-}
+};
 
 // ── Types ────────────────────────────────────────────────────────────
 
 interface EventsClientProps {
-  events?: CafeEvent[] | null
-  upcomingEvents?: CafeEvent[] | null
-  stats?: CafeStats | null
-  eventsByType?: Array<{ type: string; count: number; revenue: number }> | null
+  events?: CafeEvent[] | null;
+  upcomingEvents?: CafeEvent[] | null;
+  stats?: CafeStats | null;
+  eventsByType?: Array<{ type: string; count: number; revenue: number }> | null;
 }
 
-export default function EventsClient({ events, upcomingEvents, stats, eventsByType }: EventsClientProps) {
+export default function EventsClient({
+  events,
+  upcomingEvents,
+  stats,
+  eventsByType,
+}: EventsClientProps) {
   // Derive event type breakdown from live data or use seed
-  const eventTypeBreakdown = eventsByType && eventsByType.length > 0
-    ? eventsByType.map(e => ({ type: EVENT_TYPE_LABELS[e.type] || e.type, count: e.count }))
-    : SEED_EVENT_TYPE_BREAKDOWN
+  const eventTypeBreakdown =
+    eventsByType && eventsByType.length > 0
+      ? eventsByType.map((e) => ({
+          type: EVENT_TYPE_LABELS[e.type] || e.type,
+          count: e.count,
+        }))
+      : SEED_EVENT_TYPE_BREAKDOWN;
 
   // Derive revenue by type from live data or use seed
-  const revenueByEventType = eventsByType && eventsByType.length > 0
-    ? eventsByType
-        .map(e => ({ type: EVENT_TYPE_LABELS[e.type] || e.type, revenue: e.revenue }))
-        .sort((a, b) => b.revenue - a.revenue)
-    : SEED_REVENUE_BY_TYPE
+  const revenueByEventType =
+    eventsByType && eventsByType.length > 0
+      ? eventsByType
+          .map((e) => ({
+            type: EVENT_TYPE_LABELS[e.type] || e.type,
+            revenue: e.revenue,
+          }))
+          .sort((a, b) => b.revenue - a.revenue)
+      : SEED_REVENUE_BY_TYPE;
 
-  const maxRevenue = revenueByEventType.reduce((max, e) => Math.max(max, e.revenue), 1)
+  const maxRevenue = revenueByEventType.reduce(
+    (max, e) => Math.max(max, e.revenue),
+    1,
+  );
 
   // Attendance trends from completed events or seed
-  const attendanceTrends = events && events.length > 0
-    ? (() => {
-        const months: Record<string, { total: number; count: number }> = {}
-        for (const e of events) {
-          if (e.actual_attendance && e.date) {
-            const m = new Date(e.date).toLocaleString("default", { month: "short" })
-            if (!months[m]) months[m] = { total: 0, count: 0 }
-            months[m].total += e.actual_attendance
-            months[m].count++
+  const attendanceTrends =
+    events && events.length > 0
+      ? (() => {
+          const months: Record<string, { total: number; count: number }> = {};
+          for (const e of events) {
+            if (e.actual_attendance && e.date) {
+              const m = new Date(e.date).toLocaleString("default", {
+                month: "short",
+              });
+              if (!months[m]) months[m] = { total: 0, count: 0 };
+              months[m].total += e.actual_attendance;
+              months[m].count++;
+            }
           }
-        }
-        return Object.entries(months).map(([month, v]) => ({
-          month,
-          avg: Math.round(v.total / v.count),
-        }))
-      })()
-    : SEED_ATTENDANCE_TRENDS
+          return Object.entries(months).map(([month, v]) => ({
+            month,
+            avg: Math.round(v.total / v.count),
+          }));
+        })()
+      : SEED_ATTENDANCE_TRENDS;
 
   // Upcoming events from live data or seed
-  const upcoming = upcomingEvents && upcomingEvents.length > 0
-    ? upcomingEvents.map(e => ({
-        name: e.event_name,
-        date: new Date(e.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
-        time: e.start_time ? e.start_time.slice(0, 5) : "TBD",
-        expected: e.expected_attendance ?? 0,
-      }))
-    : SEED_UPCOMING_EVENTS
+  const upcoming =
+    upcomingEvents && upcomingEvents.length > 0
+      ? upcomingEvents.map((e) => ({
+          name: e.event_name,
+          date: new Date(e.date).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          }),
+          time: e.start_time ? e.start_time.slice(0, 5) : "TBD",
+          expected: e.expected_attendance ?? 0,
+        }))
+      : SEED_UPCOMING_EVENTS;
 
-  const isLive = !!(events && events.length > 0)
+  const isLive = !!(events && events.length > 0);
 
   return (
     <div className="space-y-8">
@@ -153,8 +177,12 @@ export default function EventsClient({ events, upcomingEvents, stats, eventsByTy
             Track performance across all event types
           </p>
         </div>
-        <div className={`px-3 py-1.5 ${isLive ? "bg-emerald-500/10 border-emerald-500/20" : "bg-amber-500/10 border-amber-500/20"} border rounded-lg`}>
-          <p className={`${isLive ? "text-emerald-400" : "text-amber-400"} text-xs font-medium`}>
+        <div
+          className={`px-3 py-1.5 ${isLive ? "bg-emerald-500/10 border-emerald-500/20" : "bg-amber-500/10 border-amber-500/20"} border rounded-lg`}
+        >
+          <p
+            className={`${isLive ? "text-emerald-400" : "text-amber-400"} text-xs font-medium`}
+          >
             {isLive ? "Live Data" : "Sample Data"}
           </p>
         </div>
@@ -168,7 +196,9 @@ export default function EventsClient({ events, upcomingEvents, stats, eventsByTy
         <ChartContainer config={chartConfig} className="h-[300px]">
           <BarChart data={eventTypeBreakdown}>
             <ChartTooltip
-              content={<ChartTooltipContent className="bg-espresso text-cream" />}
+              content={
+                <ChartTooltipContent className="bg-espresso text-cream" />
+              }
             />
             <Bar dataKey="count" fill="#F59E0B" radius={[8, 8, 0, 0]} />
           </BarChart>
@@ -208,7 +238,9 @@ export default function EventsClient({ events, upcomingEvents, stats, eventsByTy
         <ChartContainer config={chartConfig} className="h-[300px]">
           <LineChart data={attendanceTrends}>
             <ChartTooltip
-              content={<ChartTooltipContent className="bg-espresso text-cream" />}
+              content={
+                <ChartTooltipContent className="bg-espresso text-cream" />
+              }
             />
             <Line
               type="monotone"
@@ -249,5 +281,5 @@ export default function EventsClient({ events, upcomingEvents, stats, eventsByTy
         </div>
       </div>
     </div>
-  )
+  );
 }

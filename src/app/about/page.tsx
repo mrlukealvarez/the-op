@@ -23,34 +23,57 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { year: "2024", event: "BHC campus vision conceived — 15 acres in Custer, SD" },
-  { year: "2025", event: "BHC campus vision refined — coffee shop as campus anchor" },
-  { year: "2025", event: "THE OP concept developed — community coffee shop and tourist stop" },
-  { year: "2026", event: "Planned: BHC raises capital — THE OP buildout begins" },
-  { year: "2026", event: "Planned: Grand opening — campus coffee shop with drive-through" },
-  { year: "2027", event: "Planned: THE OP becomes the top-rated coffee shop in the Black Hills" },
+  {
+    year: "2024",
+    event: "BHC campus vision conceived — 15 acres in Custer, SD",
+  },
+  {
+    year: "2025",
+    event: "BHC campus vision refined — coffee shop as campus anchor",
+  },
+  {
+    year: "2025",
+    event: "THE OP concept developed — community coffee shop and tourist stop",
+  },
+  {
+    year: "2026",
+    event: "Planned: BHC raises capital — THE OP buildout begins",
+  },
+  {
+    year: "2026",
+    event: "Planned: Grand opening — campus coffee shop with drive-through",
+  },
+  {
+    year: "2027",
+    event:
+      "Planned: THE OP becomes the top-rated coffee shop in the Black Hills",
+  },
 ];
 
 const pillars = [
   {
     icon: Coffee,
     title: "World-Class Coffee",
-    description: "We don't settle for mediocre. Locally roasted, hand-brewed, and made with care every single time.",
+    description:
+      "We don't settle for mediocre. Locally roasted, hand-brewed, and made with care every single time.",
   },
   {
     icon: Leaf,
     title: "Campus Life",
-    description: "A hub for campus employees, students, and visitors. Employee perks, community events, and daily connection.",
+    description:
+      "A hub for campus employees, students, and visitors. Employee perks, community events, and daily connection.",
   },
   {
     icon: Users,
     title: "Community First",
-    description: "Every design decision, every event, every menu item asks: does this bring people together?",
+    description:
+      "Every design decision, every event, every menu item asks: does this bring people together?",
   },
   {
     icon: Mountain,
     title: "Black Hills Rooted",
-    description: "Local sourcing, local hiring, local partnerships. THE OP exists to strengthen the region, not extract from it.",
+    description:
+      "Local sourcing, local hiring, local partnerships. THE OP exists to strengthen the region, not extract from it.",
   },
 ];
 
@@ -68,8 +91,8 @@ export default function AboutPage() {
               Coffee, <AmberShimmer>Community</AmberShimmer>, and Campus
             </h1>
             <p className="max-w-xl text-cream/70">
-              THE OP was born from a simple question: what if the best coffee shop in the
-              region was also the heart of a thriving campus?
+              THE OP was born from a simple question: what if the best coffee
+              shop in the region was also the heart of a thriving campus?
             </p>
           </FadeIn>
         </div>
@@ -86,9 +109,10 @@ export default function AboutPage() {
               <div className="space-y-4 text-warm-gray leading-relaxed">
                 <p>
                   A great coffee shop is more than a place to buy espresso.
-                  It&apos;s a third place — a community anchor where conversation
-                  flows as freely as the coffee. A gathering spot for locals,
-                  a welcome center for tourists, and a daily ritual for campus staff.
+                  It&apos;s a third place — a community anchor where
+                  conversation flows as freely as the coffee. A gathering spot
+                  for locals, a welcome center for tourists, and a daily ritual
+                  for campus staff.
                 </p>
                 <p>
                   The Black Hills Consortium saw an opportunity: build a campus
@@ -100,10 +124,10 @@ export default function AboutPage() {
                 </p>
                 <p>
                   THE OP sits at the gateway to Custer State Park, one of the
-                  most visited natural destinations in America. With 14.9 million
-                  annual tourists passing through the Black Hills and a thriving
-                  campus community, it's positioned to be the region's favorite
-                  gathering place.
+                  most visited natural destinations in America. With 14.9
+                  million annual tourists passing through the Black Hills and a
+                  thriving campus community, it's positioned to be the region's
+                  favorite gathering place.
                 </p>
               </div>
             </div>
@@ -116,7 +140,8 @@ export default function AboutPage() {
                   Custer, South Dakota
                 </h3>
                 <p className="text-warm-gray">
-                  15 acres &middot; BHC Campus &middot; Gateway to Custer State Park
+                  15 acres &middot; BHC Campus &middot; Gateway to Custer State
+                  Park
                 </p>
                 <div className="mt-6 grid grid-cols-2 gap-4 text-center">
                   <div>
@@ -148,15 +173,15 @@ export default function AboutPage() {
             <p className="mb-4 leading-relaxed text-warm-gray">
               Luke Alvarez is the founder of the Black Hills Consortium and all
               11 of its entities. A South Dakota native with experience building
-              enterprise SaaS at scale (Instructure/Canvas), Luke returned to the
-              Black Hills with a vision: use technology and community to revitalize
-              rural America.
+              enterprise SaaS at scale (Instructure/Canvas), Luke returned to
+              the Black Hills with a vision: use technology and community to
+              revitalize rural America.
             </p>
             <p className="leading-relaxed text-warm-gray">
               THE OP represents the human side of that vision. While GrowWise
-              builds the technology and Seed Foundation builds the programs,
-              THE OP builds the relationships. It&apos;s where you go when you
-              want to feel the energy of what BHC is creating.
+              builds the technology and Seed Foundation builds the programs, THE
+              OP builds the relationships. It&apos;s where you go when you want
+              to feel the energy of what BHC is creating.
             </p>
           </FadeIn>
         </div>

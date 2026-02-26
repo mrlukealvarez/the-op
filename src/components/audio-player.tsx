@@ -55,10 +55,13 @@ export function AudioPlayer({ src, title }: { src: string; title: string }) {
       const bar = progressRef.current;
       if (!audio || !bar || !duration) return;
       const rect = bar.getBoundingClientRect();
-      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const ratio = Math.max(
+        0,
+        Math.min(1, (e.clientX - rect.left) / rect.width),
+      );
       audio.currentTime = ratio * duration;
     },
-    [duration]
+    [duration],
   );
 
   const cycleSpeed = useCallback(() => {
@@ -92,7 +95,11 @@ export function AudioPlayer({ src, title }: { src: string; title: string }) {
           className="shrink-0 size-9 rounded-full bg-amber-600 hover:bg-amber-700 text-white flex items-center justify-center transition-colors"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
-          {isPlaying ? <Pause className="size-4" /> : <Play className="size-4 ml-0.5" />}
+          {isPlaying ? (
+            <Pause className="size-4" />
+          ) : (
+            <Play className="size-4 ml-0.5" />
+          )}
         </button>
 
         <div

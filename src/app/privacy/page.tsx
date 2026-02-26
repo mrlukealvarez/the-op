@@ -14,7 +14,9 @@ export default function PrivacyPage() {
           Legal
         </p>
         <h1 className="mb-4 text-4xl font-bold text-cream">Privacy Policy</h1>
-        <p className="mb-12 text-sm text-cream/50">Last updated: February 2026</p>
+        <p className="mb-12 text-sm text-cream/50">
+          Last updated: February 2026
+        </p>
 
         <div className="space-y-10 text-sm leading-relaxed text-cream/70">
           <div>
@@ -23,13 +25,12 @@ export default function PrivacyPage() {
             </h2>
             <p>
               THE OP LLC (&ldquo;THE OP,&rdquo; &ldquo;we,&rdquo;
-              &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to
-              protecting your privacy. This Privacy Policy describes how we
-              collect, use, and safeguard personal information when you visit our
-              website, make purchases in our store, participate in our loyalty
-              programs, or attend our community events. THE OP LLC is an
-              affiliated entity of Black Hills Consortium and its affiliated
-              entities.
+              &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting
+              your privacy. This Privacy Policy describes how we collect, use,
+              and safeguard personal information when you visit our website,
+              make purchases in our store, participate in our loyalty programs,
+              or attend our community events. THE OP LLC is an affiliated entity
+              of Black Hills Consortium and its affiliated entities.
             </p>
           </div>
 
@@ -62,10 +63,9 @@ export default function PrivacyPage() {
                 community events or reserving space at THE OP.
               </li>
               <li>
-                <strong className="text-cream">Employee perks data:</strong>{" "}
-                BHC employee identification, discount usage, and perks
-                redemption data for employees participating in the campus
-                benefits program.
+                <strong className="text-cream">Employee perks data:</strong> BHC
+                employee identification, discount usage, and perks redemption
+                data for employees participating in the campus benefits program.
               </li>
               <li>
                 <strong className="text-cream">Website usage data:</strong> IP
@@ -79,11 +79,12 @@ export default function PrivacyPage() {
                 subscribe to our newsletter or event updates.
               </li>
               <li>
-                <strong className="text-cream">Charitable round-up data:</strong>{" "}
-                Aggregated donation amounts from POS round-up prompts
-                benefiting Seed Foundation and BHC. Individual donation amounts
-                are not linked to personal identifiers unless you request a
-                receipt.
+                <strong className="text-cream">
+                  Charitable round-up data:
+                </strong>{" "}
+                Aggregated donation amounts from POS round-up prompts benefiting
+                Seed Foundation and BHC. Individual donation amounts are not
+                linked to personal identifiers unless you request a receipt.
               </li>
             </ul>
           </div>
@@ -192,8 +193,8 @@ export default function PrivacyPage() {
               understand usage patterns. We use Vercel Analytics and Speed
               Insights for website performance monitoring. These tools collect
               anonymized usage data. You may configure your browser to refuse
-              cookies, but some features of our website may not function properly
-              without them.
+              cookies, but some features of our website may not function
+              properly without them.
             </p>
           </div>
 
@@ -217,12 +218,12 @@ export default function PrivacyPage() {
             </h2>
             <p>
               We retain your personal information for as long as necessary to
-              fulfill the purposes described in this policy. Purchase transaction
-              data is retained for up to 7 years for tax and accounting
-              compliance. Loyalty program data is retained for the duration of
-              your program membership. Website usage data is retained for up to
-              24 months. You may request deletion of your data at any time by
-              contacting us.
+              fulfill the purposes described in this policy. Purchase
+              transaction data is retained for up to 7 years for tax and
+              accounting compliance. Loyalty program data is retained for the
+              duration of your program membership. Website usage data is
+              retained for up to 24 months. You may request deletion of your
+              data at any time by contacting us.
             </p>
           </div>
 
@@ -290,10 +291,10 @@ export default function PrivacyPage() {
             </h2>
             <p>
               This Privacy Policy shall be governed by and construed in
-              accordance with the laws of the State of South Dakota. Any disputes
-              arising under this policy shall be subject to the exclusive
-              jurisdiction of the state and federal courts located in Custer
-              County, South Dakota.
+              accordance with the laws of the State of South Dakota. Any
+              disputes arising under this policy shall be subject to the
+              exclusive jurisdiction of the state and federal courts located in
+              Custer County, South Dakota.
             </p>
           </div>
 
@@ -302,8 +303,8 @@ export default function PrivacyPage() {
               13. Contact
             </h2>
             <p>
-              If you have questions about this Privacy Policy or wish to exercise
-              your data rights, please contact us at{" "}
+              If you have questions about this Privacy Policy or wish to
+              exercise your data rights, please contact us at{" "}
               <a
                 href="mailto:legal@blackhillsconsortium.org"
                 className="text-amber underline hover:text-amber/80"

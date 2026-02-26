@@ -14,7 +14,15 @@ import {
   Users,
   MapPin,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, CountUp, AmberShimmer, WarmGlow, ScaleReveal } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  CountUp,
+  AmberShimmer,
+  WarmGlow,
+  ScaleReveal,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -73,7 +81,7 @@ const upcomingEvents = [
     title: "Startup Pitch Night",
     date: "Third Thursday of each month, 6:00 PM",
     description:
-      "Seed Labs and Auric Labs founders pitch to the local audience. Community feedback, investor introductions. Where great ideas get their first real test.",
+      "Seed Labs and Wildflower Labs founders pitch to the local audience. Community feedback, investor introductions. Where great ideas get their first real test.",
     tag: "Monthly",
   },
   {
@@ -103,13 +111,41 @@ const upcomingEvents = [
 ];
 
 const weeklySchedule = [
-  { day: "Monday", event: "Happy Hour (4-6 PM)", detail: "Discounted drinks for campus workers" },
-  { day: "Tuesday", event: "Trivia Night (7:30 PM)", detail: "Teams of 4, prizes" },
-  { day: "Wednesday", event: "Wellness Wednesday", detail: "Specialty drinks + local wellness vendors" },
-  { day: "Thursday", event: "Open Mic (7 PM)", detail: "Music, comedy, poetry" },
-  { day: "Friday", event: "Acoustic Sessions (6 PM)", detail: "Live music + Art Show (2nd Fri)" },
-  { day: "Saturday", event: "Rotating Special", detail: "Outpost Media Live (1st Sat)" },
-  { day: "Sunday", event: "Morning Sessions (9 AM)", detail: "Coffee + community conversation" },
+  {
+    day: "Monday",
+    event: "Happy Hour (4-6 PM)",
+    detail: "Discounted drinks for campus workers",
+  },
+  {
+    day: "Tuesday",
+    event: "Trivia Night (7:30 PM)",
+    detail: "Teams of 4, prizes",
+  },
+  {
+    day: "Wednesday",
+    event: "Wellness Wednesday",
+    detail: "Specialty drinks + local wellness vendors",
+  },
+  {
+    day: "Thursday",
+    event: "Open Mic (7 PM)",
+    detail: "Music, comedy, poetry",
+  },
+  {
+    day: "Friday",
+    event: "Acoustic Sessions (6 PM)",
+    detail: "Live music + Art Show (2nd Fri)",
+  },
+  {
+    day: "Saturday",
+    event: "Rotating Special",
+    detail: "Outpost Media Live (1st Sat)",
+  },
+  {
+    day: "Sunday",
+    event: "Morning Sessions (9 AM)",
+    detail: "Coffee + community conversation",
+  },
 ];
 
 export default function EventsPage() {
@@ -122,10 +158,15 @@ export default function EventsPage() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-amber">
               The Living Room of the Empire
             </p>
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl"><AmberShimmer>Events</AmberShimmer> at THE OP</h1>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+              <AmberShimmer>Events</AmberShimmer> at THE OP
+            </h1>
             <p className="max-w-xl text-cream/70">
-              Small-scale community events and gatherings. Open mics, trivia, live
-              recordings, art shows, and conversations. <span className="text-amber">Looking for large conventions? Visit THE CULT Events LLC.</span>
+              Small-scale community events and gatherings. Open mics, trivia,
+              live recordings, art shows, and conversations.{" "}
+              <span className="text-amber">
+                Looking for large conventions? Visit THE CULT Events LLC.
+              </span>
             </p>
           </FadeIn>
         </div>
@@ -141,8 +182,12 @@ export default function EventsPage() {
                   <Users className="h-5 w-5 text-espresso" />
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-espresso"><CountUp end={14.9} decimals={1} suffix="M" /></p>
-                  <p className="text-xs text-warm-gray">Annual tourists past Custer</p>
+                  <p className="text-lg font-bold text-espresso">
+                    <CountUp end={14.9} decimals={1} suffix="M" />
+                  </p>
+                  <p className="text-xs text-warm-gray">
+                    Annual tourists past Custer
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -150,8 +195,12 @@ export default function EventsPage() {
                   <Coffee className="h-5 w-5 text-espresso" />
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-espresso"><CountUp end={2} suffix="M+" /></p>
-                  <p className="text-xs text-warm-gray">Tourists past campus yearly</p>
+                  <p className="text-lg font-bold text-espresso">
+                    <CountUp end={2} suffix="M+" />
+                  </p>
+                  <p className="text-xs text-warm-gray">
+                    Tourists past campus yearly
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -174,9 +223,10 @@ export default function EventsPage() {
               </div>
             </div>
             <p className="mt-6 text-sm text-warm-gray leading-relaxed max-w-3xl">
-              Every visitor to THE OP becomes a potential GrowWise lead, Seed Academy student,
-              or Settle the West relocator. The BHC flywheel means every cup of coffee sold
-              generates value across all 13 entities.
+              Every visitor to THE OP becomes a potential GrowWise lead, Seed
+              Academy student, or Settle the West relocator. The BHC flywheel
+              means every cup of coffee sold generates value across all 13
+              entities.
             </p>
           </FadeIn>
         </div>
@@ -258,7 +308,8 @@ export default function EventsPage() {
             </h2>
             <p className="mb-8 text-warm-gray">
               Small gatherings, team meetups, and community events. THE
-              OP&apos;s cafe space works for groups up to 30. For larger events, contact THE CULT Events LLC.
+              OP&apos;s cafe space works for groups up to 30. For larger events,
+              contact THE CULT Events LLC.
             </p>
             <Link
               href="/contact"

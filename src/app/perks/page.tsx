@@ -725,7 +725,7 @@ const perkIcons: Record<string, LucideIcon> = {
   "Rock Climbing at Sylvan Lake": Mountain,
   "Fly Fishing on French Creek": Fish,
   "Cross-Country Skiing": Snowflake,
-  "Snowshoeing": Snowflake,
+  Snowshoeing: Snowflake,
   "Mountain Biking": Bike,
   "Wildlife Safari Drives": Leaf,
   "Horseback Riding": TreePine,
@@ -792,7 +792,9 @@ function ScrollRow({
     <div className="group/row">
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className={`flex h-9 w-9 items-center justify-center rounded-xl bg-espresso/10 ${colorClass}`}>
+          <div
+            className={`flex h-9 w-9 items-center justify-center rounded-xl bg-espresso/10 ${colorClass}`}
+          >
             <Icon className="h-5 w-5" />
           </div>
           <h3 className="text-lg font-bold text-espresso">{title}</h3>
@@ -919,7 +921,10 @@ function FilterBar({
             Category
           </div>
           <div className="flex flex-wrap gap-2">
-            <Pill active={activeCategory === "all"} onClick={() => setActiveCategory("all")}>
+            <Pill
+              active={activeCategory === "all"}
+              onClick={() => setActiveCategory("all")}
+            >
               All
             </Pill>
             {(Object.keys(categoryMeta) as PerkCategory[]).map((cat) => {
@@ -929,7 +934,9 @@ function FilterBar({
                 <Pill
                   key={cat}
                   active={activeCategory === cat}
-                  onClick={() => setActiveCategory(activeCategory === cat ? "all" : cat)}
+                  onClick={() =>
+                    setActiveCategory(activeCategory === cat ? "all" : cat)
+                  }
                 >
                   <CatIcon className="h-3 w-3" />
                   {meta.label}
@@ -945,7 +952,10 @@ function FilterBar({
             Season
           </div>
           <div className="flex flex-wrap gap-2">
-            <Pill active={activeSeason === "all"} onClick={() => setActiveSeason("all")}>
+            <Pill
+              active={activeSeason === "all"}
+              onClick={() => setActiveSeason("all")}
+            >
               All Seasons
             </Pill>
             {(Object.keys(seasonMeta) as Season[]).map((s) => {
@@ -955,7 +965,9 @@ function FilterBar({
                 <Pill
                   key={s}
                   active={activeSeason === s}
-                  onClick={() => setActiveSeason(activeSeason === s ? "all" : s)}
+                  onClick={() =>
+                    setActiveSeason(activeSeason === s ? "all" : s)
+                  }
                 >
                   <SIcon className="h-3 w-3" />
                   {meta.label}
@@ -971,7 +983,10 @@ function FilterBar({
             Cost
           </div>
           <div className="flex flex-wrap gap-2">
-            <Pill active={activeCost === "all"} onClick={() => setActiveCost("all")}>
+            <Pill
+              active={activeCost === "all"}
+              onClick={() => setActiveCost("all")}
+            >
               All
             </Pill>
             {(Object.keys(costLabels) as CostTier[]).map((c) => (
@@ -1030,7 +1045,10 @@ function StatsBar() {
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
       {[
         { value: perks.length, label: "Total Perks" },
-        { value: perks.filter((p) => p.costTier === "free").length, label: "Completely Free" },
+        {
+          value: perks.filter((p) => p.costTier === "free").length,
+          label: "Completely Free",
+        },
         { value: Object.keys(categoryMeta).length, label: "Categories" },
         {
           value: Math.round(totalValue / 1000),
@@ -1064,7 +1082,9 @@ function StatsBar() {
 // ---------------------------------------------------------------------------
 
 export default function PerksPage() {
-  const [activeCategory, setActiveCategory] = useState<PerkCategory | "all">("all");
+  const [activeCategory, setActiveCategory] = useState<PerkCategory | "all">(
+    "all",
+  );
   const [activeSeason, setActiveSeason] = useState<Season | "all">("all");
   const [activeCost, setActiveCost] = useState<CostTier | "all">("all");
 
@@ -1097,12 +1117,13 @@ export default function PerksPage() {
               Employee Perks
             </p>
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-              Working at THE OP Comes <AmberShimmer>With Everything</AmberShimmer>
+              Working at THE OP Comes{" "}
+              <AmberShimmer>With Everything</AmberShimmer>
             </h1>
             <p className="mb-8 max-w-2xl text-lg text-cream/70">
-              Free coffee on every shift. National parks in your backyard. A campus
-              community that feels like home. This is not your average coffee shop
-              gig — it is the best job in the Black Hills.
+              Free coffee on every shift. National parks in your backyard. A
+              campus community that feels like home. This is not your average
+              coffee shop gig — it is the best job in the Black Hills.
             </p>
           </FadeIn>
         </div>
@@ -1200,14 +1221,19 @@ export default function PerksPage() {
               Coffee Shop Job vs. <AmberShimmer>THE OP</AmberShimmer>
             </h2>
             <p className="mt-3 text-cream/60">
-              We do not compete with other coffee shops. We compete with tech companies.
+              We do not compete with other coffee shops. We compete with tech
+              companies.
             </p>
           </FadeIn>
 
           <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {[
               { label: "Base Pay", them: "$15/hr", us: "$145K salary" },
-              { label: "Benefits", them: "Maybe dental", us: "Full family PPO" },
+              {
+                label: "Benefits",
+                them: "Maybe dental",
+                us: "Full family PPO",
+              },
               { label: "Tech", them: "Your phone", us: "MacBook + AirPods" },
               { label: "Commute", them: "30+ minutes", us: "5 min or walk" },
               { label: "Growth", them: "Shift lead", us: "Run the business" },
@@ -1236,8 +1262,9 @@ export default function PerksPage() {
               Ready to Join the Team?
             </h2>
             <p className="mb-8 text-lg text-warm-gray">
-              $145K base salary. Free coffee. National parks. A campus that is building
-              something unprecedented. This is what working at THE OP looks like.
+              $145K base salary. Free coffee. National parks. A campus that is
+              building something unprecedented. This is what working at THE OP
+              looks like.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

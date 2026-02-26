@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Coffee, Beer, Wheat, Heart, MapPin } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, AmberShimmer, ScaleReveal, PulseGlow } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  WarmGlow,
+  AmberShimmer,
+  ScaleReveal,
+  PulseGlow,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -8,8 +16,7 @@ export const metadata: Metadata = {
     "THE OP proudly sources from Black Hills producers. Every cup, every pint, every bite supports our neighbors.",
   openGraph: {
     title: "Partners | THE OP",
-    description:
-      "Local partners and producers who make THE OP possible.",
+    description: "Local partners and producers who make THE OP possible.",
   },
 };
 
@@ -58,8 +65,7 @@ const breweries = [
     name: "Sawyer Brewing Co",
     location: "Spearfish, SD",
     distance: "52 mi",
-    description:
-      "From lagers to sours, always something new on our tap list.",
+    description: "From lagers to sours, always something new on our tap list.",
     badge: "Rotating tap",
   },
   {
@@ -145,32 +151,32 @@ export default function PartnersPage() {
               {coffeeRoasters.map((partner) => (
                 <StaggerItem key={partner.name}>
                   <WarmGlow className="overflow-hidden rounded-xl">
-                  <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
-                    <div
-                      className="h-48 rounded-t-xl"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
-                      }}
-                    />
-                    <div className="p-6">
-                      <h3 className="mb-2 text-lg font-bold text-espresso">
-                        {partner.name}
-                      </h3>
-                      <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
-                        <MapPin className="h-4 w-4" />
-                        <span>
-                          {partner.location} • {partner.distance}
-                        </span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-warm-gray">
-                        {partner.description}
-                      </p>
-                      <div className="mt-4 inline-block rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber">
-                        Rotating on our bar
+                    <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
+                      <div
+                        className="h-48 rounded-t-xl"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+                        }}
+                      />
+                      <div className="p-6">
+                        <h3 className="mb-2 text-lg font-bold text-espresso">
+                          {partner.name}
+                        </h3>
+                        <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
+                          <MapPin className="h-4 w-4" />
+                          <span>
+                            {partner.location} • {partner.distance}
+                          </span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-warm-gray">
+                          {partner.description}
+                        </p>
+                        <div className="mt-4 inline-block rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber">
+                          Rotating on our bar
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </WarmGlow>
                 </StaggerItem>
               ))}
@@ -199,32 +205,32 @@ export default function PartnersPage() {
               {breweries.map((partner) => (
                 <StaggerItem key={partner.name}>
                   <WarmGlow className="overflow-hidden rounded-xl">
-                  <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
-                    <div
-                      className="h-48 rounded-t-xl"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #2D5016 0%, #1a2f0c 100%)",
-                      }}
-                    />
-                    <div className="p-6">
-                      <h3 className="mb-2 text-lg font-bold text-espresso">
-                        {partner.name}
-                      </h3>
-                      <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
-                        <MapPin className="h-4 w-4" />
-                        <span>
-                          {partner.location} • {partner.distance}
-                        </span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-warm-gray">
-                        {partner.description}
-                      </p>
-                      <div className="mt-4 inline-block rounded-full bg-pine-green/10 px-3 py-1 text-xs font-medium text-pine-green">
-                        {partner.badge}
+                    <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
+                      <div
+                        className="h-48 rounded-t-xl"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #2D5016 0%, #1a2f0c 100%)",
+                        }}
+                      />
+                      <div className="p-6">
+                        <h3 className="mb-2 text-lg font-bold text-espresso">
+                          {partner.name}
+                        </h3>
+                        <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
+                          <MapPin className="h-4 w-4" />
+                          <span>
+                            {partner.location} • {partner.distance}
+                          </span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-warm-gray">
+                          {partner.description}
+                        </p>
+                        <div className="mt-4 inline-block rounded-full bg-pine-green/10 px-3 py-1 text-xs font-medium text-pine-green">
+                          {partner.badge}
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </WarmGlow>
                 </StaggerItem>
               ))}
@@ -253,32 +259,32 @@ export default function PartnersPage() {
               {localProducers.map((partner) => (
                 <StaggerItem key={partner.name}>
                   <WarmGlow className="overflow-hidden rounded-xl">
-                  <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
-                    <div
-                      className="h-48 rounded-t-xl"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #FFF8E1 0%, #F5E6C3 100%)",
-                      }}
-                    />
-                    <div className="p-6">
-                      <h3 className="mb-2 text-lg font-bold text-espresso">
-                        {partner.name}
-                      </h3>
-                      <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
-                        <MapPin className="h-4 w-4" />
-                        <span>
-                          {partner.location} • {partner.distance}
-                        </span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-warm-gray">
-                        {partner.description}
-                      </p>
-                      <div className="mt-4 inline-block rounded-full bg-espresso/10 px-3 py-1 text-xs font-medium text-espresso">
-                        {partner.badge}
+                    <div className="overflow-hidden rounded-xl border border-espresso/10 bg-white">
+                      <div
+                        className="h-48 rounded-t-xl"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #FFF8E1 0%, #F5E6C3 100%)",
+                        }}
+                      />
+                      <div className="p-6">
+                        <h3 className="mb-2 text-lg font-bold text-espresso">
+                          {partner.name}
+                        </h3>
+                        <div className="mb-3 flex items-center gap-1 text-sm text-warm-gray">
+                          <MapPin className="h-4 w-4" />
+                          <span>
+                            {partner.location} • {partner.distance}
+                          </span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-warm-gray">
+                          {partner.description}
+                        </p>
+                        <div className="mt-4 inline-block rounded-full bg-espresso/10 px-3 py-1 text-xs font-medium text-espresso">
+                          {partner.badge}
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </WarmGlow>
                 </StaggerItem>
               ))}
@@ -305,21 +311,21 @@ export default function PartnersPage() {
                   different, because the Black Hills are always changing.
                 </p>
                 <PulseGlow className="rounded-xl">
-                <div className="rounded-xl border border-amber/20 bg-amber/5 p-6">
-                  <p className="text-sm font-medium text-espresso">
-                    Interested in becoming a partner?
-                  </p>
-                  <p className="mt-1 text-sm text-warm-gray">
-                    We&apos;re always looking for local producers.{" "}
-                    <a
-                      href="/contact"
-                      className="font-semibold text-amber hover:underline"
-                    >
-                      Contact us
-                    </a>
-                    .
-                  </p>
-                </div>
+                  <div className="rounded-xl border border-amber/20 bg-amber/5 p-6">
+                    <p className="text-sm font-medium text-espresso">
+                      Interested in becoming a partner?
+                    </p>
+                    <p className="mt-1 text-sm text-warm-gray">
+                      We&apos;re always looking for local producers.{" "}
+                      <a
+                        href="/contact"
+                        className="font-semibold text-amber hover:underline"
+                      >
+                        Contact us
+                      </a>
+                      .
+                    </p>
+                  </div>
                 </PulseGlow>
               </div>
             </div>

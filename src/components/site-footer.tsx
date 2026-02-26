@@ -72,15 +72,28 @@ export function SiteFooter() {
 
         <div className="mt-12 border-t border-cream/10 pt-8 flex flex-col items-center gap-4 text-xs text-cream/40">
           <div className="flex items-center gap-4">
-            <Link href="/terms" className="hover:text-amber transition-colors">Terms of Service</Link>
+            <Link href="/terms" className="hover:text-amber transition-colors">
+              Terms of Service
+            </Link>
             <span>&middot;</span>
-            <Link href="/privacy" className="hover:text-amber transition-colors">Privacy Policy</Link>
+            <Link
+              href="/privacy"
+              className="hover:text-amber transition-colors"
+            >
+              Privacy Policy
+            </Link>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] text-cream/30 uppercase tracking-wider">Built With</span>
+            <span className="text-[10px] text-cream/30 uppercase tracking-wider">
+              Built With
+            </span>
             <div className="flex items-center gap-2.5">
               {[
-                { href: "https://anthropic.com", label: "Anthropic", char: "A" },
+                {
+                  href: "https://anthropic.com",
+                  label: "Anthropic",
+                  char: "A",
+                },
                 { href: "https://vercel.com", label: "Vercel", char: "\u25B2" },
                 { href: "https://supabase.com", label: "Supabase", char: "S" },
                 { href: "https://meta.com", label: "Meta", char: "M" },
@@ -88,7 +101,11 @@ export function SiteFooter() {
                 { href: "https://x.ai", label: "xAI", char: "X" },
                 { href: "https://openai.com", label: "OpenAI", char: "O" },
                 { href: "https://cursor.com", label: "Cursor", char: "C" },
-                { href: "https://elevenlabs.io", label: "ElevenLabs", char: "11" },
+                {
+                  href: "https://elevenlabs.io",
+                  label: "ElevenLabs",
+                  char: "11",
+                },
               ].map((item) => (
                 <a
                   key={item.label}

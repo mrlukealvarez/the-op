@@ -6,14 +6,15 @@ import { submitContactForm, type ContactState } from "@/lib/contact-action";
 const initialState: ContactState = { success: false };
 
 export function ContactForm() {
-  const [state, formAction, pending] = useActionState(submitContactForm, initialState);
+  const [state, formAction, pending] = useActionState(
+    submitContactForm,
+    initialState,
+  );
 
   if (state.success) {
     return (
       <div className="rounded-2xl border border-amber/20 bg-amber/5 p-8 text-center">
-        <p className="text-lg font-semibold text-amber-dark">
-          {state.message}
-        </p>
+        <p className="text-lg font-semibold text-amber-dark">{state.message}</p>
       </div>
     );
   }
@@ -23,15 +24,22 @@ export function ContactForm() {
       {/* Honeypot */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label htmlFor="honeypot">Do not fill this</label>
-        <input type="text" id="honeypot" name="honeypot" tabIndex={-1} autoComplete="off" />
+        <input
+          type="text"
+          id="honeypot"
+          name="honeypot"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
-      {state.message && (
-        <p className="text-sm text-red-600">{state.message}</p>
-      )}
+      {state.message && <p className="text-sm text-red-600">{state.message}</p>}
 
       <div>
-        <label htmlFor="name" className="mb-1 block text-sm font-medium text-espresso">
+        <label
+          htmlFor="name"
+          className="mb-1 block text-sm font-medium text-espresso"
+        >
           Name
         </label>
         <input
@@ -47,7 +55,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-medium text-espresso">
+        <label
+          htmlFor="email"
+          className="mb-1 block text-sm font-medium text-espresso"
+        >
           Email
         </label>
         <input
@@ -63,7 +74,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="subject" className="mb-1 block text-sm font-medium text-espresso">
+        <label
+          htmlFor="subject"
+          className="mb-1 block text-sm font-medium text-espresso"
+        >
           Subject
         </label>
         <select
@@ -81,7 +95,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-medium text-espresso">
+        <label
+          htmlFor="message"
+          className="mb-1 block text-sm font-medium text-espresso"
+        >
           Message
         </label>
         <textarea

@@ -3,7 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BookOpen, Calendar, Clock, User, ArrowRight } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, AmberShimmer } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  WarmGlow,
+  AmberShimmer,
+} from "@/components/motion";
 import { blogPosts } from "@/lib/blog-posts";
 
 const categories = ["All", "Culture", "Community", "Business"] as const;
@@ -34,12 +40,11 @@ export default function BlogPage() {
                 THE OP Blog
               </p>
               <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
-                Stories from the{" "}
-                <AmberShimmer>Third Place</AmberShimmer>
+                Stories from the <AmberShimmer>Third Place</AmberShimmer>
               </h1>
               <p className="mt-4 text-lg text-cream/70">
-                Coffee, community, and the culture of gathering in the
-                Black Hills.
+                Coffee, community, and the culture of gathering in the Black
+                Hills.
               </p>
             </div>
           </FadeIn>
@@ -75,49 +80,53 @@ export default function BlogPage() {
           <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((post) => (
               <StaggerItem key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="group block h-full">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group block h-full"
+                >
                   <WarmGlow className="h-full rounded-xl">
-                  <div className="h-full rounded-xl border border-espresso/10 bg-white p-6 transition-colors group-hover:border-amber/40">
-                    <div className="mb-3 flex items-center gap-2">
-                      <span
-                        className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${
-                          categoryColors[post.category] ?? "border-warm-gray text-warm-gray"
-                        }`}
-                      >
-                        {post.category}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs text-warm-gray">
-                        <Clock className="h-3 w-3" />
-                        {post.readTime}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold leading-snug text-espresso group-hover:text-amber-dark transition-colors">
-                      {post.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm text-warm-gray line-clamp-3">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="mt-4 flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-xs text-warm-gray-light">
-                        <span className="flex items-center gap-1">
-                          <User className="h-3 w-3" />
-                          {post.author}
+                    <div className="h-full rounded-xl border border-espresso/10 bg-white p-6 transition-colors group-hover:border-amber/40">
+                      <div className="mb-3 flex items-center gap-2">
+                        <span
+                          className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${
+                            categoryColors[post.category] ??
+                            "border-warm-gray text-warm-gray"
+                          }`}
+                        >
+                          {post.category}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {new Date(post.date).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric",
-                          })}
+                        <span className="flex items-center gap-1 text-xs text-warm-gray">
+                          <Clock className="h-3 w-3" />
+                          {post.readTime}
                         </span>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-warm-gray-light transition-transform group-hover:translate-x-1 group-hover:text-amber" />
+
+                      <h3 className="text-lg font-bold leading-snug text-espresso group-hover:text-amber-dark transition-colors">
+                        {post.title}
+                      </h3>
+
+                      <p className="mt-2 text-sm text-warm-gray line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="mt-4 flex items-center justify-between">
+                        <div className="flex items-center gap-3 text-xs text-warm-gray-light">
+                          <span className="flex items-center gap-1">
+                            <User className="h-3 w-3" />
+                            {post.author}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            {new Date(post.date).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            })}
+                          </span>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-warm-gray-light transition-transform group-hover:translate-x-1 group-hover:text-amber" />
+                      </div>
                     </div>
-                  </div>
                   </WarmGlow>
                 </Link>
               </StaggerItem>

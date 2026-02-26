@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://the-op.vercel.app'),
+  metadataBase: new URL("https://the-op.vercel.app"),
   title: {
     default: "THE OP — Where the Black Hills Come Together",
     template: "%s | THE OP",
@@ -44,18 +44,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "THE OP",
-    url: 'https://the-op.vercel.app',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'THE OP' }],
+    url: "https://the-op.vercel.app",
+    images: [
+      { url: "/opengraph-image", width: 1200, height: 630, alt: "THE OP" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "THE OP — Where the Black Hills Come Together",
-    description:
-      "Coffee shop and tourist stop in Custer, South Dakota.",
-    images: ['/opengraph-image'],
+    description: "Coffee shop and tourist stop in Custer, South Dakota.",
+    images: ["/opengraph-image"],
   },
   alternates: {
-    canonical: 'https://the-op.vercel.app',
+    canonical: "https://the-op.vercel.app",
   },
   robots: {
     index: true,
@@ -85,7 +86,7 @@ export default function RootLayout({
         <SiteFooter />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );

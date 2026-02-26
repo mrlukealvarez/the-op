@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, WarmGlow, ScaleReveal, AmberShimmer } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  WarmGlow,
+  ScaleReveal,
+  AmberShimmer,
+} from "@/components/motion";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
@@ -9,7 +16,8 @@ export const metadata: Metadata = {
     "Visit THE OP in Custer, South Dakota. Get directions, hours, and contact information.",
   openGraph: {
     title: "Contact | THE OP",
-    description: "Visit THE OP in Custer, South Dakota. Get directions, hours, and contact information.",
+    description:
+      "Visit THE OP in Custer, South Dakota. Get directions, hours, and contact information.",
   },
 };
 
@@ -54,8 +62,8 @@ export default function ContactPage() {
               Visit <AmberShimmer>THE OP</AmberShimmer>
             </h1>
             <p className="max-w-xl text-cream/70">
-              We&apos;re on the BHC campus in Custer, South Dakota — right at the
-              gateway to Custer State Park. Come say hello.
+              We&apos;re on the BHC campus in Custer, South Dakota — right at
+              the gateway to Custer State Park. Come say hello.
             </p>
           </FadeIn>
         </div>
@@ -67,15 +75,17 @@ export default function ContactPage() {
           {infoCards.map((card) => (
             <StaggerItem key={card.title}>
               <WarmGlow className="rounded-xl">
-              <div className="rounded-xl border border-espresso/10 bg-white p-6">
-                <card.icon className="mb-3 h-6 w-6 text-amber" />
-                <h3 className="mb-2 font-semibold text-espresso">{card.title}</h3>
-                {card.lines.map((line) => (
-                  <p key={line} className="text-sm text-warm-gray">
-                    {line}
-                  </p>
-                ))}
-              </div>
+                <div className="rounded-xl border border-espresso/10 bg-white p-6">
+                  <card.icon className="mb-3 h-6 w-6 text-amber" />
+                  <h3 className="mb-2 font-semibold text-espresso">
+                    {card.title}
+                  </h3>
+                  {card.lines.map((line) => (
+                    <p key={line} className="text-sm text-warm-gray">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </WarmGlow>
             </StaggerItem>
           ))}
@@ -119,7 +129,8 @@ export default function ContactPage() {
         <ScaleReveal>
           <h2 className="mb-4 text-2xl font-bold">Work With Us</h2>
           <p className="mx-auto max-w-xl text-cream/60">
-            THE OP is hiring operators — $145K average base salary, no resumes required.
+            THE OP is hiring operators — $145K average base salary, no resumes
+            required.
           </p>
           <a
             href="/careers"

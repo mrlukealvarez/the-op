@@ -3,16 +3,16 @@ import {
   getUpcomingEvents,
   getCafeStats,
   getEventsByType,
-} from "@/lib/db/dashboard-queries"
-import EventsClient from "./events-client"
+} from "@/lib/db/dashboard-queries";
+import EventsClient from "./events-client";
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
-  const events = await getCafeEvents(50)
-  const upcomingEvents = await getUpcomingEvents()
-  const stats = await getCafeStats()
-  const eventsByType = await getEventsByType()
+  const events = await getCafeEvents(50);
+  const upcomingEvents = await getUpcomingEvents();
+  const stats = await getCafeStats();
+  const eventsByType = await getEventsByType();
 
   return (
     <EventsClient
@@ -21,5 +21,5 @@ export default async function EventsPage() {
       stats={stats}
       eventsByType={eventsByType}
     />
-  )
+  );
 }

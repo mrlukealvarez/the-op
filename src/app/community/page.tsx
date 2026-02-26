@@ -18,7 +18,15 @@ import {
   Handshake,
   ArrowRight,
 } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem, AmberShimmer, WarmGlow, ScaleReveal, PulseGlow } from "@/components/motion";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  AmberShimmer,
+  WarmGlow,
+  ScaleReveal,
+  PulseGlow,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -35,42 +43,50 @@ const ecosystemConnections = [
   {
     icon: Laptop,
     entity: "GrowWise",
-    connection: "GrowWise employees eat, meet, and work from THE OP daily. Team standup spot.",
+    connection:
+      "GrowWise employees eat, meet, and work from THE OP daily. Team standup spot.",
   },
   {
     icon: Tv,
     entity: "Outpost Media",
-    connection: "Live recordings, podcast interviews, and content creation happen right from the cafe floor.",
+    connection:
+      "Live recordings, podcast interviews, and content creation happen right from the cafe floor.",
   },
   {
     icon: GraduationCap,
     entity: "Seed Academy",
-    connection: "Students use THE OP as a study hall and networking space. Discounted drinks for enrollees.",
+    connection:
+      "Students use THE OP as a study hall and networking space. Discounted drinks for enrollees.",
   },
   {
     icon: Tent,
     entity: "THE CULT",
-    connection: "Convention pre-parties, product tastings, and after-parties center on THE OP.",
+    connection:
+      "Convention pre-parties, product tastings, and after-parties center on THE OP.",
   },
   {
     icon: Users,
     entity: "Settle the West",
-    connection: "New relocates get their first taste of Custer at THE OP. Welcome packets include a free drink.",
+    connection:
+      "New relocates get their first taste of Custer at THE OP. Welcome packets include a free drink.",
   },
   {
     icon: Sprout,
-    entity: "Auric Labs",
-    connection: "Accelerator teams pitch and prototype at THE OP. Investors visit here first.",
+    entity: "Wildflower Labs",
+    connection:
+      "Accelerator teams pitch and prototype at THE OP. Investors visit here first.",
   },
   {
     icon: Building,
     entity: "Pass Creek Campus",
-    connection: "THE OP is the front door to the entire 15-acre campus. First thing visitors see.",
+    connection:
+      "THE OP is the front door to the entire 15-acre campus. First thing visitors see.",
   },
   {
     icon: Heart,
     entity: "Seed Foundation",
-    connection: "Foundation programs host community events and fundraisers at THE OP regularly.",
+    connection:
+      "Foundation programs host community events and fundraisers at THE OP regularly.",
   },
 ];
 
@@ -109,17 +125,20 @@ const partnerCategories = [
 
 const testimonials = [
   {
-    quote: "It's like nothing else in the Hills. The coffee is incredible, but it's the people that keep me coming back.",
+    quote:
+      "It's like nothing else in the Hills. The coffee is incredible, but it's the people that keep me coming back.",
     name: "Sarah M.",
     title: "Custer Resident",
   },
   {
-    quote: "I relocated from Denver through Settle the West. THE OP was my first stop, and now it's my daily office.",
+    quote:
+      "I relocated from Denver through Settle the West. THE OP was my first stop, and now it's my daily office.",
     name: "James K.",
     title: "Remote Worker",
   },
   {
-    quote: "We record two shows a month from THE OP. The energy in the room makes for better content every time.",
+    quote:
+      "We record two shows a month from THE OP. The energy in the room makes for better content every time.",
     name: "Outpost Media",
     title: "Content Partner",
   },
@@ -216,8 +235,9 @@ export default function CommunityPage() {
               </h2>
             </div>
             <p className="mt-2 max-w-2xl text-warm-gray leading-relaxed">
-              When you move to the Black Hills through Settle the West, these are
-              your people. Vetted businesses that believe in what we are building.
+              When you move to the Black Hills through Settle the West, these
+              are your people. Vetted businesses that believe in what we are
+              building.
             </p>
           </FadeIn>
 
@@ -243,33 +263,40 @@ export default function CommunityPage() {
 
           <ScaleReveal delay={0.2}>
             <div className="mt-12 rounded-2xl bg-amber/5 border border-amber/10 p-8">
-              <h3 className="text-lg font-bold text-espresso">Revenue Share Model</h3>
+              <h3 className="text-lg font-bold text-espresso">
+                Revenue Share Model
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-warm-gray">
-                Every partner in the ecosystem generates revenue for themselves AND for
-                the community. Referral fees, featured placements, and exclusive offers
-                create a self-reinforcing local economy. When a Settle the West
-                relocator buys a home, the realtor earns commission and a portion flows
-                back to the program. When a brewery does a tap takeover, they sell beer
-                and THE OP sells food. Rising tides.
+                Every partner in the ecosystem generates revenue for themselves
+                AND for the community. Referral fees, featured placements, and
+                exclusive offers create a self-reinforcing local economy. When a
+                Settle the West relocator buys a home, the realtor earns
+                commission and a portion flows back to the program. When a
+                brewery does a tap takeover, they sell beer and THE OP sells
+                food. Rising tides.
               </p>
             </div>
           </ScaleReveal>
 
           <ScaleReveal delay={0.3}>
             <div className="mt-8 rounded-2xl bg-espresso/5 border border-espresso/10 p-8">
-              <h3 className="text-lg font-bold text-espresso">Connection to Settle the West</h3>
+              <h3 className="text-lg font-bold text-espresso">
+                Connection to Settle the West
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-warm-gray">
-                When remote workers relocate through our program, they get the Partner
-                List on Day 1. These are not random recommendations — they are vetted
-                businesses that believe in what we are building. From finding a home to
-                opening a bank account to joining a hiking group, the Partner List is
-                the relocator&apos;s on-ramp to Black Hills life.
+                When remote workers relocate through our program, they get the
+                Partner List on Day 1. These are not random recommendations —
+                they are vetted businesses that believe in what we are building.
+                From finding a home to opening a bank account to joining a
+                hiking group, the Partner List is the relocator&apos;s on-ramp
+                to Black Hills life.
               </p>
               <Link
                 href="/about"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-espresso hover:text-amber-dark transition-colors"
               >
-                Learn about THE OP&apos;s role <ArrowRight className="h-4 w-4" />
+                Learn about THE OP&apos;s role{" "}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </ScaleReveal>
@@ -310,11 +337,13 @@ export default function CommunityPage() {
       <section className="bg-espresso px-6 py-20 text-cream">
         <div className="mx-auto max-w-7xl text-center">
           <FadeIn>
-            <h2 className="mb-4 text-3xl font-bold">Planned Local Partnerships</h2>
+            <h2 className="mb-4 text-3xl font-bold">
+              Planned Local Partnerships
+            </h2>
             <p className="mx-auto mb-8 max-w-2xl text-cream/60">
-              We will source from Black Hills roasters, bakers, and producers. We
-              hire local. We reinvest in the community. Because that&apos;s what
-              local-first in the Black Hills means.
+              We will source from Black Hills roasters, bakers, and producers.
+              We hire local. We reinvest in the community. Because that&apos;s
+              what local-first in the Black Hills means.
             </p>
           </FadeIn>
           <ScaleReveal>

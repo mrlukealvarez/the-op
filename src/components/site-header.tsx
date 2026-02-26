@@ -23,9 +23,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-espresso/10 bg-cream/95 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="THE OP Home">
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          aria-label="THE OP Home"
+        >
           <Coffee className="h-7 w-7 text-espresso" />
-          <span className="text-xl font-bold tracking-tight text-espresso">THE OP</span>
+          <span className="text-xl font-bold tracking-tight text-espresso">
+            THE OP
+          </span>
         </Link>
 
         {/* Desktop nav */}

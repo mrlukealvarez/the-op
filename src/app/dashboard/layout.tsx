@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Overview", href: "/dashboard" },
   { name: "Intel", href: "/dashboard/intel" },
   { name: "Events", href: "/dashboard/events" },
   { name: "Community", href: "/dashboard/community" },
-]
+];
 
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   if (pathname === "/dashboard/login") {
-    return <>{children}</>
+    return <>{children}</>;
   }
 
   return (
@@ -38,9 +38,11 @@ export default function DashboardLayout({
                     href={item.href}
                     className={cn(
                       "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                      pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href))
+                      pathname === item.href ||
+                        (item.href !== "/dashboard" &&
+                          pathname.startsWith(item.href))
                         ? "bg-amber text-espresso"
-                        : "text-cream hover:bg-cream/10 hover:text-cream"
+                        : "text-cream hover:bg-cream/10 hover:text-cream",
                     )}
                   >
                     {item.name}
@@ -55,5 +57,5 @@ export default function DashboardLayout({
         {children}
       </main>
     </div>
-  )
+  );
 }

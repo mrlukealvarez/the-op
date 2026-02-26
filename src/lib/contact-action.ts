@@ -6,7 +6,10 @@ const contactSchema = z.object({
   name: z.string().min(1, "Name is required").max(200),
   email: z.string().email("Invalid email address"),
   subject: z.enum(["general", "events", "catering", "careers", "press"]),
-  message: z.string().min(10, "Message must be at least 10 characters").max(5000),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(5000),
   honeypot: z.string().max(0, "Bot detected"),
 });
 
@@ -32,14 +35,14 @@ function isRateLimited(email: string): boolean {
 
 export async function submitContactForm(
   _prev: ContactState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ContactState> {
   const raw = {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
     subject: formData.get("subject") as string,
     message: formData.get("message") as string,
-    honeypot: formData.get("honeypot") as string ?? "",
+    honeypot: (formData.get("honeypot") as string) ?? "",
   };
 
   const result = contactSchema.safeParse(raw);
@@ -48,11 +51,17 @@ export async function submitContactForm(
   }
 
   if (isRateLimited(result.data.email)) {
-    return { success: false, message: "Too many submissions. Please try again later." };
+    return {
+      success: false,
+      message: "Too many submissions. Please try again later.",
+    };
   }
 
   // In production, send email or save to database
   console.log("[THE OP Contact]", result.data);
 
-  return { success: true, message: "Thanks for reaching out! We'll get back to you soon." };
+  return {
+    success: true,
+    message: "Thanks for reaching out! We'll get back to you soon.",
+  };
 }

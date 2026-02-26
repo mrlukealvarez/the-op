@@ -21,8 +21,8 @@ export function CareersForm() {
           You&apos;re on the List!
         </h3>
         <p className="text-warm-gray">
-          We&apos;ll reach out when the cafe doors open and hiring begins.
-          Until then, follow us for build-out updates.
+          We&apos;ll reach out when the cafe doors open and hiring begins. Until
+          then, follow us for build-out updates.
         </p>
       </div>
     );
@@ -129,7 +129,8 @@ export function CareersForm() {
           htmlFor="message"
           className="mb-2 block text-sm font-medium text-espresso"
         >
-          Anything Else? <span className="text-warm-gray-light">(optional)</span>
+          Anything Else?{" "}
+          <span className="text-warm-gray-light">(optional)</span>
         </label>
         <textarea
           id="message"

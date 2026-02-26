@@ -172,7 +172,7 @@ export function CountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [display, setDisplay] = useState(
-    shouldReduceMotion ? end.toFixed(decimals) : (0).toFixed(decimals)
+    shouldReduceMotion ? end.toFixed(decimals) : (0).toFixed(decimals),
   );
 
   useEffect(() => {
@@ -195,7 +195,9 @@ export function CountUp({
       const eased = easeOut(progress);
       const current = eased * end;
       setDisplay(
-        decimals > 0 ? current.toFixed(decimals) : Math.round(current).toString()
+        decimals > 0
+          ? current.toFixed(decimals)
+          : Math.round(current).toString(),
       );
 
       if (progress < 1) {
@@ -271,7 +273,7 @@ export function ParallaxSection({
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    shouldReduceMotion ? [0, 0] : [-100 * speed, 100 * speed]
+    shouldReduceMotion ? [0, 0] : [-100 * speed, 100 * speed],
   );
 
   return (
@@ -327,9 +329,7 @@ export function ScaleReveal({
   return (
     <motion.div
       initial={
-        shouldReduceMotion
-          ? undefined
-          : { scale: 0.8, opacity: 0, rotate: -2 }
+        shouldReduceMotion ? undefined : { scale: 0.8, opacity: 0, rotate: -2 }
       }
       whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
       viewport={{ once: true }}

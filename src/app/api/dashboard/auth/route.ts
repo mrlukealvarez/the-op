@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     if (!dashboardPassword) {
       return NextResponse.json(
         { error: "Dashboard access not configured" },
-        { status: 503 }
+        { status: 503 },
       );
     }
 

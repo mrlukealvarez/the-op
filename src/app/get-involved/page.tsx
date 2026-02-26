@@ -81,8 +81,8 @@ export default function GetInvolvedPage() {
               Get <AmberShimmer>Involved</AmberShimmer>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-warm-gray">
-              THE OP is more than a cafe — it&apos;s a community hub. Here&apos;s
-              how you can be part of it.
+              THE OP is more than a cafe — it&apos;s a community hub.
+              Here&apos;s how you can be part of it.
             </p>
           </FadeIn>
         </div>
