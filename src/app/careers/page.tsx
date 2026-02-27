@@ -406,7 +406,7 @@ export default function CareersPage() {
                   color: "espresso",
                   title: "The $145K Cafe Manager",
                   description:
-                    "Your local Starbucks manager makes $55K. Our GM makes $145K+, drives a Tesla, and owns equity in a $52M-backed company.",
+                    "Your local Starbucks manager makes $55K. Our GM makes $145K+, drives a Tesla, and owns equity in a $105M-backed company.",
                 },
                 {
                   icon: Bot,
@@ -846,7 +846,7 @@ export default function CareersPage() {
               Venture-Backed, Not Bootstrapped
             </h2>
             <p className="text-center text-cream/70">
-              THE OP is part of the Black Hills Consortium&apos;s $52M capital
+              THE OP is part of the Black Hills Consortium&apos;s $105M capital
               raise across 13 companies. Our compensation philosophy is backed
               by institutional investment — not revenue guesses. We pay cafe
               operators like executives because that is what they are.

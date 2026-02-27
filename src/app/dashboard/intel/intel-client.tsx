@@ -246,7 +246,7 @@ const benefits = [
 const insights = [
   "$145K minimum salary for ALL positions -- barista to GM, no exceptions",
   "THE OP is a community anchor, not a standalone profit center",
-  "$3M from $52M raise covers Y1-Y2; FlowBot cross-subsidy covers Y3+",
+  "$3M from $105M raise covers Y1-Y2; FlowBot cross-subsidy covers Y3+",
   "Zero rent + 65.8% gross margin = strong unit economics despite operating loss",
 ];
 

@@ -248,7 +248,7 @@ export default function AboutPage() {
             </h2>
             <p className="mb-8 text-warm-gray">
               THE OP is one of 13 entities in the Black Hills Consortium — a
-              $52M initiative to revitalize rural America through technology,
+              $105M initiative to revitalize rural America through technology,
               media, education, and community.
             </p>
             <span className="inline-flex rounded-full bg-espresso/60 px-8 py-3 text-sm font-semibold text-cream">
